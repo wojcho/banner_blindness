@@ -6,10 +6,10 @@
   - [x] gallery
   - [x] captcha
 - [x] make all basic components have only parametric content
-- [ ] make all basic components have directive
+- [ ] make all basic components have directive (ecommerce, newspaper should have that)
+- [ ] improve the components
 - [ ] banner component
 - [ ] add banners to basic components
-- [ ] improve the components
 - [ ] use react router to wire the application together
 
 ---
