@@ -5,10 +5,11 @@
   - [x] newspaper
   - [x] gallery
   - [x] captcha
-- [ ] make all basic components have parametric content and have objective
+- [ ] make all basic components have only parametric content
+- [ ] make all basic components have directive
 - [ ] banner component
 - [ ] add banners to basic components
-- [ ] polish the components
+- [ ] improve the components
 - [ ] use react router to wire the application together
 
 ---
