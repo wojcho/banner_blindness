@@ -1,14 +1,13 @@
 # TODO
 
-- [ ] components for basic websites
-  - [ ] ecommerce
+- [x] components for basic websites
+  - [x] ecommerce
   - [x] newspaper
   - [x] gallery
   - [x] captcha
-- [ ] finalize the components to avoid scroll
+- [ ] make all basic components have parametric content and have objective
 - [ ] banner component
 - [ ] add banners to basic components
-- [ ] content variety
 - [ ] polish the components
 - [ ] use react router to wire the application together
 
