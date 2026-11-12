@@ -4,7 +4,7 @@
   - [ ] ecommerce
   - [ ] newspaper
   - [ ] gallery
-  - [ ] captcha
+  - [x] captcha
 - [ ] banner component
 - [ ] add banners to basic components
 - [ ] use react router to wire the application together
