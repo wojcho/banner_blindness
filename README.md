@@ -3,10 +3,11 @@
 - [ ] components for basic websites
   - [ ] ecommerce
   - [ ] newspaper
-  - [ ] gallery
+  - [x] gallery
   - [x] captcha
 - [ ] banner component
 - [ ] add banners to basic components
+- [ ] content variety
 - [ ] use react router to wire the application together
 
 ---
