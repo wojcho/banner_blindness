@@ -2,12 +2,14 @@
 
 - [ ] components for basic websites
   - [ ] ecommerce
-  - [ ] newspaper
+  - [x] newspaper
   - [x] gallery
   - [x] captcha
+- [ ] finalize the components to avoid scroll
 - [ ] banner component
 - [ ] add banners to basic components
 - [ ] content variety
+- [ ] polish the components
 - [ ] use react router to wire the application together
 
 ---

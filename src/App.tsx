@@ -1,14 +1,8 @@
-// import { Button, Title } from "@mantine/core";
-import { PhotoGalleryPortal } from "./PhotoGalleryPortal";
-// import { VerificationPortal } from "./VerificationPortal";
+import { NewspaperPortal } from "./NewspaperPortal";
 
 function App() {
   return (
-    // <>
-    //   <Title order={1}>Hello World!</Title>
-    //   <Button mt="md">Click me</Button>
-    // </>
-    <PhotoGalleryPortal targetPhotoId="1"/>
+    <NewspaperPortal/>
   );
 }
 
