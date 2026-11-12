@@ -5,7 +5,7 @@
   - [x] newspaper
   - [x] gallery
   - [x] captcha
-- [ ] make all basic components have only parametric content
+- [x] make all basic components have only parametric content
 - [ ] make all basic components have directive
 - [ ] banner component
 - [ ] add banners to basic components
