@@ -1,8 +1,8 @@
-import { NewspaperPortal } from "./NewspaperPortal";
+import PhotoGalleryPortal from "./PhotoGalleryPortal";
 
 function App() {
   return (
-    <NewspaperPortal/>
+    <PhotoGalleryPortal/>
   );
 }
 

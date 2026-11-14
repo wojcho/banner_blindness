@@ -18,12 +18,12 @@
   - [x] ecommerce
   - [x] newspaper
   - [x] gallery
-- [ ] improve the components
+- [x] improve the components
   - [x] captcha
   - [x] encyclopedia
   - [x] ecommerce
   - [x] newspaper
-  - [ ] gallery
+  - [x] gallery
 - [ ] add banners to basic components
   - [ ] top, sidebar, other
   - [ ] ad-like, similar styling to website, with photos of people, moving

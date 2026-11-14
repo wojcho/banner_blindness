@@ -143,19 +143,74 @@ export function PhotoGalleryPortal({
     }
   }, [opened]);
 
+
+  useEffect(() => {
+    if (!opened) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      switch (event.key) {
+        case "ArrowLeft":
+          event.preventDefault();
+          navigate(-1);
+          break;
+
+        case "ArrowRight":
+          event.preventDefault();
+          navigate(1);
+          break;
+
+        case "Escape":
+          event.preventDefault();
+          close();
+          break;
+
+        case "Home":
+          event.preventDefault();
+          selectPhoto(0);
+          break;
+
+        case "End":
+          event.preventDefault();
+          selectPhoto(photos.length - 1);
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [opened, selectedIndex, photos, targetPhotoId]);
+
   return (
     <Container size="xl" py="xl">
       <Stack gap="xl">
+
         <Group justify="space-between" align="center">
-          <Group gap="sm">
-            <ImageSquareIcon size={28} weight="duotone" />
-            <Box>
-              <Title order={2}>Photo Gallery</Title>
-              <Text size="sm" c="dimmed">
-                Retained echoes of points in time
-              </Text>
-            </Box>
-          </Group>
+          <UnstyledButton
+            className={classes.galleryBrand}
+            onClick={() => {
+              if (opened) {
+                close();
+              } else if (photos.length > 0) {
+                selectPhoto(0);
+              }
+            }}
+            aria-label="Open the first photo in Photo Gallery"
+          >
+            <Group gap="sm">
+              <ImageSquareIcon size={28} weight="duotone" />
+
+              <Box>
+                <Title order={2}>Photo Gallery</Title>
+
+                <Text size="sm" c="dimmed">
+                  Retained echoes of points in time
+                </Text>
+              </Box>
+            </Group>
+          </UnstyledButton>
 
           <Badge variant="light" color="gray" size="lg">
             {photos.length} photos
@@ -227,13 +282,23 @@ export function PhotoGalleryPortal({
               </ActionIcon>
             </Group>
 
-            <Box className={classes.imageStage}>
+            <Box
+              className={classes.imageStage}
+              onClick={(event) => {
+                if (event.target === event.currentTarget) {
+                  close();
+                }
+              }}
+            >
               <ActionIcon
                 className={classes.navButton}
                 variant="filled"
                 color="dark"
                 radius="xl"
-                onClick={() => navigate(-1)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  navigate(-1);
+                }}
                 aria-label="Previous photo"
               >
                 <ArrowLeftIcon size={20} />
@@ -244,6 +309,7 @@ export function PhotoGalleryPortal({
                 className={`${classes.largeImageWrapper} ${
                   animating ? classes.targetAnimation : ""
                 }`}
+                onClick={(event) => event.stopPropagation()}
               >
                 <Image
                   src={selectedPhoto.src}
@@ -268,7 +334,10 @@ export function PhotoGalleryPortal({
                 variant="filled"
                 color="dark"
                 radius="xl"
-                onClick={() => navigate(1)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  navigate(1);
+                }}
                 aria-label="Next photo"
               >
                 <ArrowRightIcon size={20} />
