@@ -29,7 +29,10 @@ import {
 } from "@phosphor-icons/react";
 
 import "./NewspaperPortal.css";
-import type { AdBannerConfig } from "./AdTypes";
+import type {
+  AdBannerConfig,
+  AdBannerLocation,
+} from "./AdTypes";
 import AdBanner from "./AdBanner";
 
 // ============================================================
@@ -215,6 +218,22 @@ export function NewspaperPortal({
   const [newsletterStatus, setNewsletterStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+
+  // ----------------------------------------------------------
+  // AD BANNER
+  // ----------------------------------------------------------
+
+  const renderAdBanner = (location: AdBannerLocation) => {
+    if (!adBanner || adBanner.location !== location) {
+      return null;
+    }
+
+    return (
+      <Box my="lg">
+        <AdBanner config={adBanner} />
+      </Box>
+    );
+  };
 
   // ----------------------------------------------------------
   // NAVIGATION
@@ -582,6 +601,10 @@ export function NewspaperPortal({
         py="lg"
       >
 
+        {/* TOP AD BANNER */}
+
+        {renderAdBanner("top")}
+
         {/* BREAKING NEWS TICKER */}
 
         <Group
@@ -629,12 +652,6 @@ export function NewspaperPortal({
           </Button>
 
         </Group>
-
-        {adBanner && (
-          <Box my="lg">
-            <AdBanner config={adBanner} />
-          </Box>
-        )}
 
         {/* SEARCH */}
 
@@ -1038,6 +1055,10 @@ export function NewspaperPortal({
 
                 <Box className="sidebar">
 
+                  {/* SIDEBAR AD BANNER */}
+
+                  {renderAdBanner("sidebar")}
+
                   <Box className="sidebar-heading">
 
                     <TrendUpIcon size={19} weight="bold" />
@@ -1204,6 +1225,10 @@ export function NewspaperPortal({
             </Grid>
           </>
         )}
+
+        {/* OTHER AD BANNER */}
+
+        {renderAdBanner("other")}
 
         {/* ================================================== */}
         {/* FOOTER */}

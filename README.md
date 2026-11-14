@@ -9,12 +9,12 @@
 - [x] make all basic components have only parametric content
 - [x] make all basic components have directive
 - [x] improve the components
-- [ ] add banners to basic components
-  - [ ] top, sidebar, other
+- [x] add banners to basic components
+  - [x] top, sidebar, other
       - [x] captcha
       - [x] encyclopedia
       - [x] ecommerce
-      - [ ] newspaper
+      - [x] newspaper
       - [z] gallery
   - [x] ad-like, similar styling to website
   - [x] content
