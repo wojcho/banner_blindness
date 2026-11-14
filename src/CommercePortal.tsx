@@ -28,128 +28,141 @@ import {
   SlidersHorizontalIcon,
   XIcon,
   PackageIcon,
+  CheckCircleIcon,
 } from "@phosphor-icons/react";
 
-export function CommercePortal() {
-  const products = [
-    {
-      id: 1,
-      name: "Apple iPhone 15 Pro 256GB Natural Titanium",
-      category: "Electronics",
-      price: 4299,
-      oldPrice: 4999,
-      rating: 4.9,
-      reviews: 128,
-      image:
-        "https://images.unsplash.com/photo-1696446701796-da61225697cc?w=600",
-      badge: "Bestseller",
-      delivery: "Tomorrow",
-    },
-    {
-      id: 2,
-      name: "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
-      category: "Electronics",
-      price: 1199,
-      oldPrice: 1499,
-      rating: 4.8,
-      reviews: 342,
-      image:
-        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
-      badge: "Price hit",
-      delivery: "Tomorrow",
-    },
-    {
-      id: 3,
-      name: "Nike Air Max 270 Men's Sports Shoes",
-      category: "Fashion",
-      price: 449,
-      oldPrice: null,
-      rating: 4.7,
-      reviews: 86,
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
-      badge: null,
-      delivery: "In 2 days",
-    },
-    {
-      id: 4,
-      name: "Modern Minimalist Desk Lamp",
-      category: "Home",
-      price: 129,
-      oldPrice: 179,
-      rating: 4.6,
-      reviews: 54,
-      image:
-        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600",
-      badge: "Sale",
-      delivery: "Tomorrow",
-    },
-    {
-      id: 5,
-      name: "Apple MacBook Air 13 M3 16GB 512GB",
-      category: "Electronics",
-      price: 5499,
-      oldPrice: 5999,
-      rating: 4.9,
-      reviews: 217,
-      image:
-        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600",
-      badge: "Bestseller",
-      delivery: "Tomorrow",
-    },
-    {
-      id: 6,
-      name: "Premium Everyday Backpack 25L",
-      category: "Fashion",
-      price: 189,
-      oldPrice: null,
-      rating: 4.5,
-      reviews: 42,
-      image:
-        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600",
-      badge: null,
-      delivery: "In 2 days",
-    },
-    {
-      id: 7,
-      name: "Ceramic Coffee Set - 4 Pieces",
-      category: "Home",
-      price: 89,
-      oldPrice: 119,
-      rating: 4.8,
-      reviews: 73,
-      image:
-        "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600",
-      badge: "Sale",
-      delivery: "Tomorrow",
-    },
-    {
-      id: 8,
-      name: "Smart Fitness Watch AMOLED Display",
-      category: "Electronics",
-      price: 599,
-      oldPrice: 799,
-      rating: 4.6,
-      reviews: 194,
-      image:
-        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600",
-      badge: "Popular",
-      delivery: "Tomorrow",
-    },
-  ];
+import "./CommercePortal.css";
 
-  const categories = [
-    "All",
-    "Electronics",
-    "Fashion",
-    "Home",
-  ];
+const mockProducts = [
+  {
+    id: 1,
+    name: "Apple iPhone 15 Pro 256GB Natural Titanium",
+    category: "Electronics",
+    price: 4299,
+    oldPrice: 4999,
+    rating: 4.9,
+    reviews: 128,
+    image:
+      "https://images.unsplash.com/photo-1696446701796-da61225697cc?w=600",
+    badge: "Bestseller",
+    delivery: "Tomorrow",
+  },
+  {
+    id: 2,
+    name: "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+    category: "Electronics",
+    price: 1199,
+    oldPrice: 1499,
+    rating: 4.8,
+    reviews: 342,
+    image:
+      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
+    badge: "Price hit",
+    delivery: "Tomorrow",
+  },
+  {
+    id: 3,
+    name: "Nike Air Max 270 Men's Sports Shoes",
+    category: "Fashion",
+    price: 449,
+    oldPrice: null,
+    rating: 4.7,
+    reviews: 86,
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
+    badge: null,
+    delivery: "In 2 days",
+  },
+  {
+    id: 4,
+    name: "Modern Minimalist Desk Lamp",
+    category: "Home",
+    price: 129,
+    oldPrice: 179,
+    rating: 4.6,
+    reviews: 54,
+    image:
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600",
+    badge: "Sale",
+    delivery: "Tomorrow",
+  },
+  {
+    id: 5,
+    name: "Apple MacBook Air 13 M3 16GB 512GB",
+    category: "Electronics",
+    price: 5499,
+    oldPrice: 5999,
+    rating: 4.9,
+    reviews: 217,
+    image:
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600",
+    badge: "Bestseller",
+    delivery: "Tomorrow",
+  },
+  {
+    id: 6,
+    name: "Premium Everyday Backpack 25L",
+    category: "Fashion",
+    price: 189,
+    oldPrice: null,
+    rating: 4.5,
+    reviews: 42,
+    image:
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600",
+    badge: null,
+    delivery: "In 2 days",
+  },
+  {
+    id: 7,
+    name: "Ceramic Coffee Set - 4 Pieces",
+    category: "Home",
+    price: 89,
+    oldPrice: 119,
+    rating: 4.8,
+    reviews: 73,
+    image:
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600",
+    badge: "Sale",
+    delivery: "Tomorrow",
+  },
+  {
+    id: 8,
+    name: "Smart Fitness Watch AMOLED Display",
+    category: "Electronics",
+    price: 599,
+    oldPrice: 799,
+    rating: 4.6,
+    reviews: 194,
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600",
+    badge: "Popular",
+    delivery: "Tomorrow",
+  },
+];
 
+interface CommercePortalProps {
+  products?: typeof mockProducts;
+  targetProductId?: number;
+  onTargetProductInCart?: () => void;
+}
+
+export function CommercePortal({
+  products = mockProducts,
+  targetProductId,
+  onTargetProductInCart,
+}: CommercePortalProps) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("recommended");
   const [favorites, setFavorites] = useState<number[]>([]);
   const [cart, setCart] = useState<number[]>([]);
+  const [successProductId, setSuccessProductId] = useState<number | null>(null);
+  const [showPageSuccess, setShowPageSuccess] = useState(false);
+
+  const categories = [
+    "All",
+    ...new Set(products.map((product) => product.category)),
+  ];
 
   const filteredProducts = useMemo(() => {
     let result = products.filter((product) => {
@@ -184,7 +197,41 @@ export function CommercePortal() {
 
   const addToCart = (id: number) => {
     setCart((current) => [...current, id]);
+
+    if (id === targetProductId) {
+      setSuccessProductId(id);
+      setShowPageSuccess(true);
+
+      onTargetProductInCart?.();
+
+      setTimeout(() => {
+        setSuccessProductId((current) =>
+          current === id ? null : current
+        );
+      }, 1800);
+
+      setTimeout(() => {
+        setShowPageSuccess(false);
+      }, 2800);
+    }
   };
+
+  const confetti = useMemo(
+    () =>
+      Array.from({ length: 45 }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 0.8,
+        color: [
+          "#228be6",
+          "#40c057",
+          "#fab005",
+          "#e64980",
+          "#7950f2",
+        ][i % 5],
+      })),
+    []
+  );
 
   return (
     <Box bg="#f5f6f8" mih="100vh">
@@ -456,10 +503,26 @@ export function CommercePortal() {
                   <Button
                     fullWidth
                     radius="md"
-                    color="blue"
+                    color={
+                      successProductId === product.id
+                        ? "green"
+                        : "blue"
+                    }
+                    className={
+                      successProductId === product.id
+                        ? "cart-success"
+                        : undefined
+                    }
                     onClick={() => addToCart(product.id)}
                   >
-                    Add to cart
+                    {successProductId === product.id ? (
+                      <>
+                        <span style={{ marginRight: 8 }}>✓</span>
+                        Added successfully!
+                      </>
+                    ) : (
+                      "Add to cart"
+                    )}
                   </Button>
                 </Stack>
               </Card>
@@ -504,11 +567,43 @@ export function CommercePortal() {
               marketo
             </Text>
             <Text size="xs" c="dimmed">
-              © 2026 Marketo Marketplace. Demo experience.
+              © 2026 Marketo Marketplace. Lose your money joyfully!
             </Text>
           </Group>
         </Container>
       </Box>
+
+      {showPageSuccess && (
+        <div className="page-success-overlay">
+          <div className="success-confetti">
+            {confetti.map((particle) => (
+              <span
+                key={particle.id}
+                style={{
+                  left: `${particle.left}%`,
+                  animationDelay: `${particle.delay}s`,
+                  backgroundColor: particle.color,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="success-content">
+            <div className="success-icon">
+              <CheckCircleIcon size={65} weight="fill" />
+            </div>
+
+            <Title order={2} c="white" mt="md">
+              Added successfully!
+            </Title>
+
+            <Text c="rgba(255,255,255,0.85)" mt="xs">
+              Your product is now in your cart.
+            </Text>
+          </div>
+        </div>
+      )}
+
     </Box>
   );
 }

@@ -1,0 +1,131 @@
+@keyframes cartSuccess {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.06);
+  }
+  65% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes successGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(47, 158, 68, 0);
+  }
+  40% {
+    box-shadow: 0 0 0 8px rgba(47, 158, 68, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(47, 158, 68, 0);
+  }
+}
+
+.cart-success {
+  animation: cartSuccess 450ms ease, successGlow 800ms ease;
+}
+
+.page-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+
+  overflow: hidden;
+
+  animation: overlayAppear 350ms ease forwards;
+}
+
+.success-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.success-confetti span {
+  position: absolute;
+  top: -25px;
+
+  display: block;
+  width: 10px;
+  height: 16px;
+
+  border-radius: 3px;
+
+  animation: confettiFall 2.8s ease-in forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translate3d(0, -10px, 0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(40px, 110vh, 0) rotate(900deg);
+    opacity: 0;
+  }
+}
+
+.success-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+
+  animation: successPop 600ms cubic-bezier(.17,.89,.32,1.49);
+}
+
+.success-icon {
+  width: 110px;
+  height: 110px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  background: #2f9e44;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 15px rgba(47,158,68,.15),
+    0 0 60px rgba(47,158,68,.6);
+
+  animation: successPulse 1.2s ease infinite;
+}
+
+@keyframes overlayAppear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: scale(.3) translateY(40px);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}

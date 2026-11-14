@@ -15,7 +15,7 @@
 - [ ] make all basic components have directive
   - [x] captcha
   - [ ] encyclopedia
-  - [ ] ecommerce
+  - [x] ecommerce
   - [x] newspaper
   - [x] gallery
 - [ ] improve the components
@@ -24,6 +24,7 @@
   - [ ] ad-like, similar styling to website, with photos of people, moving
   - [ ] content
 - [ ] use react router to wire the application together
+- [ ] create content variety
 
 ---
 

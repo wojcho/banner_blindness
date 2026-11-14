@@ -1,8 +1,8 @@
-import NewspaperPortal from "./NewspaperPortal";
+import CommercePortal from "./CommercePortal";
 
 function App() {
   return (
-    <NewspaperPortal targetArticleId={1}/>
+    <CommercePortal targetProductId={8}/>
   );
 }
 
