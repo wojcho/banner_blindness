@@ -32,6 +32,8 @@ import {
 } from "@phosphor-icons/react";
 
 import "@mantine/core/styles.css";
+import type { AdBannerConfig } from "./AdTypes";
+import AdBanner from "./AdBanner";
 
 interface EncyclopediaArticle {
   id: string;
@@ -146,6 +148,7 @@ interface EncyclopediaPortalProps {
   initialArticleId?: string;
   targetArticleId?: string;
   onTargetArticleSelected?: (article: EncyclopediaArticle) => void;
+  adBanner?: AdBannerConfig;
 }
 
 export function EncyclopediaPortal({
@@ -153,6 +156,7 @@ export function EncyclopediaPortal({
   initialArticleId,
   targetArticleId,
   onTargetArticleSelected,
+  adBanner,
 }: EncyclopediaPortalProps) {
   const [selectedArticleId, setSelectedArticleId] = useState(initialArticleId ?? "earth");
   const [search, setSearch] = useState("");
@@ -558,6 +562,12 @@ export function EncyclopediaPortal({
                 </Badge>
               </Group>
             </Paper>
+          )}
+
+          {adBanner && (
+            <Container size="xl" pt="md">
+              <AdBanner config={adBanner} />
+            </Container>
           )}
 
           {selectedArticle ? (

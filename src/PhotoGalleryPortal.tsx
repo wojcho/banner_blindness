@@ -26,6 +26,8 @@ import {
   XIcon,
 } from "@phosphor-icons/react";
 import classes from "./PhotoGallery.module.css";
+import type { AdBannerConfig } from "./AdTypes";
+import { AdBanner } from "./AdBanner";
 
 export interface GalleryPhoto {
   id: string;
@@ -38,6 +40,7 @@ interface PhotoGalleryPortalProps {
   photos?: GalleryPhoto[];
   targetPhotoId?: string;
   onTargetPhotoSelected?: (photo: GalleryPhoto) => void;
+  adBanner?: AdBannerConfig;
 }
 
 const mockPhotos: GalleryPhoto[] = [
@@ -95,6 +98,7 @@ export function PhotoGalleryPortal({
   photos = mockPhotos,
   targetPhotoId,
   onTargetPhotoSelected,
+  adBanner,
 }: PhotoGalleryPortalProps) {
   const [opened, { open, close }] = useDisclosure(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -216,6 +220,11 @@ export function PhotoGalleryPortal({
             {photos.length} photos
           </Badge>
         </Group>
+
+        {adBanner && (
+          <AdBanner config={adBanner} />
+        )}
+
 
         <SimpleGrid
           cols={{ base: 2, xs: 2, sm: 3, md: 4 }}

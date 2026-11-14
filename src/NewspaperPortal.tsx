@@ -29,6 +29,8 @@ import {
 } from "@phosphor-icons/react";
 
 import "./NewspaperPortal.css";
+import type { AdBannerConfig } from "./AdTypes";
+import AdBanner from "./AdBanner";
 
 // ============================================================
 // TYPES
@@ -50,6 +52,7 @@ interface NewspaperPortalProps {
   articles?: Article[];
   targetArticleId?: number;
   onTargetArticleSelected?: (article: Article) => void;
+  adBanner?: AdBannerConfig;
 }
 
 // ============================================================
@@ -191,6 +194,7 @@ export function NewspaperPortal({
   articles = mockArticles,
   targetArticleId,
   onTargetArticleSelected,
+  adBanner,
 }: NewspaperPortalProps) {
   // ----------------------------------------------------------
   // STATE
@@ -625,6 +629,12 @@ export function NewspaperPortal({
           </Button>
 
         </Group>
+
+        {adBanner && (
+          <Box my="lg">
+            <AdBanner config={adBanner} />
+          </Box>
+        )}
 
         {/* SEARCH */}
 

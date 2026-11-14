@@ -1,4 +1,3 @@
-
 import { useMemo, useState } from "react";
 import {
   ActionIcon,
@@ -39,6 +38,8 @@ import {
 } from "@phosphor-icons/react";
 
 import "./CommercePortal.css";
+import type { AdBannerConfig } from "./AdTypes";
+import { AdBanner } from "./AdBanner";
 
 export interface Product {
   id: number;
@@ -164,12 +165,14 @@ interface CommercePortalProps {
   products?: Product[];
   targetProductId?: number;
   onTargetProductInCart?: () => void;
+  adBanner?: AdBannerConfig;
 }
 
 export function CommercePortal({
   products = mockProducts,
   targetProductId,
   onTargetProductInCart,
+  adBanner,
 }: CommercePortalProps) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
@@ -813,6 +816,12 @@ export function CommercePortal({
           </Stack>
         </Container>
       </Box>
+
+      {adBanner?.location === "top" && (
+        <Container size="xl" pt="lg">
+          <AdBanner config={adBanner} />
+        </Container>
+      )}
 
       {/* CATEGORY NAVIGATION */}
       <Box bg="white" style={{ borderBottom: "1px solid #e9ecef" }}>

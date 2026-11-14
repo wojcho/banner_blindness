@@ -17,13 +17,17 @@ import {
 } from "@phosphor-icons/react";
 
 import { SliderCaptcha } from "./SliderCaptcha";
+import type { AdBannerConfig } from "./AdTypes";
+import { AdBanner } from "./AdBanner";
 
 interface VerificationPortalProps {
   onVerified?: () => void;
+  adBanner?: AdBannerConfig;
 }
 
 export function VerificationPortal({
   onVerified,
+  adBanner,
 }: VerificationPortalProps) {
   const [verified, setVerified] = useState(false);
   const [activePopup, setActivePopup] = useState<string | null>(null);
@@ -105,6 +109,11 @@ export function VerificationPortal({
 
             <LockIcon size={20} color="#888" />
           </Group>
+
+          {adBanner && (
+            <AdBanner config={adBanner} />
+          )}
+
 
           <Box>
             <Text fw={600} size="lg" c="#222">

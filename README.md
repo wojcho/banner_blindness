@@ -26,8 +26,9 @@
   - [x] gallery
 - [ ] add banners to basic components
   - [ ] top, sidebar, other
-  - [ ] ad-like, similar styling to website, with photos of people, moving
+  - [ ] ad-like, similar styling to website
   - [ ] content
+  - [ ] background
 - [ ] use react router to wire the application together
 - [ ] create content variety
 
