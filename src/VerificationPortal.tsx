@@ -137,3 +137,5 @@ export function VerificationPortal({
     </Center>
   );
 }
+
+export default VerificationPortal;

@@ -512,3 +512,5 @@ export function CommercePortal() {
     </Box>
   );
 }
+
+export default CommercePortal;

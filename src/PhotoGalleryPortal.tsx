@@ -300,3 +300,5 @@ export function PhotoGalleryPortal({
     </Container>
   );
 }
+
+export default PhotoGalleryPortal;

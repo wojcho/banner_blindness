@@ -37,6 +37,7 @@ interface EncyclopediaArticle {
   title: string;
   header: string;
   image: string;
+  content: string;
   relatedArticleIds: string[];
 }
 
@@ -48,6 +49,17 @@ const articles: EncyclopediaArticle[] = [
       "Earth is the third planet from the Sun and the only known astronomical object to harbor life.",
     image:
       "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4",
+    content: `
+      Earth is the third planet from the Sun and the only known
+      astronomical object to harbor life.
+
+      Earth formed approximately 4.54 billion years ago. It has
+      a diverse environment consisting of oceans, continents,
+      mountains, forests, and deserts.
+
+      The planet has one natural satellite, the Moon, and an
+      atmosphere primarily composed of nitrogen and oxygen.
+    `,
     relatedArticleIds: ["solar-system", "moon", "climate"],
   },
   {
@@ -57,6 +69,16 @@ const articles: EncyclopediaArticle[] = [
       "The Solar System consists of the Sun and all celestial objects gravitationally bound to it.",
     image:
       "https://images.unsplash.com/photo-1614728263952-84ea256f9679",
+    content: `
+      The Solar System is a gravitational system consisting
+      of the Sun and everything that orbits around it.
+
+      It contains eight planets, dwarf planets, moons,
+      asteroids, comets, and other smaller objects.
+
+      The Sun is the central star and contains most of the
+      Solar System's total mass.
+    `,
     relatedArticleIds: ["earth", "moon", "mars"],
   },
   {
@@ -66,6 +88,16 @@ const articles: EncyclopediaArticle[] = [
       "The Moon is Earth's only natural satellite and the fifth-largest satellite in the Solar System.",
     image:
       "https://images.unsplash.com/photo-1522030299830-16b8d3d049fe",
+    content: `
+      The Solar System is a gravitational system consisting
+      of the Sun and everything that orbits around it.
+
+      It contains eight planets, dwarf planets, moons,
+      asteroids, comets, and other smaller objects.
+
+      The Sun is the central star and contains most of the
+      Solar System's total mass.
+    `,
     relatedArticleIds: ["earth", "solar-system"],
   },
   {
@@ -75,6 +107,16 @@ const articles: EncyclopediaArticle[] = [
       "Mars is the fourth planet from the Sun, often called the Red Planet because of its reddish appearance.",
     image:
       "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9",
+    content: `
+      The Solar System is a gravitational system consisting
+      of the Sun and everything that orbits around it.
+
+      It contains eight planets, dwarf planets, moons,
+      asteroids, comets, and other smaller objects.
+
+      The Sun is the central star and contains most of the
+      Solar System's total mass.
+    `,
     relatedArticleIds: ["solar-system", "earth"],
   },
   {
@@ -84,6 +126,16 @@ const articles: EncyclopediaArticle[] = [
       "Climate change refers to long-term shifts in temperatures and weather patterns, primarily caused by human activities since the 1800s.",
     image:
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+    content: `
+      The Solar System is a gravitational system consisting
+      of the Sun and everything that orbits around it.
+
+      It contains eight planets, dwarf planets, moons,
+      asteroids, comets, and other smaller objects.
+
+      The Sun is the central star and contains most of the
+      Solar System's total mass.
+    `,
     relatedArticleIds: ["earth", "solar-system"],
   },
 ];
@@ -452,13 +504,13 @@ export function EncyclopediaPortal() {
                 </Title>
 
                 <Text size="md" lh={1.9} c="dark">
-                  {selectedArticle.header}
+                  {selectedArticle.content}
                 </Text>
 
                 <Divider my="lg" />
 
                 <Text size="sm" c="dimmed" lh={1.8}>
-                  Welcome to the Encyclopedia Portal. This article
+                  Welcome to the Omnipedia. This article
                   provides an introduction to {selectedArticle.title}.
                   Explore the related articles below to discover
                   more topics and expand your knowledge.
@@ -545,7 +597,7 @@ export function EncyclopediaPortal() {
           <Divider my="xl" />
 
           <Text size="xs" c="dimmed" ta="center">
-            Omnipedia · Discover knowledge, one article at a time.
+            Omnipedia. Discover knowledge, one article at a time.
           </Text>
         </Container>
       </AppShell.Main>

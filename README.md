@@ -7,7 +7,17 @@
   - [x] newspaper
   - [x] gallery
 - [x] make all basic components have only parametric content
-- [ ] make all basic components have directive (ecommerce, newspaper should have that)
+  - [x] captcha
+  - [x] encyclopedia
+  - [x] ecommerce
+  - [x] newspaper
+  - [x] gallery
+- [ ] make all basic components have directive
+  - [x] captcha
+  - [ ] encyclopedia
+  - [ ] ecommerce
+  - [ ] newspaper
+  - [x] gallery
 - [ ] improve the components
 - [ ] add banners to basic components
   - [ ] top, sidebar, other

@@ -135,7 +135,7 @@ const articles: Article[] = [
   },
 ];
 
-const NewspaperPortal: React.FC = () => {
+export function NewspaperPortal() {
   const mainArticle = articles.find((a) => a.main)!;
   const featuredArticles = articles.filter((a) => a.featured);
   const regularArticles = articles.filter(
