@@ -1,9 +1,9 @@
 import { MegaphoneIcon } from "@phosphor-icons/react";
 import type { AdBannerConfig } from "./AdTypes";
-import EncyclopediaPortal from "./EncyclopediaPortal";
+import PhotoGalleryPortal from "./PhotoGalleryPortal";
 
 const adConfig: AdBannerConfig = {
-  location: "top",
+  location: "sidebar",
   style: "attention-grabbing",
   content: "Discover exclusive offers today!",
   backgroundUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Perching_pigeon_in_Birkenhead_Park.jpg/960px-Perching_pigeon_in_Birkenhead_Park.jpg",
@@ -12,7 +12,7 @@ const adConfig: AdBannerConfig = {
 
 function App() {
   return (
-    <EncyclopediaPortal adBanner={adConfig}/>
+    <PhotoGalleryPortal adBanner={adConfig}/>
   );
 }
 

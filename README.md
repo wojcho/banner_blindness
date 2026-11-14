@@ -15,7 +15,7 @@
       - [x] encyclopedia
       - [ ] ecommerce
       - [ ] newspaper
-      - [ ] gallery
+      - [z] gallery
   - [x] ad-like, similar styling to website
   - [x] content
   - [x] background
