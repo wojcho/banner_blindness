@@ -1,15 +1,18 @@
 # TODO
 
 - [x] components for basic websites
+  - [x] captcha
+  - [ ] encyclopedia
   - [x] ecommerce
   - [x] newspaper
   - [x] gallery
-  - [x] captcha
 - [x] make all basic components have only parametric content
 - [ ] make all basic components have directive (ecommerce, newspaper should have that)
 - [ ] improve the components
-- [ ] banner component
 - [ ] add banners to basic components
+  - [ ] top, sidebar, other
+  - [ ] ad-like, similar styling to website, with photos of people, moving
+  - [ ] content
 - [ ] use react router to wire the application together
 
 ---
@@ -29,10 +32,11 @@ Jakie cechy powodują pomijanie bannerów?
 Użytkownicy mieliby wykonać zadania na spreparowanych stronach internetowych z bannerami
 
 Przykłady zadań:
-- zakup produktu (jak ecommerce)
-- znalezienie informacji w tekście (jak gazeta/wiadomości)
-- znalezienie zdjęcia w galerii z kaflami (jak aplikacja galeria)
 - wypełnienie captchy (jak cloudflare)
+- znalezienie informacji w tekście (jak encyklopedia)
+- zakup produktu (jak ecommerce)
+- znalezienie artykułu (jak gazeta)
+- znalezienie zdjęcia w galerii z kaflami (jak aplikacja galeria)
 Dostęp tylko do myszy bez klawiatury aby nie tracić wzroku jeśli ktoś nie pisze bezwzrokowo
 
 Do sprawdzenia:

@@ -238,7 +238,7 @@ const NewspaperPortal: React.FC = () => {
             BREAKING
           </Box>
           <Text size="sm" fw={700} px="md" lineClamp={1}>
-            You won"t believe what happened today! The internet is going crazy!
+            You will not believe what happened today! The internet is going crazy!
           </Text>
           <ArrowRightIcon size={18} />
         </Group>
