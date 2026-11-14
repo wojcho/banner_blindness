@@ -1,4 +1,3 @@
-
 import { Box, Center, Text } from "@mantine/core";
 import type { CSSProperties } from "react";
 import type { AdBannerConfig } from "./AdTypes";
@@ -8,11 +7,13 @@ interface AdBannerProps {
 }
 
 export function AdBanner({ config }: AdBannerProps) {
-  const isTop = config.location === "top";
-  const isSidebar = config.location === "sidebar";
   const attention = config.style === "attention-grabbing";
 
+  const isSidebar = config.location === "sidebar";
+
   const frameStyle: CSSProperties = {
+    width: isSidebar ? 160 : "100%",
+    maxWidth: isSidebar ? 160 : 970,
     padding: attention ? 5 : 0,
     borderRadius: attention ? 4 : 10,
     background: attention
@@ -21,17 +22,17 @@ export function AdBanner({ config }: AdBannerProps) {
     boxShadow: attention
       ? "0 5px 14px rgba(0, 0, 0, 0.18)"
       : "0 2px 8px rgba(0, 0, 0, 0.07)",
-    transition: "transform 160ms ease, box-shadow 160ms ease",
     cursor: "pointer",
     userSelect: "none",
-    WebkitUserSelect: "none",
   };
 
   const bannerStyle: CSSProperties = {
     position: "relative",
     overflow: "hidden",
-    minHeight: isSidebar ? 250 : 90,
-    padding: isSidebar ? 20 : 18,
+    width: "100%",
+    height: isSidebar ? 600 : 90,
+    minHeight: isSidebar ? 600 : 90,
+    padding: isSidebar ? 12 : 18,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -45,17 +46,14 @@ export function AdBanner({ config }: AdBannerProps) {
     backgroundPosition: "center",
   };
 
+
   return (
     <Box
       data-ad-location={config.location}
       data-ad-style={config.style}
-      w="100%"
-      maw={isSidebar ? undefined : 970}
-      mx={isSidebar ? undefined : "auto"}
       style={frameStyle}
     >
       <Box style={bannerStyle}>
-        {/* Dark overlay ensures readable text over any image */}
         <Box
           aria-hidden="true"
           style={{
