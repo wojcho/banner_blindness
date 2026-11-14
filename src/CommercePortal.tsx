@@ -1,4 +1,6 @@
+
 import { useMemo, useState } from "react";
+
 import {
   ActionIcon,
   Badge,
@@ -7,6 +9,7 @@ import {
   Card,
   Container,
   Divider,
+  Grid,
   Group,
   Image,
   Input,
@@ -38,8 +41,17 @@ import {
 } from "@phosphor-icons/react";
 
 import "./CommercePortal.css";
-import type { AdBannerConfig } from "./AdTypes";
+
+import type {
+  AdBannerConfig,
+  AdBannerLocation,
+} from "./AdTypes";
+
 import { AdBanner } from "./AdBanner";
+
+// --------------------------------------------------
+// PRODUCT TYPES
+// --------------------------------------------------
 
 export interface Product {
   id: number;
@@ -53,6 +65,10 @@ export interface Product {
   badge: string | null;
   delivery: string;
 }
+
+// --------------------------------------------------
+// MOCK PRODUCTS
+// --------------------------------------------------
 
 const mockProducts: Product[] = [
   {
@@ -161,6 +177,10 @@ const mockProducts: Product[] = [
   },
 ];
 
+// --------------------------------------------------
+// COMPONENT PROPS
+// --------------------------------------------------
+
 interface CommercePortalProps {
   products?: Product[];
   targetProductId?: number;
@@ -168,12 +188,20 @@ interface CommercePortalProps {
   adBanner?: AdBannerConfig;
 }
 
+// --------------------------------------------------
+// MAIN COMPONENT
+// --------------------------------------------------
+
 export function CommercePortal({
   products = mockProducts,
   targetProductId,
   onTargetProductInCart,
   adBanner,
 }: CommercePortalProps) {
+  // ------------------------------------------------
+  // STATE
+  // ------------------------------------------------
+
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("recommended");
@@ -189,19 +217,44 @@ export function CommercePortal({
 
   const [showPageSuccess, setShowPageSuccess] = useState(false);
 
-  const [paymentErrorOpened, setPaymentErrorOpened] = useState(false);
+  const [paymentErrorOpened, setPaymentErrorOpened] =
+    useState(false);
+
+  // ------------------------------------------------
+  // ADVERTISEMENT CONFIGURATION
+  // ------------------------------------------------
+
+  const hasSidebarBanner =
+    adBanner?.location === "sidebar";
+
+  const renderAdBanner = (location: AdBannerLocation) => {
+    if (!adBanner || adBanner.location !== location) {
+      return null;
+    }
+
+    return <AdBanner config={adBanner} />;
+  };
+
+  // ------------------------------------------------
+  // CATEGORIES
+  // ------------------------------------------------
 
   const categories = [
     "All",
     ...new Set(products.map((product) => product.category)),
   ];
 
-  // Filter and sort products
+  // ------------------------------------------------
+  // FILTER AND SORT PRODUCTS
+  // ------------------------------------------------
+
   const filteredProducts = useMemo(() => {
-    let result = products.filter((product) => {
+    const normalizedSearch = search.toLowerCase();
+
+    const result = products.filter((product) => {
       const matchesSearch =
-        product.name.toLowerCase().includes(search.toLowerCase()) ||
-        product.category.toLowerCase().includes(search.toLowerCase());
+        product.name.toLowerCase().includes(normalizedSearch) ||
+        product.category.toLowerCase().includes(normalizedSearch);
 
       const matchesCategory =
         category === "All" || product.category === category;
@@ -220,16 +273,33 @@ export function CommercePortal({
     return result;
   }, [products, search, category, sort]);
 
-  // Favorite products
+  // ------------------------------------------------
+  // FAVORITE PRODUCTS
+  // ------------------------------------------------
+
   const favoriteProducts = useMemo(
-    () => products.filter((product) => favorites.includes(product.id)),
+    () =>
+      products.filter((product) =>
+        favorites.includes(product.id)
+      ),
     [products, favorites]
   );
 
-  // Cart products (duplicates represent quantities)
+  // ------------------------------------------------
+  // CART PRODUCTS
+  // Duplicates represent quantities.
+  // ------------------------------------------------
+
   const cartProducts = useMemo(
-    () => cart.map((id) => products.find((product) => product.id === id))
-      .filter((product): product is Product => product !== undefined),
+    () =>
+      cart
+        .map((id) =>
+          products.find((product) => product.id === id)
+        )
+        .filter(
+          (product): product is Product =>
+            product !== undefined
+        ),
     [products, cart]
   );
 
@@ -240,27 +310,55 @@ export function CommercePortal({
 
   const cartCount = cart.length;
 
-  // Handle click of logo
+  // ------------------------------------------------
+  // GROUP CART ITEMS
+  // ------------------------------------------------
+
+  const groupedCart = useMemo(() => {
+    return cartProducts.reduce<
+      { product: Product; quantity: number }[]
+    >((groups, product) => {
+      const existing = groups.find(
+        (item) => item.product.id === product.id
+      );
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        groups.push({
+          product,
+          quantity: 1,
+        });
+      }
+
+      return groups;
+    }, []);
+  }, [cartProducts]);
+
+  // ------------------------------------------------
+  // LOGO CLICK
+  // ------------------------------------------------
+
   const handleLogoClick = () => {
-    // Reset browsing filters
     setSearch("");
     setCategory("All");
     setSort("recommended");
 
-    // Close open panels
     setFavoritesOpened(false);
     setCartOpened(false);
 
-    // Preserve cart and favorites!
+    // Preserve cart and favorites.
 
-    // Return to the top of the page
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
-  // Toggle favorite
+  // ------------------------------------------------
+  // TOGGLE FAVORITE
+  // ------------------------------------------------
+
   const toggleFavorite = (id: number) => {
     setFavorites((current) =>
       current.includes(id)
@@ -269,7 +367,10 @@ export function CommercePortal({
     );
   };
 
-  // Add to cart
+  // ------------------------------------------------
+  // ADD TO CART
+  // ------------------------------------------------
+
   const addToCart = (id: number) => {
     setCart((current) => [...current, id]);
 
@@ -291,7 +392,10 @@ export function CommercePortal({
     }
   };
 
-  // Remove one occurrence from cart
+  // ------------------------------------------------
+  // REMOVE ONE ITEM FROM CART
+  // ------------------------------------------------
+
   const removeFromCart = (id: number) => {
     setCart((current) => {
       const index = current.indexOf(id);
@@ -302,26 +406,10 @@ export function CommercePortal({
     });
   };
 
-  // Group cart items and calculate quantities
-  const groupedCart = useMemo(() => {
-    return cartProducts.reduce<
-      { product: Product; quantity: number }[]
-    >((groups, product) => {
-      const existing = groups.find(
-        (item) => item.product.id === product.id
-      );
+  // ------------------------------------------------
+  // PRODUCT CARD
+  // ------------------------------------------------
 
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        groups.push({ product, quantity: 1 });
-      }
-
-      return groups;
-    }, []);
-  }, [cartProducts]);
-
-  // Product card
   const renderProduct = (product: Product) => (
     <Card
       key={product.id}
@@ -369,15 +457,26 @@ export function CommercePortal({
           top={10}
           right={10}
           variant="white"
-          color={favorites.includes(product.id) ? "red" : "gray"}
+          color={
+            favorites.includes(product.id)
+              ? "red"
+              : "gray"
+          }
           radius="xl"
           size="lg"
           onClick={() => toggleFavorite(product.id)}
+          aria-label={
+            favorites.includes(product.id)
+              ? "Remove from favorites"
+              : "Add to favorites"
+          }
         >
           <HeartIcon
             size={19}
             weight={
-              favorites.includes(product.id) ? "fill" : "regular"
+              favorites.includes(product.id)
+                ? "fill"
+                : "regular"
             }
           />
         </ActionIcon>
@@ -446,7 +545,9 @@ export function CommercePortal({
           fullWidth
           radius="md"
           color={
-            successProductId === product.id ? "green" : "blue"
+            successProductId === product.id
+              ? "green"
+              : "blue"
           }
           className={
             successProductId === product.id
@@ -463,14 +564,28 @@ export function CommercePortal({
     </Card>
   );
 
+  // ------------------------------------------------
+  // RENDER
+  // ------------------------------------------------
+
   return (
     <Box bg="#f5f6f8" mih="100vh">
-      {/* HEADER */}
-      <Box bg="white" style={{ borderBottom: "1px solid #e9ecef" }}>
+
+      {/* ============================================
+          HEADER
+      ============================================ */}
+
+      <Box
+        bg="white"
+        style={{
+          borderBottom: "1px solid #e9ecef",
+        }}
+      >
         <Container size="xl" py="md">
           <Group justify="space-between" wrap="nowrap">
 
             {/* CLICKABLE LOGO */}
+
             <Group
               gap="xs"
               style={{ cursor: "pointer" }}
@@ -478,6 +593,15 @@ export function CommercePortal({
               role="button"
               tabIndex={0}
               aria-label="Go to homepage"
+              onKeyDown={(event) => {
+                if (
+                  event.key === "Enter" ||
+                  event.key === " "
+                ) {
+                  event.preventDefault();
+                  handleLogoClick();
+                }
+              }}
             >
               <ThemeIcon
                 size={42}
@@ -495,7 +619,10 @@ export function CommercePortal({
 
             <Group gap="sm">
 
-              {/* FAVORITES POPOVER */}
+              {/* ======================================
+                  FAVORITES POPOVER
+              ====================================== */}
+
               <Popover
                 width={360}
                 position="bottom-end"
@@ -521,7 +648,9 @@ export function CommercePortal({
 
                 <Popover.Dropdown p="md">
                   <Group justify="space-between" mb="md">
-                    <Title order={4}>My favorites</Title>
+                    <Title order={4}>
+                      My favorites
+                    </Title>
 
                     <Badge color="pink">
                       {favorites.length} products
@@ -545,12 +674,25 @@ export function CommercePortal({
                               fit="cover"
                             />
 
-                            <Box style={{ flex: 1, minWidth: 0 }}>
-                              <Text size="sm" fw={600} lineClamp={2}>
+                            <Box
+                              style={{
+                                flex: 1,
+                                minWidth: 0,
+                              }}
+                            >
+                              <Text
+                                size="sm"
+                                fw={600}
+                                lineClamp={2}
+                              >
                                 {product.name}
                               </Text>
 
-                              <Text size="sm" fw={700} c="blue">
+                              <Text
+                                size="sm"
+                                fw={700}
+                                c="blue"
+                              >
                                 <NumberFormatter
                                   value={product.price}
                                   thousandSeparator
@@ -562,7 +704,9 @@ export function CommercePortal({
                                 size="xs"
                                 variant="light"
                                 mt={5}
-                                onClick={() => addToCart(product.id)}
+                                onClick={() =>
+                                  addToCart(product.id)
+                                }
                               >
                                 Add to cart
                               </Button>
@@ -574,6 +718,7 @@ export function CommercePortal({
                               onClick={() =>
                                 toggleFavorite(product.id)
                               }
+                              aria-label="Remove favorite"
                             >
                               <TrashIcon size={18} />
                             </ActionIcon>
@@ -583,11 +728,20 @@ export function CommercePortal({
                     </ScrollArea.Autosize>
                   ) : (
                     <Stack align="center" py="xl" gap="xs">
-                      <HeartIcon size={36} color="#adb5bd" />
+                      <HeartIcon
+                        size={36}
+                        color="#adb5bd"
+                      />
 
-                      <Text fw={600}>No favorites yet</Text>
+                      <Text fw={600}>
+                        No favorites yet
+                      </Text>
 
-                      <Text size="xs" c="dimmed" ta="center">
+                      <Text
+                        size="xs"
+                        c="dimmed"
+                        ta="center"
+                      >
                         Save products using the heart icon.
                       </Text>
                     </Stack>
@@ -595,7 +749,10 @@ export function CommercePortal({
                 </Popover.Dropdown>
               </Popover>
 
-              {/* CART POPOVER */}
+              {/* ======================================
+                  CART POPOVER
+              ====================================== */}
+
               <Popover
                 width={390}
                 position="bottom-end"
@@ -609,7 +766,9 @@ export function CommercePortal({
                   <Button
                     color="blue"
                     radius="md"
-                    leftSection={<ShoppingCartIcon size={20} />}
+                    leftSection={
+                      <ShoppingCartIcon size={20} />
+                    }
                     onClick={() => {
                       setCartOpened((current) => !current);
                       setFavoritesOpened(false);
@@ -621,7 +780,9 @@ export function CommercePortal({
 
                 <Popover.Dropdown p="md">
                   <Group justify="space-between" mb="md">
-                    <Title order={4}>Shopping cart</Title>
+                    <Title order={4}>
+                      Shopping cart
+                    </Title>
 
                     <Badge color="blue">
                       {cartCount} items
@@ -648,7 +809,10 @@ export function CommercePortal({
                                 />
 
                                 <Box
-                                  style={{ flex: 1, minWidth: 0 }}
+                                  style={{
+                                    flex: 1,
+                                    minWidth: 0,
+                                  }}
                                 >
                                   <Text
                                     size="sm"
@@ -658,20 +822,32 @@ export function CommercePortal({
                                     {product.name}
                                   </Text>
 
-                                  <Text size="xs" c="dimmed">
+                                  <Text
+                                    size="xs"
+                                    c="dimmed"
+                                  >
                                     Quantity: {quantity}
                                   </Text>
 
-                                  <Text size="sm" fw={700} c="blue">
+                                  <Text
+                                    size="sm"
+                                    fw={700}
+                                    c="blue"
+                                  >
                                     <NumberFormatter
-                                      value={product.price * quantity}
+                                      value={
+                                        product.price * quantity
+                                      }
                                       thousandSeparator
                                       suffix=" zł"
                                     />
                                   </Text>
                                 </Box>
 
-                                <Stack gap={3} align="center">
+                                <Stack
+                                  gap={3}
+                                  align="center"
+                                >
                                   <ActionIcon
                                     size="sm"
                                     color="blue"
@@ -679,6 +855,7 @@ export function CommercePortal({
                                     onClick={() =>
                                       addToCart(product.id)
                                     }
+                                    aria-label="Increase quantity"
                                   >
                                     +
                                   </ActionIcon>
@@ -690,6 +867,7 @@ export function CommercePortal({
                                     onClick={() =>
                                       removeFromCart(product.id)
                                     }
+                                    aria-label="Remove one item"
                                   >
                                     <TrashIcon size={16} />
                                   </ActionIcon>
@@ -716,8 +894,13 @@ export function CommercePortal({
                         </Text>
                       </Group>
 
-                      <Group justify="space-between" mt="xs">
-                        <Text fw={700}>Total payment</Text>
+                      <Group
+                        justify="space-between"
+                        mt="xs"
+                      >
+                        <Text fw={700}>
+                          Total payment
+                        </Text>
 
                         <Title order={3} c="blue">
                           <NumberFormatter
@@ -751,15 +934,25 @@ export function CommercePortal({
                       </Button>
                     </>
                   ) : (
-                    <Stack align="center" py="xl" gap="xs">
+                    <Stack
+                      align="center"
+                      py="xl"
+                      gap="xs"
+                    >
                       <ShoppingCartIcon
                         size={38}
                         color="#adb5bd"
                       />
 
-                      <Text fw={600}>Your cart is empty</Text>
+                      <Text fw={600}>
+                        Your cart is empty
+                      </Text>
 
-                      <Text size="xs" c="dimmed" ta="center">
+                      <Text
+                        size="xs"
+                        c="dimmed"
+                        ta="center"
+                      >
                         Add some products to get started.
                       </Text>
                     </Stack>
@@ -771,7 +964,10 @@ export function CommercePortal({
         </Container>
       </Box>
 
-      {/* SEARCH AREA */}
+      {/* ============================================
+          SEARCH AREA
+      ============================================ */}
+
       <Box bg="#1769d2" py={35}>
         <Container size="xl">
           <Stack gap="lg">
@@ -780,7 +976,10 @@ export function CommercePortal({
                 Find exactly what you need.
               </Title>
 
-              <Text c="rgba(255,255,255,0.8)" mt={5}>
+              <Text
+                c="rgba(255,255,255,0.8)"
+                mt={5}
+              >
                 Millions of products. Great prices. Fast delivery.
               </Text>
             </Box>
@@ -802,6 +1001,7 @@ export function CommercePortal({
                       variant="subtle"
                       color="gray"
                       onClick={() => setSearch("")}
+                      aria-label="Clear search"
                     >
                       <XIcon size={18} />
                     </ActionIcon>
@@ -817,20 +1017,34 @@ export function CommercePortal({
         </Container>
       </Box>
 
+      {/* ============================================
+          TOP ADVERTISEMENT
+      ============================================ */}
+
       {adBanner?.location === "top" && (
         <Container size="xl" pt="lg">
-          <AdBanner config={adBanner} />
+          {renderAdBanner("top")}
         </Container>
       )}
 
-      {/* CATEGORY NAVIGATION */}
-      <Box bg="white" style={{ borderBottom: "1px solid #e9ecef" }}>
+      {/* ============================================
+          CATEGORY NAVIGATION
+      ============================================ */}
+
+      <Box
+        bg="white"
+        style={{
+          borderBottom: "1px solid #e9ecef",
+        }}
+      >
         <Container size="xl" py="sm">
           <Group gap="xl" wrap="nowrap">
             {categories.map((item) => (
               <Button
                 key={item}
-                variant={category === item ? "light" : "subtle"}
+                variant={
+                  category === item ? "light" : "subtle"
+                }
                 color="blue"
                 radius="xl"
                 size="sm"
@@ -843,83 +1057,174 @@ export function CommercePortal({
         </Container>
       </Box>
 
-      {/* MAIN CONTENT */}
+      {/* ============================================
+          MAIN CONTENT
+          PRODUCTS + OPTIONAL SIDEBAR
+      ============================================ */}
+
       <Container size="xl" py={30}>
-        <Group justify="space-between" align="center" mb="xl">
-          <Box>
-            <Title order={2} size={24} c="#212529">
-              {search
-                ? `Results for "${search}"`
-                : "Discover products"}
-            </Title>
+        <Grid>
 
-            <Text size="sm" c="dimmed" mt={4}>
-              {filteredProducts.length} products found
-            </Text>
-          </Box>
+          {/* ======================================
+              PRODUCT LISTING
+          ====================================== */}
 
-          <Select
-            w={205}
-            size="sm"
-            radius="md"
-            leftSection={
-              <SlidersHorizontalIcon size={17} />
+          <Grid.Col
+            span={
+              hasSidebarBanner
+                ? { base: 12, md: 9 }
+                : 12
             }
-            value={sort}
-            onChange={(value) =>
-              setSort(value || "recommended")
-            }
-            data={[
-              { value: "recommended", label: "Recommended" },
-              { value: "price-asc", label: "Price: lowest first" },
-              { value: "price-desc", label: "Price: highest first" },
-              { value: "rating", label: "Top rated" },
-            ]}
-          />
-        </Group>
-
-        {filteredProducts.length > 0 ? (
-          <SimpleGrid
-            cols={{ base: 1, xs: 2, sm: 3, lg: 4 }}
-            spacing="lg"
           >
-            {filteredProducts.map(renderProduct)}
-          </SimpleGrid>
-        ) : (
-          <Paper p={60} radius="lg" ta="center" withBorder>
-            <ThemeIcon
-              size={60}
-              radius="xl"
-              color="gray"
-              variant="light"
-              mx="auto"
+            <Group
+              justify="space-between"
+              align="center"
+              mb="xl"
             >
-              <MagnifyingGlassIcon size={30} />
-            </ThemeIcon>
+              <Box>
+                <Title
+                  order={2}
+                  size={24}
+                  c="#212529"
+                >
+                  {search
+                    ? `Results for "${search}"`
+                    : "Discover products"}
+                </Title>
 
-            <Title order={3} mt="lg">
-              No products found
-            </Title>
+                <Text
+                  size="sm"
+                  c="dimmed"
+                  mt={4}
+                >
+                  {filteredProducts.length} products found
+                </Text>
+              </Box>
 
-            <Text c="dimmed" mt="xs">
-              Try another search term or change the selected category.
-            </Text>
+              <Select
+                w={205}
+                size="sm"
+                radius="md"
+                leftSection={
+                  <SlidersHorizontalIcon size={17} />
+                }
+                value={sort}
+                onChange={(value) =>
+                  setSort(value || "recommended")
+                }
+                data={[
+                  {
+                    value: "recommended",
+                    label: "Recommended",
+                  },
+                  {
+                    value: "price-asc",
+                    label: "Price: lowest first",
+                  },
+                  {
+                    value: "price-desc",
+                    label: "Price: highest first",
+                  },
+                  {
+                    value: "rating",
+                    label: "Top rated",
+                  },
+                ]}
+              />
+            </Group>
 
-            <Button
-              mt="lg"
-              variant="light"
-              onClick={() => {
-                setSearch("");
-                setCategory("All");
-              }}
+            {/* PRODUCT GRID */}
+
+            {filteredProducts.length > 0 ? (
+              <SimpleGrid
+                cols={{
+                  base: 1,
+                  xs: 2,
+                  sm: 3,
+                  lg: hasSidebarBanner ? 3 : 4,
+                }}
+                spacing="lg"
+              >
+                {filteredProducts.map(renderProduct)}
+              </SimpleGrid>
+            ) : (
+              <Paper
+                p={60}
+                radius="lg"
+                ta="center"
+                withBorder
+              >
+                <ThemeIcon
+                  size={60}
+                  radius="xl"
+                  color="gray"
+                  variant="light"
+                  mx="auto"
+                >
+                  <MagnifyingGlassIcon size={30} />
+                </ThemeIcon>
+
+                <Title order={3} mt="lg">
+                  No products found
+                </Title>
+
+                <Text c="dimmed" mt="xs">
+                  Try another search term or change the selected category.
+                </Text>
+
+                <Button
+                  mt="lg"
+                  variant="light"
+                  onClick={() => {
+                    setSearch("");
+                    setCategory("All");
+                  }}
+                >
+                  Clear filters
+                </Button>
+              </Paper>
+            )}
+          </Grid.Col>
+
+          {/* ======================================
+              SIDEBAR ADVERTISEMENT
+          ====================================== */}
+
+          {hasSidebarBanner && (
+            <Grid.Col
+              span={{ base: 12, md: 3 }}
             >
-              Clear filters
-            </Button>
-          </Paper>
-        )}
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignSelf: "flex-start",
+                  position: "sticky",
+                  top: 20,
+                }}
+              >
+                {renderAdBanner("sidebar")}
+              </Box>
+            </Grid.Col>
+          )}
+
+        </Grid>
       </Container>
 
-      {/* FOOTER */}
+      {/* ============================================
+          OTHER / BOTTOM ADVERTISEMENT
+      ============================================ */}
+
+      {adBanner?.location === "other" && (
+        <Container size="xl" pb="xl">
+          {renderAdBanner("other")}
+        </Container>
+      )}
+
+      {/* ============================================
+          FOOTER
+      ============================================ */}
+
       <Box bg="white" mt={40} py="xl">
         <Container size="xl">
           <Group justify="space-between">
@@ -934,26 +1239,38 @@ export function CommercePortal({
         </Container>
       </Box>
 
-      {/* SUCCESS OVERLAY */}
+      {/* ============================================
+          SUCCESS OVERLAY
+      ============================================ */}
+
       {showPageSuccess && (
         <div className="page-success-overlay">
           <div className="success-content">
             <div className="success-icon">
-              <CheckCircleIcon size={65} weight="fill" />
+              <CheckCircleIcon
+                size={65}
+                weight="fill"
+              />
             </div>
 
             <Title order={2} c="white" mt="md">
               Added successfully!
             </Title>
 
-            <Text c="rgba(255,255,255,0.85)" mt="xs">
+            <Text
+              c="rgba(255,255,255,0.85)"
+              mt="xs"
+            >
               Your product is now in your cart.
             </Text>
           </div>
         </div>
       )}
 
-      {/* PAYMENT ERROR MODAL */}
+      {/* ============================================
+          PAYMENT ERROR MODAL
+      ============================================ */}
+
       <Modal
         opened={paymentErrorOpened}
         onClose={() => setPaymentErrorOpened(false)}
@@ -961,7 +1278,10 @@ export function CommercePortal({
         radius="lg"
         size="sm"
         withCloseButton={false}
-        overlayProps={{ backgroundOpacity: 0.6, blur: 3 }}
+        overlayProps={{
+          backgroundOpacity: 0.6,
+          blur: 3,
+        }}
       >
         <Stack align="center" gap="md" py="md">
           <ThemeIcon
@@ -970,7 +1290,10 @@ export function CommercePortal({
             color="red"
             variant="light"
           >
-            <WarningCircleIcon size={45} weight="fill" />
+            <WarningCircleIcon
+              size={45}
+              weight="fill"
+            />
           </ThemeIcon>
 
           <Box ta="center">
@@ -978,7 +1301,11 @@ export function CommercePortal({
               Payment declined
             </Title>
 
-            <Text size="sm" c="dimmed" mt="xs">
+            <Text
+              size="sm"
+              c="dimmed"
+              mt="xs"
+            >
               Unfortunately, your payment couldn't be processed.
             </Text>
           </Box>
@@ -989,11 +1316,19 @@ export function CommercePortal({
             w="100%"
             bg="red.0"
           >
-            <Text size="sm" fw={600} c="dark">
+            <Text
+              size="sm"
+              fw={600}
+              c="dark"
+            >
               Transaction failed
             </Text>
 
-            <Text size="sm" c="dimmed" mt={5}>
+            <Text
+              size="sm"
+              c="dimmed"
+              mt={5}
+            >
               Your card was declined by the issuing bank.
               Please check your card details or try another payment method.
             </Text>
@@ -1014,7 +1349,9 @@ export function CommercePortal({
           <Group grow w="100%">
             <Button
               variant="default"
-              onClick={() => setPaymentErrorOpened(false)}
+              onClick={() =>
+                setPaymentErrorOpened(false)
+              }
             >
               Cancel
             </Button>

@@ -1,6 +1,6 @@
 import { MegaphoneIcon } from "@phosphor-icons/react";
 import type { AdBannerConfig } from "./AdTypes";
-import PhotoGalleryPortal from "./PhotoGalleryPortal";
+import { CommercePortal } from "./CommercePortal";
 
 const adConfig: AdBannerConfig = {
   location: "sidebar",
@@ -12,7 +12,7 @@ const adConfig: AdBannerConfig = {
 
 function App() {
   return (
-    <PhotoGalleryPortal adBanner={adConfig}/>
+    <CommercePortal adBanner={adConfig}/>
   );
 }
 

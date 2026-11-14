@@ -13,7 +13,7 @@
   - [ ] top, sidebar, other
       - [x] captcha
       - [x] encyclopedia
-      - [ ] ecommerce
+      - [x] ecommerce
       - [ ] newspaper
       - [z] gallery
   - [x] ad-like, similar styling to website
