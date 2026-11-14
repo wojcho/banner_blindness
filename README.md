@@ -12,7 +12,7 @@
 - [ ] add banners to basic components
   - [ ] top, sidebar, other
       - [x] captcha
-      - [ ] encyclopedia
+      - [x] encyclopedia
       - [ ] ecommerce
       - [ ] newspaper
       - [ ] gallery

@@ -56,3 +56,66 @@
 .target-success-heading {
   animation: successPulse 1.2s ease-out;
 }
+
+
+/* Encyclopedia content and advertising layout */
+.encyclopedia-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.encyclopedia-article {
+  min-width: 0;
+  width: 100%;
+}
+
+.encyclopedia-sidebar {
+  display: none;
+  min-width: 0;
+}
+
+.encyclopedia-top-ad {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.encyclopedia-other-ad {
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+/* Desktop sidebar */
+@media (min-width: 1200px) {
+  .encyclopedia-layout.has-sidebar {
+    grid-template-columns: minmax(0, 1fr) 160px;
+  }
+
+  .encyclopedia-sidebar {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* Tablet and mobile */
+@media (max-width: 1199px) {
+  .encyclopedia-layout.has-sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .encyclopedia-sidebar {
+    display: none;
+  }
+
+  .encyclopedia-mobile-ad {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+}
