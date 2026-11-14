@@ -405,7 +405,7 @@ export function NewspaperPortal({
               </Text>
 
               <Text size="sm">
-                That's not the article we're looking for. Try again!
+                That is not the article we are looking for. Try again!
               </Text>
             </>
           )}
@@ -423,7 +423,14 @@ export function NewspaperPortal({
           <Group justify="space-between" py="xs">
 
             <Text size="xs" fw={700} c="dimmed">
-              SATURDAY, NOVEMBER 14, 2026
+              {new Intl.DateTimeFormat("en-US", {
+                weekday: "long",
+                month: "long",
+                day: "2-digit",
+                year: "numeric",
+              })
+                .format(new Date())
+                .toUpperCase()}
             </Text>
 
             <Group gap={6}>
