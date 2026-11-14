@@ -16,7 +16,7 @@
   - [x] captcha
   - [ ] encyclopedia
   - [ ] ecommerce
-  - [ ] newspaper
+  - [x] newspaper
   - [x] gallery
 - [ ] improve the components
 - [ ] add banners to basic components

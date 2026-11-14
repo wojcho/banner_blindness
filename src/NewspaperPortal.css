@@ -1,3 +1,154 @@
+.selection-feedback {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  min-width: 280px;
+  padding: 22px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  color: white;
+  text-align: center;
+  border-radius: 14px;
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+  pointer-events: none;
+}
+
+.selection-success {
+  background: linear-gradient(135deg, #2f9e44, #087f5b);
+  animation: success-animation 2.5s ease forwards;
+}
+
+.selection-failure {
+  background: linear-gradient(135deg, #e03131, #c92a2a);
+  animation: failure-animation 2.5s ease forwards;
+}
+
+.feedback-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid white;
+  border-radius: 50%;
+
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.selection-success .feedback-icon {
+  animation: check-pop 0.5s cubic-bezier(.17,.89,.32,1.49);
+}
+
+.selection-failure .feedback-icon {
+  animation: error-shake 0.5s ease;
+}
+
+/* SUCCESS */
+
+@keyframes success-animation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40px) scale(0.7);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.05);
+  }
+
+  25% {
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -20px) scale(0.95);
+  }
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0) rotate(-45deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* FAILURE */
+
+@keyframes failure-animation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  25% {
+    transform: translate(calc(-50% - 8px), 0);
+  }
+
+  35% {
+    transform: translate(calc(-50% + 8px), 0);
+  }
+
+  45% {
+    transform: translate(calc(-50% - 5px), 0);
+  }
+
+  55% {
+    transform: translate(-50%, 0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+}
+
+@keyframes error-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  75% {
+    transform: translateX(-3px);
+  }
+}
 
 .newspaper-portal {
   background: #f4f3ef;

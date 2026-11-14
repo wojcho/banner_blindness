@@ -1,8 +1,8 @@
-import EncyclopediaPortal from "./EncyclopediaPortal";
+import NewspaperPortal from "./NewspaperPortal";
 
 function App() {
   return (
-    <EncyclopediaPortal/>
+    <NewspaperPortal targetArticleId={1}/>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -38,7 +38,7 @@ interface Article {
   time?: string;
 }
 
-const articles: Article[] = [
+const mockArticles: Article[] = [
   {
     id: 1,
     title: "THE TRUTH THEY HID FROM US! Scientists Discover Something That Could Change Everything",
@@ -135,12 +135,47 @@ const articles: Article[] = [
   },
 ];
 
-export function NewspaperPortal() {
+interface NewspaperPortalProps {
+  articles?: Article[];
+  targetArticleId?: number;
+  onTargetArticleSelected?: (article: Article) => void;
+}
+
+export function NewspaperPortal({
+  articles = mockArticles,
+  targetArticleId,
+  onTargetArticleSelected,
+}: NewspaperPortalProps) {
   const mainArticle = articles.find((a) => a.main)!;
   const featuredArticles = articles.filter((a) => a.featured);
   const regularArticles = articles.filter(
     (a) => !a.main && !a.featured
   );
+
+  const [feedback, setFeedback] = useState<{
+    type: "success" | "failure";
+    articleId: number;
+    key: number;
+  } | null>(null);
+
+  const handleArticleSelection = (
+    article: Article,
+    event: React.MouseEvent
+  ) => {
+    event.preventDefault();
+
+    const isCorrect = article.id === targetArticleId;
+
+    setFeedback((previous) => ({
+      type: isCorrect ? "success" : "failure",
+      articleId: article.id,
+      key: (previous?.key ?? 0) + 1,
+    }));
+
+    if (isCorrect) {
+      onTargetArticleSelected?.(article);
+    }
+  };
 
   const ArticleLink = ({
     article,
@@ -153,6 +188,7 @@ export function NewspaperPortal() {
       href={article.link}
       underline="never"
       c="inherit"
+      onClick={(event) => handleArticleSelection(article, event)}
     >
       {children}
     </Anchor>
@@ -160,6 +196,42 @@ export function NewspaperPortal() {
 
   return (
     <Box className="newspaper-portal">
+
+      {/* SELECTION FEEDBACK ANIMATION */}
+      {feedback && (
+        <Box
+          key={feedback.key}
+          className={`selection-feedback ${
+            feedback.type === "success"
+              ? "selection-success"
+              : "selection-failure"
+          }`}
+          role="alert"
+        >
+          {feedback.type === "success" ? (
+            <>
+              <span className="feedback-icon">✓</span>
+              <Text fw={900} size="lg">
+                CORRECT! YOU FOUND IT!
+              </Text>
+              <Text size="sm">
+                Excellent work. That's the target article!
+              </Text>
+            </>
+          ) : (
+            <>
+              <span className="feedback-icon">✕</span>
+              <Text fw={900} size="lg">
+                NOT QUITE!
+              </Text>
+              <Text size="sm">
+                That's not the article we're looking for. Try again!
+              </Text>
+            </>
+          )}
+        </Box>
+      )}
+
       {/* MASTHEAD */}
       <Box className="newspaper-masthead">
         <Container size="xl">
