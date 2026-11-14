@@ -22,7 +22,7 @@
   - [x] captcha
   - [x] encyclopedia
   - [x] ecommerce
-  - [ ] newspaper
+  - [x] newspaper
   - [ ] gallery
 - [ ] add banners to basic components
   - [ ] top, sidebar, other
