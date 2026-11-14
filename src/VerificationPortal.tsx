@@ -7,11 +7,13 @@ import {
   Stack,
   Text,
   ThemeIcon,
+  Popover,
 } from "@mantine/core";
 import {
   CheckIcon,
   CloudIcon,
   LockIcon,
+  CircleIcon,
 } from "@phosphor-icons/react";
 
 import { SliderCaptcha } from "./SliderCaptcha";
@@ -24,6 +26,7 @@ export function VerificationPortal({
   onVerified,
 }: VerificationPortalProps) {
   const [verified, setVerified] = useState(false);
+  const [activePopup, setActivePopup] = useState<string | null>(null);
 
   const handleSuccess = () => {
     setTimeout(() => {
@@ -31,6 +34,42 @@ export function VerificationPortal({
       onVerified?.();
     }, 1000);
   };
+
+  const footerLinkStyle = {
+    cursor: "pointer",
+    userSelect: "none" as const,
+  };
+
+  const renderPopup = (label: string) => (
+    <Popover
+      opened={activePopup === label}
+      onChange={(opened) =>
+        setActivePopup(opened ? label : null)
+      }
+      position="top"
+      withArrow
+      shadow="md"
+    >
+      <Popover.Target>
+        <Text
+          size="xs"
+          c="dimmed"
+          style={footerLinkStyle}
+          onClick={() =>
+            setActivePopup(
+              activePopup === label ? null : label
+            )
+          }
+        >
+          {label}
+        </Text>
+      </Popover.Target>
+
+      <Popover.Dropdown>
+        <Text size="sm">There is nothing here.</Text>
+      </Popover.Dropdown>
+    </Popover>
+  );
 
   return (
     <Center mih="100vh" bg="#f7f7f7" p="md">
@@ -106,9 +145,7 @@ export function VerificationPortal({
                 </Box>
               </Group>
             ) : (
-              <SliderCaptcha
-                onSuccess={handleSuccess}
-              />
+              <SliderCaptcha onSuccess={handleSuccess} />
             )}
           </Box>
 
@@ -121,15 +158,9 @@ export function VerificationPortal({
             </Text>
 
             <Group gap={6}>
-              <Text size="xs" c="dimmed">
-                Privacy
-              </Text>
-              <Text size="xs" c="dimmed">
-                ·
-              </Text>
-              <Text size="xs" c="dimmed">
-                Terms
-              </Text>
+              {renderPopup("Privacy")}
+              <CircleIcon size={8} color="#888" />
+              {renderPopup("Terms")}
             </Group>
           </Group>
         </Stack>

@@ -1,8 +1,8 @@
-import EncyclopediaPortal from "./EncyclopediaPortal";
+import VerificationPortal from "./VerificationPortal";
 
 function App() {
   return (
-    <EncyclopediaPortal targetArticleId="mars"/>
+    <VerificationPortal/>
   );
 }
 

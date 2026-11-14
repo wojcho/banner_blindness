@@ -19,6 +19,11 @@
   - [x] newspaper
   - [x] gallery
 - [ ] improve the components
+  - [x] captcha
+  - [ ] encyclopedia
+  - [ ] ecommerce
+  - [ ] newspaper
+  - [ ] gallery
 - [ ] add banners to basic components
   - [ ] top, sidebar, other
   - [ ] ad-like, similar styling to website, with photos of people, moving
