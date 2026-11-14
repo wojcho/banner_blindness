@@ -163,6 +163,10 @@ export function EncyclopediaPortal({
     (article) => article.id === selectedArticleId
   );
 
+  const goToHome = () => {
+    selectArticle(initialArticleId ?? "earth");
+  };
+
   useEffect(() => {
     if (
       targetArticleId &&
@@ -298,19 +302,27 @@ export function EncyclopediaPortal({
                 aria-label="Toggle article navigation"
               />
 
-              <ThemeIcon size={42} radius="md" color="blue">
-                <BookOpenIcon size={25} weight="duotone" />
-              </ThemeIcon>
+              <UnstyledButton
+                onClick={goToHome}
+                style={{ cursor: "pointer" }}
+                aria-label="Go to Omnipedia home"
+              >
+                <Group gap="sm" wrap="nowrap">
+                  <ThemeIcon size={42} radius="md" color="blue">
+                    <BookOpenIcon size={25} weight="duotone" />
+                  </ThemeIcon>
 
-              <Box visibleFrom="xs">
-                <Title order={3} size="h4">
-                  Omnipedia
-                </Title>
+                  <Box visibleFrom="xs">
+                    <Title order={3} size="h4">
+                      Omnipedia
+                    </Title>
 
-                <Text size="xs" c="dimmed">
-                  Explore the world of knowledge
-                </Text>
-              </Box>
+                    <Text size="xs" c="dimmed">
+                      Explore the world of knowledge
+                    </Text>
+                  </Box>
+                </Group>
+              </UnstyledButton>
             </Group>
 
             {/* SEARCH */}

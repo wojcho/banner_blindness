@@ -20,7 +20,7 @@
   - [x] gallery
 - [ ] improve the components
   - [x] captcha
-  - [ ] encyclopedia
+  - [x] encyclopedia
   - [ ] ecommerce
   - [ ] newspaper
   - [ ] gallery
