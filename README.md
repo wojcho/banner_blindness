@@ -2,7 +2,7 @@
 
 - [x] components for basic websites
   - [x] captcha
-  - [ ] encyclopedia
+  - [x] encyclopedia
   - [x] ecommerce
   - [x] newspaper
   - [x] gallery
