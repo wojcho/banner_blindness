@@ -1,3 +1,4 @@
+
 import { useMemo, useState } from "react";
 import {
   ActionIcon,
@@ -12,13 +13,17 @@ import {
   Input,
   NumberFormatter,
   Paper,
+  Popover,
+  ScrollArea,
   Select,
   SimpleGrid,
   Stack,
   Text,
   ThemeIcon,
   Title,
+  Modal,
 } from "@mantine/core";
+
 import {
   MagnifyingGlassIcon,
   ShoppingCartIcon,
@@ -29,11 +34,26 @@ import {
   XIcon,
   PackageIcon,
   CheckCircleIcon,
+  TrashIcon,
+  WarningCircleIcon,
 } from "@phosphor-icons/react";
 
 import "./CommercePortal.css";
 
-const mockProducts = [
+export interface Product {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  oldPrice: number | null;
+  rating: number;
+  reviews: number;
+  image: string;
+  badge: string | null;
+  delivery: string;
+}
+
+const mockProducts: Product[] = [
   {
     id: 1,
     name: "Apple iPhone 15 Pro 256GB Natural Titanium",
@@ -141,7 +161,7 @@ const mockProducts = [
 ];
 
 interface CommercePortalProps {
-  products?: typeof mockProducts;
+  products?: Product[];
   targetProductId?: number;
   onTargetProductInCart?: () => void;
 }
@@ -154,16 +174,26 @@ export function CommercePortal({
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("recommended");
+
   const [favorites, setFavorites] = useState<number[]>([]);
   const [cart, setCart] = useState<number[]>([]);
-  const [successProductId, setSuccessProductId] = useState<number | null>(null);
+
+  const [favoritesOpened, setFavoritesOpened] = useState(false);
+  const [cartOpened, setCartOpened] = useState(false);
+
+  const [successProductId, setSuccessProductId] =
+    useState<number | null>(null);
+
   const [showPageSuccess, setShowPageSuccess] = useState(false);
+
+  const [paymentErrorOpened, setPaymentErrorOpened] = useState(false);
 
   const categories = [
     "All",
     ...new Set(products.map((product) => product.category)),
   ];
 
+  // Filter and sort products
   const filteredProducts = useMemo(() => {
     let result = products.filter((product) => {
       const matchesSearch =
@@ -185,8 +215,49 @@ export function CommercePortal({
     }
 
     return result;
-  }, [search, category, sort]);
+  }, [products, search, category, sort]);
 
+  // Favorite products
+  const favoriteProducts = useMemo(
+    () => products.filter((product) => favorites.includes(product.id)),
+    [products, favorites]
+  );
+
+  // Cart products (duplicates represent quantities)
+  const cartProducts = useMemo(
+    () => cart.map((id) => products.find((product) => product.id === id))
+      .filter((product): product is Product => product !== undefined),
+    [products, cart]
+  );
+
+  const cartTotal = cartProducts.reduce(
+    (total, product) => total + product.price,
+    0
+  );
+
+  const cartCount = cart.length;
+
+  // Handle click of logo
+  const handleLogoClick = () => {
+    // Reset browsing filters
+    setSearch("");
+    setCategory("All");
+    setSort("recommended");
+
+    // Close open panels
+    setFavoritesOpened(false);
+    setCartOpened(false);
+
+    // Preserve cart and favorites!
+
+    // Return to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Toggle favorite
   const toggleFavorite = (id: number) => {
     setFavorites((current) =>
       current.includes(id)
@@ -195,6 +266,7 @@ export function CommercePortal({
     );
   };
 
+  // Add to cart
   const addToCart = (id: number) => {
     setCart((current) => [...current, id]);
 
@@ -216,30 +288,194 @@ export function CommercePortal({
     }
   };
 
-  const confetti = useMemo(
-    () =>
-      Array.from({ length: 45 }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        delay: Math.random() * 0.8,
-        color: [
-          "#228be6",
-          "#40c057",
-          "#fab005",
-          "#e64980",
-          "#7950f2",
-        ][i % 5],
-      })),
-    []
+  // Remove one occurrence from cart
+  const removeFromCart = (id: number) => {
+    setCart((current) => {
+      const index = current.indexOf(id);
+
+      if (index === -1) return current;
+
+      return current.filter((_, i) => i !== index);
+    });
+  };
+
+  // Group cart items and calculate quantities
+  const groupedCart = useMemo(() => {
+    return cartProducts.reduce<
+      { product: Product; quantity: number }[]
+    >((groups, product) => {
+      const existing = groups.find(
+        (item) => item.product.id === product.id
+      );
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        groups.push({ product, quantity: 1 });
+      }
+
+      return groups;
+    }, []);
+  }, [cartProducts]);
+
+  // Product card
+  const renderProduct = (product: Product) => (
+    <Card
+      key={product.id}
+      bg="white"
+      radius="lg"
+      padding={0}
+      withBorder
+      style={{
+        overflow: "hidden",
+        transition: "transform 150ms ease, box-shadow 150ms ease",
+      }}
+      onMouseEnter={(event) => {
+        event.currentTarget.style.transform = "translateY(-3px)";
+        event.currentTarget.style.boxShadow =
+          "0 8px 24px rgba(0,0,0,0.08)";
+      }}
+      onMouseLeave={(event) => {
+        event.currentTarget.style.transform = "translateY(0)";
+        event.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      <Box pos="relative">
+        <Image
+          src={product.image}
+          h={210}
+          fit="cover"
+          alt={product.name}
+        />
+
+        {product.badge && (
+          <Badge
+            pos="absolute"
+            top={12}
+            left={12}
+            color="blue"
+            variant="filled"
+            radius="sm"
+          >
+            {product.badge}
+          </Badge>
+        )}
+
+        <ActionIcon
+          pos="absolute"
+          top={10}
+          right={10}
+          variant="white"
+          color={favorites.includes(product.id) ? "red" : "gray"}
+          radius="xl"
+          size="lg"
+          onClick={() => toggleFavorite(product.id)}
+        >
+          <HeartIcon
+            size={19}
+            weight={
+              favorites.includes(product.id) ? "fill" : "regular"
+            }
+          />
+        </ActionIcon>
+      </Box>
+
+      <Stack p="md" gap="xs" style={{ flex: 1 }}>
+        <Text size="xs" c="dimmed">
+          {product.category}
+        </Text>
+
+        <Text
+          fw={600}
+          size="sm"
+          lineClamp={2}
+          mih={42}
+          c="#212529"
+        >
+          {product.name}
+        </Text>
+
+        <Group gap={5}>
+          <StarIcon size={14} color="#f59f00" />
+
+          <Text size="xs" fw={600}>
+            {product.rating}
+          </Text>
+
+          <Text size="xs" c="dimmed">
+            ({product.reviews} reviews)
+          </Text>
+        </Group>
+
+        <Box mt="xs">
+          <Group gap={8} align="baseline">
+            <Text size="xl" fw={800} c="#212529">
+              <NumberFormatter
+                value={product.price}
+                thousandSeparator
+                suffix=" zł"
+              />
+            </Text>
+
+            {product.oldPrice && (
+              <Text size="xs" c="dimmed" td="line-through">
+                <NumberFormatter
+                  value={product.oldPrice}
+                  thousandSeparator
+                  suffix=" zł"
+                />
+              </Text>
+            )}
+          </Group>
+        </Box>
+
+        <Group gap={5}>
+          <TruckIcon size={16} color="#2f9e44" />
+
+          <Text size="xs" c="green" fw={500}>
+            Delivery: {product.delivery}
+          </Text>
+        </Group>
+
+        <Divider my={5} />
+
+        <Button
+          fullWidth
+          radius="md"
+          color={
+            successProductId === product.id ? "green" : "blue"
+          }
+          className={
+            successProductId === product.id
+              ? "cart-success"
+              : undefined
+          }
+          onClick={() => addToCart(product.id)}
+        >
+          {successProductId === product.id
+            ? "✓ Added successfully!"
+            : "Add to cart"}
+        </Button>
+      </Stack>
+    </Card>
   );
 
   return (
     <Box bg="#f5f6f8" mih="100vh">
-      {/* Header */}
+      {/* HEADER */}
       <Box bg="white" style={{ borderBottom: "1px solid #e9ecef" }}>
         <Container size="xl" py="md">
           <Group justify="space-between" wrap="nowrap">
-            <Group gap="xs">
+
+            {/* CLICKABLE LOGO */}
+            <Group
+              gap="xs"
+              style={{ cursor: "pointer" }}
+              onClick={handleLogoClick}
+              role="button"
+              tabIndex={0}
+              aria-label="Go to homepage"
+            >
               <ThemeIcon
                 size={42}
                 radius="md"
@@ -248,34 +484,291 @@ export function CommercePortal({
               >
                 <PackageIcon size={25} />
               </ThemeIcon>
+
               <Title order={2} c="#1769d2" fw={900}>
                 marketo
               </Title>
             </Group>
 
-            <Group gap="lg">
-              <Button
-                variant="subtle"
-                color="dark"
-                leftSection={<HeartIcon size={19} />}
-                visibleFrom="sm"
-              >
-                Favorites
-              </Button>
+            <Group gap="sm">
 
-              <Button
-                color="blue"
-                radius="md"
-                leftSection={<ShoppingCartIcon size={20} />}
+              {/* FAVORITES POPOVER */}
+              <Popover
+                width={360}
+                position="bottom-end"
+                shadow="lg"
+                radius="lg"
+                opened={favoritesOpened}
+                onChange={setFavoritesOpened}
+                withArrow
               >
-                Cart ({cart.length})
-              </Button>
+                <Popover.Target>
+                  <Button
+                    variant="subtle"
+                    color="dark"
+                    leftSection={<HeartIcon size={19} />}
+                    onClick={() => {
+                      setFavoritesOpened((current) => !current);
+                      setCartOpened(false);
+                    }}
+                  >
+                    Favorites ({favorites.length})
+                  </Button>
+                </Popover.Target>
+
+                <Popover.Dropdown p="md">
+                  <Group justify="space-between" mb="md">
+                    <Title order={4}>My favorites</Title>
+
+                    <Badge color="pink">
+                      {favorites.length} products
+                    </Badge>
+                  </Group>
+
+                  {favoriteProducts.length > 0 ? (
+                    <ScrollArea.Autosize mah={350}>
+                      <Stack gap="md">
+                        {favoriteProducts.map((product) => (
+                          <Group
+                            key={product.id}
+                            wrap="nowrap"
+                            align="center"
+                          >
+                            <Image
+                              src={product.image}
+                              w={65}
+                              h={65}
+                              radius="md"
+                              fit="cover"
+                            />
+
+                            <Box style={{ flex: 1, minWidth: 0 }}>
+                              <Text size="sm" fw={600} lineClamp={2}>
+                                {product.name}
+                              </Text>
+
+                              <Text size="sm" fw={700} c="blue">
+                                <NumberFormatter
+                                  value={product.price}
+                                  thousandSeparator
+                                  suffix=" zł"
+                                />
+                              </Text>
+
+                              <Button
+                                size="xs"
+                                variant="light"
+                                mt={5}
+                                onClick={() => addToCart(product.id)}
+                              >
+                                Add to cart
+                              </Button>
+                            </Box>
+
+                            <ActionIcon
+                              color="red"
+                              variant="subtle"
+                              onClick={() =>
+                                toggleFavorite(product.id)
+                              }
+                            >
+                              <TrashIcon size={18} />
+                            </ActionIcon>
+                          </Group>
+                        ))}
+                      </Stack>
+                    </ScrollArea.Autosize>
+                  ) : (
+                    <Stack align="center" py="xl" gap="xs">
+                      <HeartIcon size={36} color="#adb5bd" />
+
+                      <Text fw={600}>No favorites yet</Text>
+
+                      <Text size="xs" c="dimmed" ta="center">
+                        Save products using the heart icon.
+                      </Text>
+                    </Stack>
+                  )}
+                </Popover.Dropdown>
+              </Popover>
+
+              {/* CART POPOVER */}
+              <Popover
+                width={390}
+                position="bottom-end"
+                shadow="lg"
+                radius="lg"
+                opened={cartOpened}
+                onChange={setCartOpened}
+                withArrow
+              >
+                <Popover.Target>
+                  <Button
+                    color="blue"
+                    radius="md"
+                    leftSection={<ShoppingCartIcon size={20} />}
+                    onClick={() => {
+                      setCartOpened((current) => !current);
+                      setFavoritesOpened(false);
+                    }}
+                  >
+                    Cart ({cartCount})
+                  </Button>
+                </Popover.Target>
+
+                <Popover.Dropdown p="md">
+                  <Group justify="space-between" mb="md">
+                    <Title order={4}>Shopping cart</Title>
+
+                    <Badge color="blue">
+                      {cartCount} items
+                    </Badge>
+                  </Group>
+
+                  {groupedCart.length > 0 ? (
+                    <>
+                      <ScrollArea.Autosize mah={320}>
+                        <Stack gap="md">
+                          {groupedCart.map(
+                            ({ product, quantity }) => (
+                              <Group
+                                key={product.id}
+                                wrap="nowrap"
+                                align="center"
+                              >
+                                <Image
+                                  src={product.image}
+                                  w={65}
+                                  h={65}
+                                  radius="md"
+                                  fit="cover"
+                                />
+
+                                <Box
+                                  style={{ flex: 1, minWidth: 0 }}
+                                >
+                                  <Text
+                                    size="sm"
+                                    fw={600}
+                                    lineClamp={2}
+                                  >
+                                    {product.name}
+                                  </Text>
+
+                                  <Text size="xs" c="dimmed">
+                                    Quantity: {quantity}
+                                  </Text>
+
+                                  <Text size="sm" fw={700} c="blue">
+                                    <NumberFormatter
+                                      value={product.price * quantity}
+                                      thousandSeparator
+                                      suffix=" zł"
+                                    />
+                                  </Text>
+                                </Box>
+
+                                <Stack gap={3} align="center">
+                                  <ActionIcon
+                                    size="sm"
+                                    color="blue"
+                                    variant="light"
+                                    onClick={() =>
+                                      addToCart(product.id)
+                                    }
+                                  >
+                                    +
+                                  </ActionIcon>
+
+                                  <ActionIcon
+                                    size="sm"
+                                    color="red"
+                                    variant="subtle"
+                                    onClick={() =>
+                                      removeFromCart(product.id)
+                                    }
+                                  >
+                                    <TrashIcon size={16} />
+                                  </ActionIcon>
+                                </Stack>
+                              </Group>
+                            )
+                          )}
+                        </Stack>
+                      </ScrollArea.Autosize>
+
+                      <Divider my="md" />
+
+                      <Group justify="space-between">
+                        <Text size="sm" c="dimmed">
+                          Subtotal
+                        </Text>
+
+                        <Text fw={600}>
+                          <NumberFormatter
+                            value={cartTotal}
+                            thousandSeparator
+                            suffix=" zł"
+                          />
+                        </Text>
+                      </Group>
+
+                      <Group justify="space-between" mt="xs">
+                        <Text fw={700}>Total payment</Text>
+
+                        <Title order={3} c="blue">
+                          <NumberFormatter
+                            value={cartTotal}
+                            thousandSeparator
+                            suffix=" zł"
+                          />
+                        </Title>
+                      </Group>
+
+                      <Button
+                        fullWidth
+                        mt="md"
+                        radius="md"
+                        onClick={() => {
+                          setCartOpened(false);
+                          setPaymentErrorOpened(true);
+                        }}
+                      >
+                        Proceed to checkout
+                      </Button>
+
+                      <Button
+                        fullWidth
+                        mt="xs"
+                        variant="subtle"
+                        color="red"
+                        onClick={() => setCart([])}
+                      >
+                        Clear cart
+                      </Button>
+                    </>
+                  ) : (
+                    <Stack align="center" py="xl" gap="xs">
+                      <ShoppingCartIcon
+                        size={38}
+                        color="#adb5bd"
+                      />
+
+                      <Text fw={600}>Your cart is empty</Text>
+
+                      <Text size="xs" c="dimmed" ta="center">
+                        Add some products to get started.
+                      </Text>
+                    </Stack>
+                  )}
+                </Popover.Dropdown>
+              </Popover>
             </Group>
           </Group>
         </Container>
       </Box>
 
-      {/* Search area */}
+      {/* SEARCH AREA */}
       <Box bg="#1769d2" py={35}>
         <Container size="xl">
           <Stack gap="lg">
@@ -283,6 +776,7 @@ export function CommercePortal({
               <Title order={1} c="white" size={32}>
                 Find exactly what you need.
               </Title>
+
               <Text c="rgba(255,255,255,0.8)" mt={5}>
                 Millions of products. Great prices. Fast delivery.
               </Text>
@@ -293,7 +787,12 @@ export function CommercePortal({
                 size="xl"
                 variant="unstyled"
                 placeholder="What are you looking for?"
-                leftSection={<MagnifyingGlassIcon size={23} color="#868e96" />}
+                leftSection={
+                  <MagnifyingGlassIcon
+                    size={23}
+                    color="#868e96"
+                  />
+                }
                 rightSection={
                   search ? (
                     <ActionIcon
@@ -309,19 +808,13 @@ export function CommercePortal({
                 onChange={(event) =>
                   setSearch(event.currentTarget.value)
                 }
-                styles={{
-                  input: {
-                    fontSize: 16,
-                    height: 48,
-                  },
-                }}
               />
             </Paper>
           </Stack>
         </Container>
       </Box>
 
-      {/* Category navigation */}
+      {/* CATEGORY NAVIGATION */}
       <Box bg="white" style={{ borderBottom: "1px solid #e9ecef" }}>
         <Container size="xl" py="sm">
           <Group gap="xl" wrap="nowrap">
@@ -341,13 +834,16 @@ export function CommercePortal({
         </Container>
       </Box>
 
-      {/* Main content */}
+      {/* MAIN CONTENT */}
       <Container size="xl" py={30}>
         <Group justify="space-between" align="center" mb="xl">
           <Box>
             <Title order={2} size={24} c="#212529">
-              {search ? `Results for "${search}"` : "Discover products"}
+              {search
+                ? `Results for "${search}"`
+                : "Discover products"}
             </Title>
+
             <Text size="sm" c="dimmed" mt={4}>
               {filteredProducts.length} products found
             </Text>
@@ -357,9 +853,13 @@ export function CommercePortal({
             w={205}
             size="sm"
             radius="md"
-            leftSection={<SlidersHorizontalIcon size={17} />}
+            leftSection={
+              <SlidersHorizontalIcon size={17} />
+            }
             value={sort}
-            onChange={(value) => setSort(value || "recommended")}
+            onChange={(value) =>
+              setSort(value || "recommended")
+            }
             data={[
               { value: "recommended", label: "Recommended" },
               { value: "price-asc", label: "Price: lowest first" },
@@ -369,164 +869,12 @@ export function CommercePortal({
           />
         </Group>
 
-        {/* Product grid */}
         {filteredProducts.length > 0 ? (
           <SimpleGrid
             cols={{ base: 1, xs: 2, sm: 3, lg: 4 }}
             spacing="lg"
           >
-            {filteredProducts.map((product) => (
-              <Card
-                key={product.id}
-                bg="white"
-                radius="lg"
-                padding={0}
-                withBorder
-                style={{
-                  overflow: "hidden",
-                  transition: "transform 150ms ease, box-shadow 150ms ease",
-                }}
-                onMouseEnter={(event) => {
-                  event.currentTarget.style.transform = "translateY(-3px)";
-                  event.currentTarget.style.boxShadow =
-                    "0 8px 24px rgba(0,0,0,0.08)";
-                }}
-                onMouseLeave={(event) => {
-                  event.currentTarget.style.transform = "translateY(0)";
-                  event.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <Box pos="relative">
-                  <Image
-                    src={product.image}
-                    h={210}
-                    fit="cover"
-                    alt={product.name}
-                  />
-
-                  {product.badge && (
-                    <Badge
-                      pos="absolute"
-                      top={12}
-                      left={12}
-                      color="blue"
-                      variant="filled"
-                      radius="sm"
-                    >
-                      {product.badge}
-                    </Badge>
-                  )}
-
-                  <ActionIcon
-                    pos="absolute"
-                    top={10}
-                    right={10}
-                    variant="white"
-                    color={
-                      favorites.includes(product.id) ? "red" : "gray"
-                    }
-                    radius="xl"
-                    size="lg"
-                    onClick={() => toggleFavorite(product.id)}
-                  >
-                    <HeartIcon
-                      size={19}
-                      weight={
-                        favorites.includes(product.id)
-                          ? "fill"
-                          : "regular"
-                      }
-                    />
-                  </ActionIcon>
-                </Box>
-
-                <Stack p="md" gap="xs" style={{ flex: 1 }}>
-                  <Text size="xs" c="dimmed">
-                    {product.category}
-                  </Text>
-
-                  <Text
-                    fw={600}
-                    size="sm"
-                    lineClamp={2}
-                    mih={42}
-                    c="#212529"
-                  >
-                    {product.name}
-                  </Text>
-
-                  <Group gap={5}>
-                    <StarIcon size={14} color="#f59f00" />
-                    <Text size="xs" fw={600}>
-                      {product.rating}
-                    </Text>
-                    <Text size="xs" c="dimmed">
-                      ({product.reviews} reviews)
-                    </Text>
-                  </Group>
-
-                  <Box mt="xs">
-                    <Group gap={8} align="baseline">
-                      <Text size="xl" fw={800} c="#212529">
-                        <NumberFormatter
-                          value={product.price}
-                          thousandSeparator
-                          suffix=" zł"
-                        />
-                      </Text>
-
-                      {product.oldPrice && (
-                        <Text
-                          size="xs"
-                          c="dimmed"
-                          td="line-through"
-                        >
-                          <NumberFormatter
-                            value={product.oldPrice}
-                            thousandSeparator
-                            suffix=" zł"
-                          />
-                        </Text>
-                      )}
-                    </Group>
-                  </Box>
-
-                  <Group gap={5}>
-                    <TruckIcon size={16} color="#2f9e44" />
-                    <Text size="xs" c="green" fw={500}>
-                      Delivery: {product.delivery}
-                    </Text>
-                  </Group>
-
-                  <Divider my={5} />
-
-                  <Button
-                    fullWidth
-                    radius="md"
-                    color={
-                      successProductId === product.id
-                        ? "green"
-                        : "blue"
-                    }
-                    className={
-                      successProductId === product.id
-                        ? "cart-success"
-                        : undefined
-                    }
-                    onClick={() => addToCart(product.id)}
-                  >
-                    {successProductId === product.id ? (
-                      <>
-                        <span style={{ marginRight: 8 }}>✓</span>
-                        Added successfully!
-                      </>
-                    ) : (
-                      "Add to cart"
-                    )}
-                  </Button>
-                </Stack>
-              </Card>
-            ))}
+            {filteredProducts.map(renderProduct)}
           </SimpleGrid>
         ) : (
           <Paper p={60} radius="lg" ta="center" withBorder>
@@ -539,12 +887,15 @@ export function CommercePortal({
             >
               <MagnifyingGlassIcon size={30} />
             </ThemeIcon>
+
             <Title order={3} mt="lg">
               No products found
             </Title>
+
             <Text c="dimmed" mt="xs">
               Try another search term or change the selected category.
             </Text>
+
             <Button
               mt="lg"
               variant="light"
@@ -559,13 +910,14 @@ export function CommercePortal({
         )}
       </Container>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <Box bg="white" mt={40} py="xl">
         <Container size="xl">
           <Group justify="space-between">
             <Text fw={800} c="blue" size="lg">
               marketo
             </Text>
+
             <Text size="xs" c="dimmed">
               © 2026 Marketo Marketplace. Lose your money joyfully!
             </Text>
@@ -573,21 +925,9 @@ export function CommercePortal({
         </Container>
       </Box>
 
+      {/* SUCCESS OVERLAY */}
       {showPageSuccess && (
         <div className="page-success-overlay">
-          <div className="success-confetti">
-            {confetti.map((particle) => (
-              <span
-                key={particle.id}
-                style={{
-                  left: `${particle.left}%`,
-                  animationDelay: `${particle.delay}s`,
-                  backgroundColor: particle.color,
-                }}
-              />
-            ))}
-          </div>
-
           <div className="success-content">
             <div className="success-icon">
               <CheckCircleIcon size={65} weight="fill" />
@@ -603,6 +943,85 @@ export function CommercePortal({
           </div>
         </div>
       )}
+
+      {/* PAYMENT ERROR MODAL */}
+      <Modal
+        opened={paymentErrorOpened}
+        onClose={() => setPaymentErrorOpened(false)}
+        centered
+        radius="lg"
+        size="sm"
+        withCloseButton={false}
+        overlayProps={{ backgroundOpacity: 0.6, blur: 3 }}
+      >
+        <Stack align="center" gap="md" py="md">
+          <ThemeIcon
+            size={75}
+            radius="xl"
+            color="red"
+            variant="light"
+          >
+            <WarningCircleIcon size={45} weight="fill" />
+          </ThemeIcon>
+
+          <Box ta="center">
+            <Title order={3} c="red">
+              Payment declined
+            </Title>
+
+            <Text size="sm" c="dimmed" mt="xs">
+              Unfortunately, your payment couldn't be processed.
+            </Text>
+          </Box>
+
+          <Paper
+            p="md"
+            radius="md"
+            w="100%"
+            bg="red.0"
+          >
+            <Text size="sm" fw={600} c="dark">
+              Transaction failed
+            </Text>
+
+            <Text size="sm" c="dimmed" mt={5}>
+              Your card was declined by the issuing bank.
+              Please check your card details or try another payment method.
+            </Text>
+
+            <Divider my="sm" />
+
+            <Group justify="space-between">
+              <Text size="xs" c="dimmed">
+                Error code
+              </Text>
+
+              <Text size="xs" fw={700}>
+                CARD_DECLINED
+              </Text>
+            </Group>
+          </Paper>
+
+          <Group grow w="100%">
+            <Button
+              variant="default"
+              onClick={() => setPaymentErrorOpened(false)}
+            >
+              Cancel
+            </Button>
+
+            <Button
+              color="blue"
+              onClick={() => {
+                setPaymentErrorOpened(false);
+                setCartOpened(true);
+              }}
+            >
+              Try again
+            </Button>
+          </Group>
+        </Stack>
+      </Modal>
 
     </Box>
   );

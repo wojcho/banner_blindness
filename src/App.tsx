@@ -1,8 +1,8 @@
-import EncyclopediaPortal from "./EncyclopediaPortal";
+import CommercePortal from "./CommercePortal";
 
 function App() {
   return (
-    <EncyclopediaPortal/>
+    <CommercePortal/>
   );
 }
 

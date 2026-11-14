@@ -21,7 +21,7 @@
 - [ ] improve the components
   - [x] captcha
   - [x] encyclopedia
-  - [ ] ecommerce
+  - [x] ecommerce
   - [ ] newspaper
   - [ ] gallery
 - [ ] add banners to basic components
