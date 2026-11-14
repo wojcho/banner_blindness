@@ -1,8 +1,8 @@
-import CommercePortal from "./CommercePortal";
+import EncyclopediaPortal from "./EncyclopediaPortal";
 
 function App() {
   return (
-    <CommercePortal targetProductId={8}/>
+    <EncyclopediaPortal targetArticleId="mars"/>
   );
 }
 

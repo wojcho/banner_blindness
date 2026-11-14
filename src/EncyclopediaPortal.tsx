@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ActionIcon,
   AppShell,
@@ -28,6 +28,7 @@ import {
   CompassIcon,
   ArticleIcon,
   XIcon,
+  CheckCircleIcon,
 } from "@phosphor-icons/react";
 
 import "@mantine/core/styles.css";
@@ -41,7 +42,7 @@ interface EncyclopediaArticle {
   relatedArticleIds: string[];
 }
 
-const articles: EncyclopediaArticle[] = [
+const mockedArticles: EncyclopediaArticle[] = [
   {
     id: "earth",
     title: "Earth",
@@ -140,15 +141,52 @@ const articles: EncyclopediaArticle[] = [
   },
 ];
 
+interface EncyclopediaPortalProps {
+  articles?: EncyclopediaArticle[];
+  initialArticleId?: string;
+  targetArticleId?: string;
+  onTargetArticleSelected?: (article: EncyclopediaArticle) => void;
+}
 
-export function EncyclopediaPortal() {
-  const [selectedArticleId, setSelectedArticleId] = useState("earth");
+export function EncyclopediaPortal({
+  articles = mockedArticles,
+  initialArticleId,
+  targetArticleId,
+  onTargetArticleSelected,
+}: EncyclopediaPortalProps) {
+  const [selectedArticleId, setSelectedArticleId] = useState(initialArticleId ?? "earth");
   const [search, setSearch] = useState("");
   const [menuOpened, setMenuOpened] = useState(false);
+  const [showTargetSuccess, setShowTargetSuccess] = useState(false);
 
   const selectedArticle = articles.find(
     (article) => article.id === selectedArticleId
   );
+
+  useEffect(() => {
+    if (
+      targetArticleId &&
+      selectedArticleId === targetArticleId &&
+      selectedArticle
+    ) {
+      setShowTargetSuccess(true);
+
+      onTargetArticleSelected?.(selectedArticle);
+
+      const timeout = setTimeout(() => {
+        setShowTargetSuccess(false);
+      }, 3500);
+
+      return () => clearTimeout(timeout);
+    }
+
+    setShowTargetSuccess(false);
+  }, [
+    selectedArticleId,
+    targetArticleId,
+    selectedArticle,
+    onTargetArticleSelected,
+  ]);
 
   // Search articles by title and description.
   const filteredArticles = useMemo(() => {
@@ -468,13 +506,77 @@ export function EncyclopediaPortal() {
       <AppShell.Main>
         <Container size="xl" py="xl">
 
+          {/* SUCCESS ANIMATION */}
+          {showTargetSuccess && selectedArticle && (
+            <Paper
+              mb="xl"
+              p="md"
+              radius="lg"
+              withBorder
+              bg="#ebfbee"
+              style={{
+                borderColor: "#69db7c",
+                animation: "successSlideIn 0.55s ease-out",
+              }}
+            >
+              <Group gap="md" wrap="nowrap">
+                <ThemeIcon
+                  size={46}
+                  radius="xl"
+                  color="green"
+                  variant="light"
+                  className="target-success-icon"
+                >
+                  <CheckCircleIcon size={30} weight="fill" />
+                </ThemeIcon>
+
+                <Box style={{ flex: 1 }}>
+                  <Text fw={700} c="green.9">
+                    Target article reached!
+                  </Text>
+
+                  <Text size="sm" c="green.8">
+                    Successfully navigated to {selectedArticle.title}.
+                    Your destination has been found.
+                  </Text>
+                </Box>
+
+                <Badge color="green" variant="light">
+                  SUCCESS
+                </Badge>
+              </Group>
+            </Paper>
+          )}
+
           {selectedArticle ? (
             <Stack gap="lg">
 
               {/* ARTICLE HEADING */}
-              <Box>
+              <Box
+                className={
+                  showTargetSuccess ? "target-success-heading" : undefined
+                }
+                style={{
+                  borderRadius: rem(12),
+                  padding: rem(8),
+                }}
+              >
                 <Title order={1} size="2.5rem" mb="sm">
                   {selectedArticle.title}
+
+                  {showTargetSuccess && (
+                    <Badge
+                      ml="md"
+                      color="green"
+                      variant="light"
+                      size="lg"
+                    >
+                      <Group gap={4}>
+                        <CheckCircleIcon size={14} weight="fill" />
+                        Reached
+                      </Group>
+                    </Badge>
+                  )}
                 </Title>
 
                 <Text size="lg" c="dimmed" lh={1.7}>

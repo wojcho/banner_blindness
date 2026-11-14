@@ -12,9 +12,9 @@
   - [x] ecommerce
   - [x] newspaper
   - [x] gallery
-- [ ] make all basic components have directive
+- [x] make all basic components have directive
   - [x] captcha
-  - [ ] encyclopedia
+  - [x] encyclopedia
   - [x] ecommerce
   - [x] newspaper
   - [x] gallery

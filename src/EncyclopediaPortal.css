@@ -1,0 +1,58 @@
+@keyframes successSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px) scale(0.95);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(64, 192, 87, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(64, 192, 87, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(64, 192, 87, 0);
+  }
+}
+
+@keyframes successCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-30deg);
+  }
+
+  70% {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+.target-success-banner {
+  animation: successSlideIn 0.55s ease-out forwards;
+}
+
+.target-success-icon {
+  animation: successCheck 0.65s ease-out;
+}
+
+.target-success-heading {
+  animation: successPulse 1.2s ease-out;
+}
