@@ -11,7 +11,14 @@ export interface AdBannerConfig {
   location: AdBannerLocation;
   style: AdBannerStyle;
   content: string;
-
   backgroundUrl?: string;
   icon?: React.ReactNode;
+}
+
+export interface AdBannerConfigSerialized {
+  location: AdBannerLocation;
+  style: AdBannerStyle;
+  content: string;
+  backgroundUrl?: string;
+  icon?: string;
 }

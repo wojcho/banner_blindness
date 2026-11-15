@@ -1,18 +1,72 @@
-import { MegaphoneIcon } from "@phosphor-icons/react";
-import type { AdBannerConfig } from "./AdTypes";
-import NewspaperPortal from "./NewspaperPortal";
 
-const adConfig: AdBannerConfig = {
-  location: "top",
-  style: "attention-grabbing",
-  content: "Discover exclusive offers today!",
-  backgroundUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Perching_pigeon_in_Birkenhead_Park.jpg/960px-Perching_pigeon_in_Birkenhead_Park.jpg",
-  icon: <MegaphoneIcon size={28} />,
-};
+import { Routes, Route, useParams } from "react-router-dom";
+
+import type { AdBannerConfig } from "./AdTypes";
+
+import AdConfigLoader from "./AdConfigLoader";
+
+import VerificationPortal from "./VerificationPortal";
+import EncyclopediaPortal from "./EncyclopediaPortal";
+import CommercePortal from "./CommercePortal";
+import NewspaperPortal from "./NewspaperPortal";
+import PhotoGalleryPortal from "./PhotoGalleryPortal";
+import LinkWizard from "./LinkWizard";
+
+interface PortalRouteProps {
+  Component: React.ComponentType<{
+    adBanner: AdBannerConfig;
+  }>;
+}
+
+function PortalRoute({ Component }: PortalRouteProps) {
+  const { adConfigName } = useParams<{
+    adConfigName: string;
+  }>();
+
+  if (!adConfigName) {
+    return <div role="alert">Missing ad configuration name.</div>;
+  }
+
+  return (
+    <AdConfigLoader configName={adConfigName}>
+      {(config) => <Component adBanner={config} />}
+    </AdConfigLoader>
+  );
+}
 
 function App() {
   return (
-    <NewspaperPortal adBanner={adConfig}/>
+    <Routes>
+      <Route
+        path="/captcha/:adConfigName"
+        element={<PortalRoute Component={VerificationPortal} />}
+      />
+
+      <Route
+        path="/encyclopedia/:adConfigName"
+        element={<PortalRoute Component={EncyclopediaPortal} />}
+      />
+
+      <Route
+        path="/ecommerce/:adConfigName"
+        element={<PortalRoute Component={CommercePortal} />}
+      />
+
+      <Route
+        path="/newspaper/:adConfigName"
+        element={<PortalRoute Component={NewspaperPortal} />}
+      />
+
+      <Route
+        path="/gallery/:adConfigName"
+        element={<PortalRoute Component={PhotoGalleryPortal} />}
+      />
+
+      <Route
+        path="*"
+        element={<LinkWizard />}
+      />
+    </Routes>
   );
 }
 
