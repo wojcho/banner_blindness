@@ -15,7 +15,7 @@
   - [x] content
   - [x] background
 - [x] use react router to wire the application together
-- [ ] link builder
+- [x] link builder
 - [ ] finalization page
 - [ ] lock versions
 - [ ] create content variety
