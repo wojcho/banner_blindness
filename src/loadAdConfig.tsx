@@ -23,7 +23,6 @@ function isIconName(name: string): name is IconName {
   return name in iconMap;
 }
 
-
 function isValidAdConfig(
   value: unknown
 ): value is AdBannerConfigSerialized {

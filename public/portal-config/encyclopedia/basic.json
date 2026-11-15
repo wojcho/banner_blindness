@@ -1,0 +1,63 @@
+{
+  "articles": [
+    {
+      "id": "earth",
+      "title": "Earth",
+      "header": "Earth is the third planet from the Sun and the only known astronomical object to harbor life.",
+      "image": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4",
+      "content": " Earth is the third planet from the Sun and the only known astronomical object to harbor life. Earth formed approximately 4.54 billion years ago. It has a diverse environment consisting of oceans, continents, mountains, forests, and deserts. The planet has one natural satellite, the Moon, and an atmosphere primarily composed of nitrogen and oxygen.    ",
+      "relatedArticleIds": [
+        "solar-system",
+        "moon",
+        "climate"
+      ]
+    },
+    {
+      "id": "solar-system",
+      "title": "Solar System",
+      "header": "The Solar System consists of the Sun and all celestial objects gravitationally bound to it.",
+      "image": "https://images.unsplash.com/photo-1614728263952-84ea256f9679",
+      "content": " The Solar System is a gravitational system consisting of the Sun and everything that orbits around it. It contains eight planets, dwarf planets, moons, asteroids, comets, and other smaller objects. The Sun is the central star and contains most of the Solar System's total mass.    ",
+      "relatedArticleIds": [
+        "earth",
+        "moon",
+        "mars"
+      ]
+    },
+    {
+      "id": "moon",
+      "title": "Moon",
+      "header": "The Moon is Earth's only natural satellite and the fifth-largest satellite in the Solar System.",
+      "image": "https://images.unsplash.com/photo-1522030299830-16b8d3d049fe",
+      "content": " The Solar System is a gravitational system consisting of the Sun and everything that orbits around it. It contains eight planets, dwarf planets, moons, asteroids, comets, and other smaller objects. The Sun is the central star and contains most of the Solar System's total mass.    ",
+      "relatedArticleIds": [
+        "earth",
+        "solar-system"
+      ]
+    },
+    {
+      "id": "mars",
+      "title": "Mars",
+      "header": "Mars is the fourth planet from the Sun, often called the Red Planet because of its reddish appearance.",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9",
+      "content": " The Solar System is a gravitational system consisting of the Sun and everything that orbits around it. It contains eight planets, dwarf planets, moons, asteroids, comets, and other smaller objects. The Sun is the central star and contains most of the Solar System's total mass.    ",
+      "relatedArticleIds": [
+        "solar-system",
+        "earth"
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate Change",
+      "header": "Climate change refers to long-term shifts in temperatures and weather patterns, primarily caused by human activities since the 1800s.",
+      "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      "content": "The Solar System is a gravitational system consisting of the Sun and everything that orbits around it. It contains eight planets, dwarf planets, moons, asteroids, comets, and other smaller objects. The Sun is the central star and contains most of the Solar System's total mass.    ",
+      "relatedArticleIds": [
+        "earth",
+        "solar-system"
+      ]
+    }
+  ],
+  "initialArticleId": "earth",
+  "targetArticleId": "mars"
+}

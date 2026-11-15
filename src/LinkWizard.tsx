@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 
-const adConfigNames: string[] = ["basic"];
+const adConfigIds: string[] = ["basic"];
+
+const portals = ["captcha", "encyclopedia", "ecommerce", "newspaper", "gallery"];
+
+const portalConfigIds = {
+  "enyclopedia": ["basic"],
+  "ecommerce": ["basic"],
+  "newspaper": ["basic"],
+  "gallery": ["basic"],
+};
 
 export function LinkWizard() {
   return (

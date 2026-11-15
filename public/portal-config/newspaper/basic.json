@@ -1,0 +1,99 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "THE TRUTH THEY HID FROM US! Scientists Discover Something That Could Change Everything",
+      "header": "Experts are speechless. The discovery nobody expected is making headlines around the world.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200",
+      "link": "#article-1",
+      "category": "BREAKING NEWS",
+      "main": true,
+      "time": "12 min ago"
+    },
+    {
+      "id": 2,
+      "title": "SHOCKING! A Simple Everyday Habit Could Be Ruining Your Life",
+      "header": "Doctors are warning everyone. Millions of people might be making this mistake.",
+      "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800",
+      "link": "#article-2",
+      "category": "HEALTH",
+      "featured": true,
+      "time": "25 min ago"
+    },
+    {
+      "id": 3,
+      "title": "Nobody Saw This Coming: Internet Explodes Over Celebrity Revelation",
+      "header": "One unexpected announcement has sent social media into complete chaos.",
+      "image": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800",
+      "link": "#article-3",
+      "category": "CELEBRITIES",
+      "featured": true,
+      "time": "38 min ago"
+    },
+    {
+      "id": 4,
+      "title": "This New Technology Is Leaving Everyone Speechless",
+      "header": "A futuristic innovation could soon become part of everyday life.",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+      "link": "#article-4",
+      "category": "TECHNOLOGY",
+      "featured": true,
+      "time": "1 hour ago"
+    },
+    {
+      "id": 5,
+      "title": "The 5 Things You Should Never Do Before Going to Bed",
+      "header": "Sleep specialists explain why these seemingly harmless habits matter.",
+      "image": "https://images.unsplash.com/photo-1511295742362-92c96b6c8a0c?w=600",
+      "link": "#article-5",
+      "category": "LIFESTYLE",
+      "time": "1 hour ago"
+    },
+    {
+      "id": 6,
+      "title": "A Mysterious Object Appeared in the Sky. People Cannot Explain It",
+      "header": "Witnesses captured something unusual, and the footage is going viral.",
+      "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600",
+      "link": "#article-6",
+      "category": "WORLD",
+      "time": "2 hours ago"
+    },
+    {
+      "id": 7,
+      "title": "Your Smartphone Has a Hidden Feature You Probably Never Used",
+      "header": "This little-known trick could save you a lot of time.",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600",
+      "link": "#article-7",
+      "category": "TECHNOLOGY",
+      "time": "3 hours ago"
+    },
+    {
+      "id": 8,
+      "title": "The Most Unexpected Food Trend Is Taking Over the Internet",
+      "header": "Food lovers are divided over this unusual new sensation.",
+      "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600",
+      "link": "#article-8",
+      "category": "FOOD",
+      "time": "4 hours ago"
+    },
+    {
+      "id": 9,
+      "title": "Why Everyone Is Talking About This Forgotten Destination",
+      "header": "Travel enthusiasts have discovered a surprising hidden gem.",
+      "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600",
+      "link": "#article-9",
+      "category": "TRAVEL",
+      "time": "5 hours ago"
+    },
+    {
+      "id": 10,
+      "title": "Scientists Reveal What Happens When You Take a Break From Social Media",
+      "header": "The results of a recent study may surprise you.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600",
+      "link": "#article-10",
+      "category": "SCIENCE",
+      "time": "6 hours ago"
+    }
+  ],
+  "targetArticleId": 10
+}
