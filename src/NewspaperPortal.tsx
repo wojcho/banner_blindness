@@ -236,11 +236,12 @@ export function NewspaperPortal({
 
   const navigationItems = [
     { label: "HOME", category: "ALL" },
-    { label: "WORLD", category: "WORLD" },
-    { label: "CELEBRITIES", category: "CELEBRITIES" },
-    { label: "TECH", category: "TECHNOLOGY" },
-    { label: "HEALTH", category: "HEALTH" },
-    { label: "LIFESTYLE", category: "LIFESTYLE" },
+    ...Array.from(
+      new Set(articles.map((article) => article.category))
+    ).map((category) => ({
+      label: category,
+      category,
+    })),
   ];
 
   // ==========================================================
@@ -395,7 +396,7 @@ export function NewspaperPortal({
 
               {navigationItems.map((item) => (
                 <Anchor
-                  key={item.label}
+                  key={item.category}
                   component="button"
                   type="button"
                   c={
@@ -405,9 +406,7 @@ export function NewspaperPortal({
                   }
                   fw={900}
                   size="xs"
-                  onClick={() =>
-                    selectCategory(item.category)
-                  }
+                  onClick={() => selectCategory(item.category)}
                   className="nav-link"
                   aria-current={
                     activeCategory === item.category
