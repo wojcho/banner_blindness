@@ -17,8 +17,48 @@
 - [x] use react router to wire the application together
 - [x] link builder
 - [x] finalization page
-- [ ] lock versions
 - [ ] create content variety
+
+---
+
+To add new ad configuration
+
+1. Make a new .json file in `public/ad-config`, it would be reachable by its name
+It should match
+```ts
+export type AdBannerLocation =
+  | "top"
+  | "sidebar"
+  | "other";
+
+export type AdBannerStyle =
+  | "attention-grabbing"
+  | "nondescript";
+
+export interface AdBannerConfigSerialized {
+  location: AdBannerLocation;
+  style: AdBannerStyle;
+  content: string;
+  backgroundUrl?: string;
+  icon?: string;
+}
+```
+
+2. Add the file name without extension to array in `const adConfigIds: string[]` in `/src/LinkWizard.tsx`
+
+---
+
+To add new portal configuration
+
+1. Add new file in `public/portal-config` subfolder:
+  - captcha
+  - encyclopedia
+  - ecommerce
+  - newspaper
+  - gallery
+According to specification and examples from `/src/PortalTypes.ts`
+
+2. Add the file name without extension to appropriate array of subkey in `const portalConfigIds: Record<PortalType, string[]>` in `/src/LinkWizard.tsx`
 
 ---
 
