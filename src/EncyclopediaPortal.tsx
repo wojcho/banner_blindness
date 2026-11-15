@@ -79,9 +79,9 @@ export function EncyclopediaPortal({
     ) {
       setShowTargetSuccess(true);
 
-      onTargetArticleSelected?.(selectedArticle);
-
+      // Wait for the success animation to complete
       const timeout = setTimeout(() => {
+        onTargetArticleSelected?.(selectedArticle);
         setShowTargetSuccess(false);
       }, 3500);
 

@@ -37,8 +37,10 @@ export function VerificationPortal({
   const handleSuccess = () => {
     setTimeout(() => {
       setVerified(true);
-      onVerified?.();
-    }, 1000);
+      setTimeout(() => {
+        onVerified?.();
+      }, 2000);
+    }, 2000);
   };
 
   const renderPopup = (label: string) => (

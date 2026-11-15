@@ -178,7 +178,9 @@ export function NewspaperPortal({
     }));
 
     if (isCorrect) {
-      onTargetArticleSelected?.(article);
+      setTimeout(() => {
+        onTargetArticleSelected?.(article);
+      }, 3000);
     }
   };
 

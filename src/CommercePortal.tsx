@@ -1,4 +1,3 @@
-
 import { useMemo, useState } from "react";
 
 import {
@@ -251,17 +250,22 @@ export function CommercePortal({
       setSuccessProductId(id);
       setShowPageSuccess(true);
 
-      onTargetProductInCart?.();
-
+      // Clear product success animation
       setTimeout(() => {
         setSuccessProductId((current) =>
           current === id ? null : current
         );
       }, 1800);
 
+      // Clear page success animation
       setTimeout(() => {
         setShowPageSuccess(false);
       }, 2800);
+
+      // Call callback 3 seconds after animations finish
+      setTimeout(() => {
+        onTargetProductInCart?.();
+      }, 5800);
     }
   };
 

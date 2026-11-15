@@ -98,7 +98,7 @@ export function PhotoGalleryPortal({
       requestAnimationFrame(() => {
         setTimeout(() => {
           onTargetPhotoSelected?.(photo);
-        }, 650);
+        }, 2000);
       });
     }
   };
