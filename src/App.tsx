@@ -1,5 +1,4 @@
-
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, useNavigate } from "react-router-dom";
 
 import type { AdBannerConfig } from "./AdTypes";
 
@@ -17,6 +16,7 @@ import CommercePortal from "./CommercePortal";
 import NewspaperPortal from "./NewspaperPortal";
 import PhotoGalleryPortal from "./PhotoGalleryPortal";
 import LinkWizard from "./LinkWizard";
+import SuccessFinal from "./SuccessFinal";
 
 interface PortalRouteProps<K extends PortalType> {
   Component?: React.ComponentType<{
@@ -27,7 +27,8 @@ interface PortalRouteProps<K extends PortalType> {
 
   render?: (
     config: PortalConfigMap[K],
-    adBanner: AdBannerConfig
+    adBanner: AdBannerConfig,
+    onObjectiveCompleted: () => void
   ) => React.ReactNode;
 }
 
@@ -48,6 +49,12 @@ function PortalRoute<K extends PortalType>({
       </div>
     );
   }
+
+  const navigate = useNavigate();
+
+  const handleObjectiveCompleted = () => {
+    navigate("/success");
+  };
 
   return (
     <AdConfigLoader configName={adConfigId}>
@@ -79,11 +86,28 @@ function PortalRoute<K extends PortalType>({
             portalType={portalType}
             configId={portalConfigId}
           >
-            {(config) => render(config, adBanner)}
+            {(config) =>
+              render(config, adBanner, handleObjectiveCompleted)
+            }
           </PortalConfigLoader>
         );
       }}
     </AdConfigLoader>
+  );
+}
+
+function CaptchaRoute({
+  adBanner,
+}: {
+  adBanner?: AdBannerConfig;
+}) {
+  const navigate = useNavigate();
+
+  return (
+    <VerificationPortal
+      adBanner={adBanner}
+      onVerified={() => navigate("/success")}
+    />
   );
 }
 
@@ -94,7 +118,7 @@ function App() {
 
       <Route
         path="/captcha/:adConfigId/"
-        element={<PortalRoute Component={VerificationPortal} />}
+        element={<PortalRoute Component={CaptchaRoute} />}
       />
 
       {/* Encyclopedia */}
@@ -104,11 +128,12 @@ function App() {
         element={
           <PortalRoute
             portalType="encyclopedia"
-            render={(config, adBanner) => (
+            render={(config, adBanner, onObjectiveCompleted) => (
               <EncyclopediaPortal
                 articles={config.articles}
                 initialArticleId={config.initialArticleId}
                 targetArticleId={config.targetArticleId}
+                onTargetArticleSelected={onObjectiveCompleted}
                 adBanner={adBanner}
               />
             )}
@@ -123,10 +148,11 @@ function App() {
         element={
           <PortalRoute
             portalType="ecommerce"
-            render={(config, adBanner) => (
+            render={(config, adBanner, onObjectiveCompleted) => (
               <CommercePortal
                 products={config.products}
                 targetProductId={config.targetProductId}
+                onTargetProductInCart={onObjectiveCompleted}
                 adBanner={adBanner}
               />
             )}
@@ -141,10 +167,11 @@ function App() {
         element={
           <PortalRoute
             portalType="newspaper"
-            render={(config, adBanner) => (
+            render={(config, adBanner, onObjectiveCompleted) => (
               <NewspaperPortal
                 articles={config.articles}
                 targetArticleId={config.targetArticleId}
+                onTargetArticleSelected={onObjectiveCompleted}
                 adBanner={adBanner}
               />
             )}
@@ -159,13 +186,26 @@ function App() {
         element={
           <PortalRoute
             portalType="gallery"
-            render={(config, adBanner) => (
+            render={(config, adBanner, onObjectiveCompleted) => (
               <PhotoGalleryPortal
                 photos={config.photos}
                 targetPhotoId={config.targetPhotoId}
+                onTargetPhotoSelected={onObjectiveCompleted}
                 adBanner={adBanner}
               />
             )}
+          />
+        }
+      />
+
+      {/* Success */}
+
+      <Route
+        path="/success"
+        element={
+          <SuccessFinal
+            title="You did it!"
+            description="Congratulations! You have successfully achieved your objective. Your progress has been recorded."
           />
         }
       />
