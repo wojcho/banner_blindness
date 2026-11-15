@@ -21,7 +21,20 @@
 
 ---
 
-To add new ad configuration
+[Video](./demo/demo.mp4)
+
+![](./demo/selector.png)
+![](./demo/captcha.png)
+![](./demo/encyclopedia.png)
+![](./demo/commerce.png)
+![](./demo/newspaper.png)
+![](./demo/gallery.png)
+![](./demo/success.png)
+
+
+---
+
+# To add new ad configuration
 
 1. Make a new .json file in `public/ad-config`, it would be reachable by its name
 It should match
@@ -48,7 +61,7 @@ export interface AdBannerConfigSerialized {
 
 ---
 
-To add new portal configuration
+# To add new portal configuration
 
 1. Add new file in `public/portal-config` subfolder:
   - captcha
