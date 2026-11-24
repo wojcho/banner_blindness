@@ -1,0 +1,331 @@
+{
+  "targetArticleId": 1,
+  "articles": [
+    {
+      "id": 1,
+      "title": "WALL STREET IN SHOCK! Global Markets Brace for a Massive Financial Shake-Up",
+      "header": "Investors are watching nervously as major market movements threaten to reshape the global financial landscape.",
+      "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200",
+      "link": "#article-1",
+      "category": "STOCKS & MARKETS",
+      "main": true,
+      "time": "5 min ago"
+    },
+    {
+      "id": 2,
+      "title": "A Tech Giant's Stock Suddenly Surges. Here's What Investors Are Watching",
+      "header": "Unexpected market momentum has put major technology companies back in the spotlight.",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+      "link": "#article-2",
+      "category": "STOCKS & MARKETS",
+      "featured": true,
+      "time": "12 min ago"
+    },
+    {
+      "id": 3,
+      "title": "Billion-Dollar Bet! Hedge Funds Are Making a Major Move Into AI Stocks",
+      "header": "Institutional investors are increasingly looking toward artificial intelligence as a potential growth engine.",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+      "link": "#article-3",
+      "category": "STOCKS & MARKETS",
+      "featured": true,
+      "time": "18 min ago"
+    },
+    {
+      "id": 4,
+      "title": "Stock Market Warning: 5 Signals Investors Should Not Ignore",
+      "header": "Market analysts are highlighting several indicators that could influence the next major market move.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      "link": "#article-4",
+      "category": "STOCKS & MARKETS",
+      "featured": true,
+      "time": "25 min ago"
+    },
+    {
+      "id": 5,
+      "title": "Small-Cap Stocks Are Back on Investors' Radar",
+      "header": "After a challenging period, smaller publicly traded companies are attracting renewed attention.",
+      "image": "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=600",
+      "link": "#article-5",
+      "category": "STOCKS & MARKETS",
+      "time": "32 min ago"
+    },
+    {
+      "id": 6,
+      "title": "The Next Big Stock Market Opportunity? Analysts Point to These Industries",
+      "header": "Energy, healthcare and technology are among the sectors attracting investor interest.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",
+      "link": "#article-6",
+      "category": "STOCKS & MARKETS",
+      "time": "45 min ago"
+    },
+    {
+      "id": 7,
+      "title": "Retail Investors Are Changing the Rules of Wall Street",
+      "header": "Online trading platforms and social investing communities continue to influence market behavior.",
+      "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600",
+      "link": "#article-7",
+      "category": "STOCKS & MARKETS",
+      "time": "1 hour ago"
+    },
+    {
+      "id": 8,
+      "title": "IPO Fever Returns! Investors Prepare for a New Wave of Public Listings",
+      "header": "Several ambitious private companies are exploring the possibility of entering public markets.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+      "link": "#article-8",
+      "category": "IPO & VENTURE CAPITAL",
+      "featured": true,
+      "time": "1 hour ago"
+    },
+    {
+      "id": 9,
+      "title": "Startup Valuations Are Exploding Again. Is Venture Capital Getting Too Optimistic?",
+      "header": "Investors are debating whether the latest funding momentum reflects real growth or inflated expectations.",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800",
+      "link": "#article-9",
+      "category": "IPO & VENTURE CAPITAL",
+      "featured": true,
+      "time": "1 hour ago"
+    },
+    {
+      "id": 10,
+      "title": "The Unicorn Club Is Growing. These Startups Are Chasing Billion-Dollar Valuations",
+      "header": "Ambitious founders are attracting attention from venture capital firms looking for the next breakout company.",
+      "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600",
+      "link": "#article-10",
+      "category": "IPO & VENTURE CAPITAL",
+      "time": "2 hours ago"
+    },
+    {
+      "id": 11,
+      "title": "Venture Capital Is Moving East: Investors Discover New Startup Hotspots",
+      "header": "Emerging technology ecosystems are attracting international capital and ambitious founders.",
+      "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600",
+      "link": "#article-11",
+      "category": "IPO & VENTURE CAPITAL",
+      "time": "2 hours ago"
+    },
+    {
+      "id": 12,
+      "title": "Private Equity Giants Are Sitting on Billions. What Happens Next?",
+      "header": "Investment firms face growing pressure to deploy capital and deliver returns to their investors.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",
+      "link": "#article-12",
+      "category": "IPO & VENTURE CAPITAL",
+      "time": "3 hours ago"
+    },
+    {
+      "id": 13,
+      "title": "A New Billion-Dollar Startup Could Disrupt the Financial Industry",
+      "header": "Fintech entrepreneurs are challenging traditional business models with new financial technology.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600",
+      "link": "#article-13",
+      "category": "IPO & VENTURE CAPITAL",
+      "time": "3 hours ago"
+    },
+    {
+      "id": 14,
+      "title": "IPO Investors Are Asking One Big Question: Where Is the Real Growth?",
+      "header": "Profitability, revenue quality and sustainable business models are becoming central to IPO valuations.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
+      "link": "#article-14",
+      "category": "IPO & VENTURE CAPITAL",
+      "time": "4 hours ago"
+    },
+    {
+      "id": 15,
+      "title": "BANKING ALERT! Traditional Banks Face a New Wave of Competition",
+      "header": "Digital-first financial companies are challenging established institutions for customers and market share.",
+      "image": "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=800",
+      "link": "#article-15",
+      "category": "BANKING & RATES",
+      "featured": true,
+      "time": "4 hours ago"
+    },
+    {
+      "id": 16,
+      "title": "Interest Rate Mystery: What Central Banks Could Do Next",
+      "header": "Investors are closely studying inflation and employment data for clues about future monetary policy.",
+      "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800",
+      "link": "#article-16",
+      "category": "BANKING & RATES",
+      "featured": true,
+      "time": "5 hours ago"
+    },
+    {
+      "id": 17,
+      "title": "Banks Are Preparing for a Digital Currency Revolution",
+      "header": "Financial institutions are exploring tokenization, blockchain infrastructure and digital payment systems.",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600",
+      "link": "#article-17",
+      "category": "BANKING & RATES",
+      "time": "5 hours ago"
+    },
+    {
+      "id": 18,
+      "title": "Mortgage Rates Could Change Everything for Homebuyers",
+      "header": "Borrowing costs remain a major factor in housing affordability and consumer confidence.",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600",
+      "link": "#article-18",
+      "category": "BANKING & RATES",
+      "time": "6 hours ago"
+    },
+    {
+      "id": 19,
+      "title": "The Hidden Risks Inside the Global Banking System",
+      "header": "Regulators and financial analysts continue to monitor liquidity, lending standards and systemic exposure.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",
+      "link": "#article-19",
+      "category": "BANKING & RATES",
+      "time": "7 hours ago"
+    },
+    {
+      "id": 20,
+      "title": "Central Banks Are Facing an Impossible Balancing Act",
+      "header": "Policymakers must weigh inflation control against economic growth and financial stability.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600",
+      "link": "#article-20",
+      "category": "BANKING & RATES",
+      "time": "8 hours ago"
+    },
+    {
+      "id": 21,
+      "title": "Could a Banking Merger Reshape the Financial Industry?",
+      "header": "Consolidation discussions are highlighting the changing economics of the global banking sector.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",
+      "link": "#article-21",
+      "category": "BANKING & RATES",
+      "time": "9 hours ago"
+    },
+    {
+      "id": 22,
+      "title": "CRYPTO IS BACK! Digital Assets Are Fighting for Mainstream Adoption",
+      "header": "Institutional interest and changing regulation are keeping cryptocurrency markets in the spotlight.",
+      "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800",
+      "link": "#article-22",
+      "category": "CRYPTO & BLOCKCHAIN",
+      "featured": true,
+      "time": "10 hours ago"
+    },
+    {
+      "id": 23,
+      "title": "Bitcoin's Next Big Test: Can Digital Gold Prove Its Staying Power?",
+      "header": "Investors continue debating Bitcoin's role as an alternative asset in an uncertain financial environment.",
+      "image": "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800",
+      "link": "#article-23",
+      "category": "CRYPTO & BLOCKCHAIN",
+      "featured": true,
+      "time": "11 hours ago"
+    },
+    {
+      "id": 24,
+      "title": "Ethereum Developers Are Building the Next Chapter of Blockchain",
+      "header": "Scaling, decentralized applications and network upgrades remain central to the ecosystem's evolution.",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600",
+      "link": "#article-24",
+      "category": "CRYPTO & BLOCKCHAIN",
+      "time": "12 hours ago"
+    },
+    {
+      "id": 25,
+      "title": "Stablecoins Could Change How Money Moves Around the World",
+      "header": "Digital dollar tokens are attracting attention from payment companies, banks and regulators.",
+      "image": "https://images.unsplash.com/photo-1640340434855-6084b1f4901d?w=600",
+      "link": "#article-25",
+      "category": "CRYPTO & BLOCKCHAIN",
+      "time": "13 hours ago"
+    },
+    {
+      "id": 26,
+      "title": "Crypto Regulation Is Entering a New Era. What Investors Need to Know",
+      "header": "Legal frameworks for digital assets could have major implications for exchanges and institutional investors.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600",
+      "link": "#article-26",
+      "category": "CRYPTO & BLOCKCHAIN",
+      "time": "14 hours ago"
+    },
+    {
+      "id": 27,
+      "title": "FOREX ALERT! The Dollar Faces a Crucial Moment Against Major Currencies",
+      "header": "Currency traders are watching economic indicators and central bank decisions for the next market catalyst.",
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800",
+      "link": "#article-27",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "featured": true,
+      "time": "15 hours ago"
+    },
+    {
+      "id": 28,
+      "title": "Euro vs Dollar: The Currency Battle That Could Affect Global Trade",
+      "header": "Exchange rate movements are influencing international businesses, investors and policymakers.",
+      "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=600",
+      "link": "#article-28",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "16 hours ago"
+    },
+    {
+      "id": 29,
+      "title": "A Major Financial Lawsuit Could Change How Wall Street Operates",
+      "header": "A closely watched legal dispute is raising questions about financial transparency and market oversight.",
+      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600",
+      "link": "#article-29",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "17 hours ago"
+    },
+    {
+      "id": 30,
+      "title": "Global Inflation: Why the Cost of Living Remains a Financial Challenge",
+      "header": "Consumers and businesses continue adapting to shifting prices, wages and borrowing costs.",
+      "image": "https://images.unsplash.com/photo-1542222024-c39e2281f121?w=600",
+      "link": "#article-30",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "18 hours ago"
+    },
+    {
+      "id": 31,
+      "title": "Tax Authorities Are Increasing Their Focus on International Finance",
+      "header": "Cross-border transactions and corporate structures are receiving renewed regulatory attention.",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600",
+      "link": "#article-31",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "19 hours ago"
+    },
+    {
+      "id": 32,
+      "title": "China's Economic Outlook Could Have Global Financial Consequences",
+      "header": "Investors are evaluating how trade, domestic demand and policy decisions could influence global markets.",
+      "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=600",
+      "link": "#article-32",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "20 hours ago"
+    },
+    {
+      "id": 33,
+      "title": "The World's Biggest Economies Are Facing a New Debt Challenge",
+      "header": "Rising public debt and refinancing costs are becoming increasingly important issues for governments.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",
+      "link": "#article-33",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "21 hours ago"
+    },
+    {
+      "id": 34,
+      "title": "New Financial Regulations Could Transform the European Investment Market",
+      "header": "Regulators are balancing investor protection, market competitiveness and innovation across Europe.",
+      "image": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600",
+      "link": "#article-34",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "22 hours ago"
+    },
+    {
+      "id": 35,
+      "title": "Recession Fears Return: Economists Debate What Comes Next",
+      "header": "Economic indicators are fueling discussion about growth, employment and the future direction of global markets.",
+      "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600",
+      "link": "#article-35",
+      "category": "ECONOMY, FOREX & LEGAL",
+      "time": "1 day ago"
+    }
+  ]
+}

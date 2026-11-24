@@ -75,6 +75,39 @@ According to specification and examples from `/src/PortalTypes.ts`
 
 ---
 
+scenarios
+
+- [x] ecommerce
+  - [x] technology
+  - [x] clothes
+- [x] encyclopedia
+  - [x] biology
+  - [x] history
+- [x] gallery
+  - [x] nature
+  - [x] landmarks
+- [x] newspaper
+  - [x] politics
+  - [x] finance
+
+- [ ] ads
+  - [ ] error
+  - [ ] generic
+  - [ ] advert
+  - [ ] pigeon
+  - [ ] face
+  - [ ] captcha
+  - [ ] technology
+  - [ ] clothes
+  - [ ] biology
+  - [ ] history
+  - [ ] nature
+  - [ ] landmarks
+  - [ ] politics
+  - [ ] finance
+
+---
+
 # Badanie Banner Blindness
 
 Banner Blindness - fenomen z dziedziny UX, obejmujący sytuacje, gdy użytkownicy ignorują informacje zbliżone do bannerów, czasem świadomie, czasem nieświadomie.

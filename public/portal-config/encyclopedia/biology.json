@@ -1,0 +1,358 @@
+{
+  "initialArticleId": "fungi",
+  "targetArticleId": "amanita-muscaria",
+  "articles": [
+    {
+      "id": "fungi",
+      "title": "Fungi",
+      "header": "Fungi are a kingdom of eukaryotic organisms that includes mushrooms, molds, and yeasts.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Fungi are a diverse kingdom of organisms that play essential roles in ecosystems. Unlike plants, they cannot produce their own food through photosynthesis. Instead, they obtain nutrients by absorbing organic matter from their surroundings. Many fungi decompose dead organisms, recycling nutrients into the environment. Others form beneficial relationships with plants or live as parasites. Their cells contain chitin in their cell walls, and many reproduce through spores.",
+      "relatedArticleIds": ["mushrooms", "plants", "decomposition", "amanita-muscaria", "yeast"]
+    },
+    {
+      "id": "mushrooms",
+      "title": "Mushrooms",
+      "header": "Mushrooms are the reproductive structures of certain fungi, producing and dispersing spores.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "A mushroom is the fruiting body of a fungus. It usually consists of a cap, stem, and spore-producing structures such as gills or pores. Most of the organism exists underground or inside its food source as a network of microscopic filaments called mycelium. Mushrooms occur in forests, grasslands, and many other habitats. Some species are edible, some are poisonous, and others are important decomposers.",
+      "relatedArticleIds": ["fungi", "mycelium", "amanita-muscaria", "boletales", "decomposition"]
+    },
+    {
+      "id": "amanita-muscaria",
+      "title": "Amanita muscaria",
+      "header": "Amanita muscaria, commonly known as the fly agaric, is a distinctive mushroom with a red cap covered in white patches.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Amanita muscaria belongs to the family Amanitaceae and the order Agaricales. It is recognizable by its bright red or orange-red cap, white gills, white stem, and remnants of a universal veil that appear as white patches. It forms mycorrhizal relationships with trees, particularly birches and conifers. The species contains biologically active compounds, including ibotenic acid and muscimol, and is poisonous. It should never be consumed.",
+      "relatedArticleIds": ["mushrooms", "fungi", "agaricales", "amanitaceae", "mycorrhiza"]
+    },
+    {
+      "id": "amanitaceae",
+      "title": "Amanitaceae",
+      "header": "Amanitaceae is a family of mushrooms that includes several well-known and ecologically important fungal species.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Amanitaceae is a family within the order Agaricales. Its members include Amanita, Limacella, and related genera. Many Amanita species form mycorrhizal associations with trees. The family contains edible, poisonous, and deadly poisonous mushrooms. Characteristic features of many species include a universal veil, partial veil, and distinctive spore-producing structures.",
+      "relatedArticleIds": ["amanita-muscaria", "agaricales", "mushrooms", "mycorrhiza"]
+    },
+    {
+      "id": "agaricales",
+      "title": "Agaricales",
+      "header": "Agaricales is a large order of fungi containing many familiar gilled mushrooms.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Agaricales is one of the largest orders of mushroom-forming fungi. Many members produce fruiting bodies with caps and gills, although considerable variation exists. The order includes species that decompose wood, form mycorrhizal associations, or grow on soil and organic material. Important families include Agaricaceae, Amanitaceae, and Pleurotaceae.",
+      "relatedArticleIds": ["amanita-muscaria", "amanitaceae", "mushrooms", "agaricus-bisporus"]
+    },
+    {
+      "id": "agaricus-bisporus",
+      "title": "Agaricus bisporus",
+      "header": "Agaricus bisporus is the cultivated mushroom commonly sold as the button, cremini, or portobello mushroom.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Agaricus bisporus is an edible mushroom native to grassland habitats and widely cultivated around the world. Its fruiting body develops from underground mycelium. Young specimens have closed caps and are commonly called button mushrooms. More mature specimens develop brown caps and are marketed as cremini or portobello mushrooms. It belongs to the family Agaricaceae and order Agaricales.",
+      "relatedArticleIds": ["agaricales", "fungi", "mushrooms", "decomposition"]
+    },
+    {
+      "id": "boletales",
+      "title": "Boletales",
+      "header": "Boletales is an order of fungi that includes boletes, false truffles, and several other mushroom groups.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Boletales is an order of fungi with considerable morphological diversity. Many familiar members produce mushrooms with spongy pores beneath their caps rather than gills. Numerous species form mycorrhizal relationships with trees, helping their roots absorb nutrients. Other members are decomposers or parasites. The order includes the genus Boletus and several related groups.",
+      "relatedArticleIds": ["fungi", "mushrooms", "mycorrhiza", "plants"]
+    },
+    {
+      "id": "mycelium",
+      "title": "Mycelium",
+      "header": "Mycelium is the branching network of microscopic fungal filaments that forms the main body of many fungi.",
+      "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073",
+      "content": "Mycelium consists of thread-like structures called hyphae. These filaments grow through soil, wood, and other substrates, absorbing nutrients from the environment. Mycelial networks can spread over large areas and connect with plant roots through mycorrhizal associations. Under suitable conditions, mycelium can produce reproductive structures such as mushrooms.",
+      "relatedArticleIds": ["fungi", "mushrooms", "mycorrhiza", "decomposition"]
+    },
+    {
+      "id": "yeast",
+      "title": "Yeast",
+      "header": "Yeasts are unicellular fungi that reproduce primarily through budding or cell division.",
+      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655",
+      "content": "Yeasts are microscopic fungi found in soil, plants, and many other environments. Some species ferment sugars into alcohol and carbon dioxide. Saccharomyces cerevisiae is widely used in baking, brewing, and scientific research. Yeasts are important model organisms for studying genetics, cell biology, and metabolism.",
+      "relatedArticleIds": ["fungi", "decomposition", "plants"]
+    },
+    {
+      "id": "decomposition",
+      "title": "Decomposition",
+      "header": "Decomposition is the biological process through which organic matter is broken down into simpler substances.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "content": "Decomposition is essential for nutrient cycling in ecosystems. Fungi and bacteria break down dead plants, animals, and other organic materials. Enzymes released by decomposers transform complex molecules into simpler compounds that return to soil and water. These nutrients can then be reused by plants and other organisms.",
+      "relatedArticleIds": ["fungi", "mushrooms", "mycelium", "plants", "bacteria"]
+    },
+    {
+      "id": "plants",
+      "title": "Plants",
+      "header": "Plants are multicellular eukaryotic organisms that form the foundation of most terrestrial ecosystems.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "content": "Plants are photosynthetic organisms that use sunlight to convert carbon dioxide and water into organic compounds. Most plants contain chlorophyll within specialized organelles called chloroplasts. They produce oxygen and provide food and habitats for countless organisms. Plant diversity includes mosses, ferns, conifers, flowering plants, and many other groups.",
+      "relatedArticleIds": ["photosynthesis", "angiosperms", "gymnosperms", "trees", "mycorrhiza"]
+    },
+    {
+      "id": "photosynthesis",
+      "title": "Photosynthesis",
+      "header": "Photosynthesis is the process through which plants, algae, and some bacteria convert light energy into chemical energy.",
+      "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
+      "content": "Photosynthesis is a fundamental biological process that captures energy from sunlight. In plants, it takes place primarily in chloroplasts. Light-dependent reactions generate energy-rich molecules, which are used in the Calvin cycle to fix carbon dioxide into organic compounds. Oxygen is released as a byproduct of oxygenic photosynthesis.",
+      "relatedArticleIds": ["plants", "chloroplast", "algae", "ecosystem"]
+    },
+    {
+      "id": "angiosperms",
+      "title": "Angiosperms",
+      "header": "Angiosperms are flowering plants whose seeds develop inside protective structures called fruits.",
+      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "content": "Angiosperms are the largest and most diverse group of land plants. Their reproductive structures are flowers, which facilitate pollination and fertilization. Following fertilization, the ovary develops into a fruit containing seeds. Angiosperms include grasses, orchids, roses, trees, and most plants cultivated for food.",
+      "relatedArticleIds": ["plants", "monocots", "eudicots", "pollination", "fruits"]
+    },
+    {
+      "id": "gymnosperms",
+      "title": "Gymnosperms",
+      "header": "Gymnosperms are seed-producing plants whose seeds are not enclosed within fruits.",
+      "image": "https://images.unsplash.com/photo-1511497584788-876760111969",
+      "content": "Gymnosperms include conifers, cycads, ginkgo, and gnetophytes. Their seeds are typically exposed on the surfaces of specialized structures, often cones. Many gymnosperms are evergreen trees adapted to cold or nutrient-poor environments. They are important components of forests and provide timber, paper, and habitats for wildlife.",
+      "relatedArticleIds": ["plants", "conifers", "trees", "photosynthesis"]
+    },
+    {
+      "id": "monocots",
+      "title": "Monocots",
+      "header": "Monocots are flowering plants characterized by having one embryonic seed leaf.",
+      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
+      "content": "Monocots are a major group of angiosperms. They generally have parallel leaf venation, fibrous root systems, and flower parts arranged in multiples of three. Important examples include grasses, lilies, orchids, palms, and cereals such as wheat, rice, and maize.",
+      "relatedArticleIds": ["angiosperms", "plants", "grasses", "photosynthesis"]
+    },
+    {
+      "id": "eudicots",
+      "title": "Eudicots",
+      "header": "Eudicots are a major group of flowering plants typically characterized by two embryonic seed leaves.",
+      "image": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e",
+      "content": "Eudicots represent a large proportion of flowering plant diversity. Many have net-like leaf venation, vascular bundles arranged in a ring, and flower parts in multiples of four or five. Roses, sunflowers, oak trees, legumes, and many agricultural crops belong to this group.",
+      "relatedArticleIds": ["angiosperms", "plants", "trees", "pollination"]
+    },
+    {
+      "id": "conifers",
+      "title": "Conifers",
+      "header": "Conifers are cone-bearing gymnosperms that include pines, spruces, firs, and cedars.",
+      "image": "https://images.unsplash.com/photo-1511497584788-876760111969",
+      "content": "Conifers are predominantly woody plants that reproduce using pollen and seeds produced in cones. Most retain their needle-like or scale-like leaves throughout the year. They dominate many boreal and temperate forests and provide habitats for animals while storing substantial amounts of carbon.",
+      "relatedArticleIds": ["gymnosperms", "plants", "trees", "ecosystem"]
+    },
+    {
+      "id": "trees",
+      "title": "Trees",
+      "header": "Trees are perennial plants that typically develop a woody trunk and a branching crown.",
+      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b",
+      "content": "Trees are essential components of terrestrial ecosystems. They capture carbon dioxide, release oxygen, stabilize soils, regulate water cycles, and provide habitats. Trees occur in many plant lineages, including flowering plants and gymnosperms. Forest communities support enormous biodiversity and influence regional and global climates.",
+      "relatedArticleIds": ["plants", "conifers", "angiosperms", "ecosystem", "photosynthesis"]
+    },
+    {
+      "id": "pollination",
+      "title": "Pollination",
+      "header": "Pollination is the transfer of pollen from the male reproductive structures of a flower to a compatible female reproductive structure.",
+      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "content": "Pollination enables sexual reproduction in flowering plants. It can occur through wind, water, or animals. Insects such as bees and butterflies are important pollinators, while birds and bats pollinate certain plant species. Successful pollination may lead to fertilization and seed formation.",
+      "relatedArticleIds": ["angiosperms", "plants", "bees", "ecosystem"]
+    },
+    {
+      "id": "animals",
+      "title": "Animals",
+      "header": "Animals are multicellular eukaryotic organisms that obtain energy by consuming organic matter.",
+      "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5",
+      "content": "Animals belong to the kingdom Animalia. Most are capable of movement during at least one stage of their life cycle and possess specialized tissues and organs. Animals occupy a wide variety of ecological roles, including predators, herbivores, omnivores, parasites, and decomposers. Their diversity ranges from microscopic organisms to enormous whales.",
+      "relatedArticleIds": ["mammals", "birds", "reptiles", "insects", "vertebrates", "invertebrates"]
+    },
+    {
+      "id": "mammals",
+      "title": "Mammals",
+      "header": "Mammals are vertebrate animals characterized by hair or fur and mammary glands that produce milk.",
+      "image": "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+      "content": "Mammals belong to the class Mammalia. They are endothermic vertebrates with specialized teeth, differentiated into types adapted for different diets. Most give birth to live young, although monotremes lay eggs. Mammals occupy terrestrial, aquatic, and aerial habitats. Examples include humans, elephants, bats, dolphins, and lions.",
+      "relatedArticleIds": ["animals", "primates", "carnivora", "vertebrates"]
+    },
+    {
+      "id": "primates",
+      "title": "Primates",
+      "header": "Primates are an order of mammals that includes lemurs, monkeys, apes, and humans.",
+      "image": "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9",
+      "content": "Primates are characterized by grasping hands and feet, forward-facing eyes, and relatively large brains. Many species have complex social structures and sophisticated communication systems. The order includes strepsirrhines, monkeys, and apes. Humans belong to the family Hominidae within the primate order.",
+      "relatedArticleIds": ["mammals", "homo-sapiens", "animals", "vertebrates"]
+    },
+    {
+      "id": "homo-sapiens",
+      "title": "Homo sapiens",
+      "header": "Homo sapiens is the only surviving species of the genus Homo and the species to which modern humans belong.",
+      "image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
+      "content": "Homo sapiens evolved in Africa approximately 300,000 years ago. Humans are characterized by complex language, abstract reasoning, advanced tool use, and highly developed social cooperation. They have spread across nearly every terrestrial habitat and have profoundly influenced Earth's ecosystems and biodiversity.",
+      "relatedArticleIds": ["primates", "mammals", "animals", "evolution"]
+    },
+    {
+      "id": "carnivora",
+      "title": "Carnivora",
+      "header": "Carnivora is an order of mammals that includes cats, dogs, bears, seals, and many other species.",
+      "image": "https://images.unsplash.com/photo-1516934024742-b461fba47600",
+      "content": "Carnivora is a diverse mammalian order with specialized teeth and adaptations for processing animal or plant matter. Its members include the families Felidae, Canidae, Ursidae, and Mustelidae. Although many carnivorans are predators, some species are omnivorous or primarily herbivorous.",
+      "relatedArticleIds": ["mammals", "felidae", "canidae", "animals"]
+    },
+    {
+      "id": "felidae",
+      "title": "Felidae",
+      "header": "Felidae is the biological family of cats, including domestic cats, lions, tigers, and leopards.",
+      "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba",
+      "content": "Felidae is a family of carnivorous mammals with highly developed senses, retractable claws in most species, and specialized adaptations for hunting. Cats are found across many continents and habitats. The family includes large cats such as lions and tigers as well as smaller species such as lynxes and domestic cats.",
+      "relatedArticleIds": ["carnivora", "mammals", "animals", "canidae"]
+    },
+    {
+      "id": "canidae",
+      "title": "Canidae",
+      "header": "Canidae is a family of mammals that includes dogs, wolves, foxes, jackals, and coyotes.",
+      "image": "https://images.unsplash.com/photo-1552053831-71594a27632d",
+      "content": "Canids are generally characterized by elongated muzzles, non-retractable claws, and well-developed senses of smell and hearing. Many species are social and live in family groups or packs. They occupy ecosystems ranging from forests and grasslands to deserts and Arctic environments.",
+      "relatedArticleIds": ["carnivora", "mammals", "animals", "felidae"]
+    },
+    {
+      "id": "birds",
+      "title": "Birds",
+      "header": "Birds are feathered, warm-blooded vertebrates belonging to the class Aves.",
+      "image": "https://images.unsplash.com/photo-1444464666168-49d633b86797",
+      "content": "Birds are characterized by feathers, beaks, lightweight skeletons, and forelimbs modified into wings. Most species can fly, although some are flightless. Birds reproduce by laying hard-shelled eggs and play important ecological roles as pollinators, seed dispersers, predators, and scavengers.",
+      "relatedArticleIds": ["animals", "vertebrates", "passeriformes", "reptiles"]
+    },
+    {
+      "id": "passeriformes",
+      "title": "Passeriformes",
+      "header": "Passeriformes is the largest order of birds, commonly known as perching birds or songbirds.",
+      "image": "https://images.unsplash.com/photo-1444464666168-49d633b86797",
+      "content": "Passeriformes includes more than half of all living bird species. Members are commonly adapted for perching, with specialized feet that allow them to grip branches. The order includes sparrows, finches, crows, swallows, and many songbirds. They occupy nearly every terrestrial habitat.",
+      "relatedArticleIds": ["birds", "animals", "vertebrates", "ecosystem"]
+    },
+    {
+      "id": "reptiles",
+      "title": "Reptiles",
+      "header": "Reptiles are a diverse group of vertebrates that includes turtles, lizards, snakes, and crocodilians.",
+      "image": "https://images.unsplash.com/photo-1531386151447-fd76ad50012f",
+      "content": "Reptiles are ectothermic vertebrates with keratinized scales or other protective coverings. Most lay amniotic eggs, although some species give birth to live young. They inhabit terrestrial and aquatic environments and occupy important roles as predators, herbivores, and ecosystem regulators. Birds are evolutionarily nested within the reptile lineage.",
+      "relatedArticleIds": ["animals", "birds", "vertebrates", "squamata"]
+    },
+    {
+      "id": "squamata",
+      "title": "Squamata",
+      "header": "Squamata is the largest order of reptiles and includes lizards, snakes, and worm lizards.",
+      "image": "https://images.unsplash.com/photo-1531386151447-fd76ad50012f",
+      "content": "Squamata contains thousands of species with highly diverse body forms and ecological adaptations. Lizards generally have four limbs, although many lineages have lost them. Snakes have elongated, limbless bodies and specialized feeding adaptations. Squamates occur in nearly every major terrestrial habitat.",
+      "relatedArticleIds": ["reptiles", "animals", "vertebrates", "evolution"]
+    },
+    {
+      "id": "insects",
+      "title": "Insects",
+      "header": "Insects are arthropods with three pairs of legs, a segmented body, and usually one or two pairs of wings.",
+      "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf",
+      "content": "Insects belong to the class Insecta and represent the most species-rich group of animals. Their bodies consist of a head, thorax, and abdomen. Many undergo metamorphosis during development. Insects are essential pollinators, decomposers, herbivores, and predators. Examples include beetles, butterflies, ants, flies, and bees.",
+      "relatedArticleIds": ["animals", "coleoptera", "hymenoptera", "pollination", "ecosystem"]
+    },
+    {
+      "id": "coleoptera",
+      "title": "Coleoptera",
+      "header": "Coleoptera is the order of insects commonly known as beetles and is one of the largest animal orders.",
+      "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf",
+      "content": "Beetles are distinguished by hardened forewings called elytra, which protect their flight wings and abdomen. They occupy a wide range of habitats and feeding niches. Some beetles are herbivores, others are predators, and many contribute to decomposition. Their extraordinary diversity makes them important subjects in evolutionary biology.",
+      "relatedArticleIds": ["insects", "animals", "ecosystem", "decomposition"]
+    },
+    {
+      "id": "hymenoptera",
+      "title": "Hymenoptera",
+      "header": "Hymenoptera is an order of insects that includes bees, ants, and wasps.",
+      "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38",
+      "content": "Hymenoptera includes some of the most ecologically important insects. Many species are social and live in organized colonies with specialized reproductive and worker roles. Bees pollinate flowering plants, ants influence soil structure and nutrient cycling, and parasitoid wasps help regulate populations of other insects.",
+      "relatedArticleIds": ["insects", "bees", "pollination", "angiosperms", "ecosystem"]
+    },
+    {
+      "id": "bees",
+      "title": "Bees",
+      "header": "Bees are flying insects closely related to wasps and ants, best known for their role in pollination.",
+      "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38",
+      "content": "Bees feed primarily on nectar and pollen collected from flowers. During foraging, pollen grains attach to their bodies and are transferred between flowers. This makes bees important pollinators for wild plants and agricultural crops. Some species, such as honey bees, live in large social colonies, while many others are solitary.",
+      "relatedArticleIds": ["hymenoptera", "insects", "pollination", "angiosperms", "ecosystem"]
+    },
+    {
+      "id": "vertebrates",
+      "title": "Vertebrates",
+      "header": "Vertebrates are animals characterized by a vertebral column or backbone.",
+      "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5",
+      "content": "Vertebrates belong to the subphylum Vertebrata within Chordata. Their internal skeleton provides structural support and protects the nervous system. Major living groups include mammals, birds, reptiles, amphibians, and fishes. Vertebrates occupy aquatic, terrestrial, and aerial environments.",
+      "relatedArticleIds": ["animals", "mammals", "birds", "reptiles", "evolution"]
+    },
+    {
+      "id": "invertebrates",
+      "title": "Invertebrates",
+      "header": "Invertebrates are animals that lack a vertebral column and account for the vast majority of animal species.",
+      "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf",
+      "content": "Invertebrates include insects, arachnids, mollusks, crustaceans, worms, and many marine organisms. They display enormous variation in anatomy, behavior, and reproductive strategies. Many are essential for pollination, decomposition, food webs, and nutrient cycling. Invertebrates inhabit almost every environment on Earth.",
+      "relatedArticleIds": ["animals", "insects", "arthropods", "ecosystem"]
+    },
+    {
+      "id": "arthropods",
+      "title": "Arthropods",
+      "header": "Arthropods are invertebrates with segmented bodies, jointed appendages, and an external skeleton.",
+      "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf",
+      "content": "Arthropoda is the largest animal phylum in terms of described species. Its members possess a chitinous exoskeleton that must be periodically shed during growth. Major groups include insects, arachnids, crustaceans, and myriapods. Arthropods are found in marine, freshwater, and terrestrial environments.",
+      "relatedArticleIds": ["invertebrates", "insects", "coleoptera", "hymenoptera"]
+    },
+    {
+      "id": "evolution",
+      "title": "Evolution",
+      "header": "Evolution is the change in heritable characteristics of populations across successive generations.",
+      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b",
+      "content": "Biological evolution occurs through mechanisms including natural selection, mutation, genetic drift, and gene flow. Over long periods, these processes can produce adaptations and contribute to the formation of new species. Evolution explains the diversity and shared ancestry of living organisms and is a central principle of modern biology.",
+      "relatedArticleIds": ["animals", "plants", "fungi", "homo-sapiens", "taxonomy"]
+    },
+    {
+      "id": "taxonomy",
+      "title": "Biological Taxonomy",
+      "header": "Biological taxonomy is the science of naming, describing, and classifying living organisms.",
+      "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
+      "content": "Taxonomy organizes biodiversity into hierarchical groups based on shared characteristics and evolutionary relationships. Common taxonomic ranks include domain, kingdom, phylum, class, order, family, genus, and species. Scientific names generally use binomial nomenclature, consisting of a genus name and a specific epithet. Taxonomy helps scientists communicate about biodiversity consistently.",
+      "relatedArticleIds": ["evolution", "species", "animals", "plants", "fungi"]
+    },
+    {
+      "id": "species",
+      "title": "Species",
+      "header": "A species is a fundamental unit of biological classification, often defined as a group of organisms capable of interbreeding and producing fertile offspring.",
+      "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5",
+      "content": "Species represent distinct evolutionary lineages of organisms. The biological species concept emphasizes reproductive compatibility, but alternative definitions are used for fossils, microorganisms, and asexual organisms. Scientists identify species using morphology, genetics, ecology, and evolutionary history. Describing and protecting species is essential for understanding biodiversity.",
+      "relatedArticleIds": ["taxonomy", "evolution", "animals", "plants", "fungi"]
+    },
+    {
+      "id": "mycorrhiza",
+      "title": "Mycorrhiza",
+      "header": "Mycorrhiza describes a mutualistic association between certain fungi and the roots of plants.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76e6",
+      "content": "Mycorrhizal fungi associate with plant roots and extend their hyphae into surrounding soil. The fungi help plants obtain water and mineral nutrients, especially phosphorus, while receiving sugars and other carbon compounds from their hosts. These relationships are widespread and influence plant growth, soil ecology, and forest health.",
+      "relatedArticleIds": ["fungi", "plants", "mycelium", "amanita-muscaria", "conifers"]
+    },
+    {
+      "id": "ecosystem",
+      "title": "Ecosystems",
+      "header": "An ecosystem is a community of organisms interacting with one another and with their physical environment.",
+      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b",
+      "content": "Ecosystems consist of living organisms and nonliving environmental factors such as water, soil, air, and sunlight. Energy flows through food webs, while matter cycles through biological and geological processes. Producers, consumers, and decomposers interact to maintain ecological functions. Ecosystems range from forests and oceans to grasslands and wetlands.",
+      "relatedArticleIds": ["plants", "animals", "fungi", "decomposition", "photosynthesis", "bees"]
+    },
+    {
+      "id": "chloroplast",
+      "title": "Chloroplast",
+      "header": "Chloroplasts are specialized organelles in plants and algae where photosynthesis takes place.",
+      "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
+      "content": "Chloroplasts contain chlorophyll and other pigments that capture light energy. They have a double membrane and an internal system of membranes called thylakoids. Light-dependent reactions occur in thylakoid membranes, while carbon fixation occurs in the surrounding stroma. Chloroplasts contain their own DNA and are thought to have evolved from ancient photosynthetic bacteria.",
+      "relatedArticleIds": ["photosynthesis", "plants", "algae", "evolution"]
+    },
+    {
+      "id": "algae",
+      "title": "Algae",
+      "header": "Algae are a diverse collection of photosynthetic organisms found primarily in aquatic environments.",
+      "image": "https://images.unsplash.com/photo-1530053969600-caed2596d242",
+      "content": "Algae include organisms ranging from microscopic unicellular species to large multicellular seaweeds. They perform photosynthesis and contribute significantly to global oxygen production and aquatic food webs. Different algal lineages have distinct evolutionary histories, and some possess chloroplasts derived from endosymbiotic events.",
+      "relatedArticleIds": ["photosynthesis", "chloroplast", "plants", "ecosystem"]
+    }
+  ]
+}

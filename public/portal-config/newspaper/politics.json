@@ -1,0 +1,324 @@
+{
+  "targetArticleId": 1,
+  "articles": [
+    {
+      "id": 1,
+      "title": "THE POLITICAL EARTHQUAKE! New Poll Reveals Stunning Shift in Voter Support",
+      "header": "A dramatic change in public opinion could reshape the political landscape ahead of the next election.",
+      "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200",
+      "link": "#article-1",
+      "category": "ELECTIONS",
+      "main": true,
+      "time": "8 min ago"
+    },
+    {
+      "id": 2,
+      "title": "Opposition Leader Makes Unexpected Announcement Ahead of Election",
+      "header": "The candidate's latest statement has sparked speculation about a major campaign strategy shift.",
+      "image": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800",
+      "link": "#article-2",
+      "category": "ELECTIONS",
+      "featured": true,
+      "time": "15 min ago"
+    },
+    {
+      "id": 3,
+      "title": "POLITICAL SCANDAL! Leaked Messages Raise Serious Questions About Government",
+      "header": "Newly surfaced correspondence has triggered calls for transparency and an independent investigation.",
+      "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800",
+      "link": "#article-3",
+      "category": "SCANDALS",
+      "featured": true,
+      "time": "22 min ago"
+    },
+    {
+      "id": 4,
+      "title": "World Leaders Face Critical Decision as International Tensions Rise",
+      "header": "Diplomatic negotiations are entering a crucial phase as several countries demand immediate action.",
+      "image": "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800",
+      "link": "#article-4",
+      "category": "WORLD",
+      "featured": true,
+      "time": "34 min ago"
+    },
+    {
+      "id": 5,
+      "title": "Government Unveils Controversial Economic Plan: Who Will Benefit?",
+      "header": "The proposed reforms promise major changes but have already divided lawmakers and economists.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
+      "link": "#article-5",
+      "category": "POLICY",
+      "time": "45 min ago"
+    },
+    {
+      "id": 6,
+      "title": "Three Candidates, One Presidency: The Race Is Getting Personal",
+      "header": "Campaign attacks are intensifying as candidates compete for undecided voters.",
+      "image": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=600",
+      "link": "#article-6",
+      "category": "ELECTIONS",
+      "time": "1 hour ago"
+    },
+    {
+      "id": 7,
+      "title": "Historic Alliance? Two Major Political Parties Begin Surprise Negotiations",
+      "header": "Behind-the-scenes discussions could produce an unexpected coalition agreement.",
+      "image": "https://images.unsplash.com/photo-1520869562399-e772f042f422?w=600",
+      "link": "#article-7",
+      "category": "POLITICS",
+      "time": "1 hour ago"
+    },
+    {
+      "id": 8,
+      "title": "New Immigration Proposal Divides Parliament and Sparks Public Debate",
+      "header": "Lawmakers are preparing for a heated vote on a proposal that could reshape national border policy.",
+      "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600",
+      "link": "#article-8",
+      "category": "POLICY",
+      "time": "2 hours ago"
+    },
+    {
+      "id": 9,
+      "title": "Campaign Spending Under the Microscope After New Financial Report",
+      "header": "Questions surrounding political donations are putting several campaign organizations under pressure.",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600",
+      "link": "#article-9",
+      "category": "SCANDALS",
+      "time": "2 hours ago"
+    },
+    {
+      "id": 10,
+      "title": "Unexpected Poll Results Put Longtime Political Favorite at Risk",
+      "header": "A new national survey suggests that the election could be much closer than previously expected.",
+      "image": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600",
+      "link": "#article-10",
+      "category": "ELECTIONS",
+      "time": "3 hours ago"
+    },
+    {
+      "id": 11,
+      "title": "NATO Allies Debate Their Next Move as Security Concerns Grow",
+      "header": "Member states are discussing defense spending, military readiness and future cooperation.",
+      "image": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600",
+      "link": "#article-11",
+      "category": "WORLD",
+      "time": "3 hours ago"
+    },
+    {
+      "id": 12,
+      "title": "The Tax Revolution: Government Wants to Rewrite the Rules",
+      "header": "A sweeping tax reform proposal could change how households and businesses contribute.",
+      "image": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=600",
+      "link": "#article-12",
+      "category": "POLICY",
+      "time": "4 hours ago"
+    },
+    {
+      "id": 13,
+      "title": "Minister Faces Calls to Resign After Explosive Parliamentary Hearing",
+      "header": "Opposition lawmakers are demanding answers following a tense exchange during committee proceedings.",
+      "image": "https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?w=600",
+      "link": "#article-13",
+      "category": "SCANDALS",
+      "time": "4 hours ago"
+    },
+    {
+      "id": 14,
+      "title": "Can a New Political Movement Break the Traditional Two-Party System?",
+      "header": "A growing grassroots organization is attracting attention from voters frustrated with established parties.",
+      "image": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600",
+      "link": "#article-14",
+      "category": "POLITICS",
+      "time": "5 hours ago"
+    },
+    {
+      "id": 15,
+      "title": "Secret Diplomacy? Major Powers Reportedly Discuss New Trade Agreement",
+      "header": "A possible international deal could have significant consequences for global markets and relations.",
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600",
+      "link": "#article-15",
+      "category": "WORLD",
+      "time": "5 hours ago"
+    },
+    {
+      "id": 16,
+      "title": "Presidential Debate Goes Off Script After Candidate's Unexpected Response",
+      "header": "A heated exchange over the economy became the defining moment of an already dramatic debate.",
+      "image": "https://images.unsplash.com/photo-1590861025846-5e3f7e6e8a3a?w=600",
+      "link": "#article-16",
+      "category": "ELECTIONS",
+      "time": "6 hours ago"
+    },
+    {
+      "id": 17,
+      "title": "Government Announces Ambitious Housing Plan Amid Growing Public Pressure",
+      "header": "The proposal aims to address rising housing costs through construction incentives and regulatory changes.",
+      "image": "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600",
+      "link": "#article-17",
+      "category": "POLICY",
+      "time": "7 hours ago"
+    },
+    {
+      "id": 18,
+      "title": "Political Donation Investigation Takes Unexpected Turn",
+      "header": "Investigators are examining financial links between private organizations and campaign committees.",
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600",
+      "link": "#article-18",
+      "category": "SCANDALS",
+      "time": "8 hours ago"
+    },
+    {
+      "id": 19,
+      "title": "Europe Faces a New Political Challenge as Coalition Talks Stall",
+      "header": "Negotiations between rival parties have reached a critical stage after weeks of uncertainty.",
+      "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600",
+      "link": "#article-19",
+      "category": "WORLD",
+      "time": "9 hours ago"
+    },
+    {
+      "id": 20,
+      "title": "Young Voters Could Decide the Next Election, New Survey Suggests",
+      "header": "Political analysts are examining a generational shift that may reshape traditional voting patterns.",
+      "image": "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600",
+      "link": "#article-20",
+      "category": "ELECTIONS",
+      "time": "10 hours ago"
+    },
+    {
+      "id": 21,
+      "title": "Opposition Presents Alternative Budget and Challenges Government Priorities",
+      "header": "The rival financial plan puts healthcare, infrastructure and public spending at the center of debate.",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600",
+      "link": "#article-21",
+      "category": "POLICY",
+      "time": "11 hours ago"
+    },
+    {
+      "id": 22,
+      "title": "Foreign Relations at a Crossroads After Unexpected Diplomatic Incident",
+      "header": "Officials are working to prevent a diplomatic dispute from escalating into a wider international crisis.",
+      "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=600",
+      "link": "#article-22",
+      "category": "WORLD",
+      "time": "12 hours ago"
+    },
+    {
+      "id": 23,
+      "title": "Inside the Campaign War Room: How Candidates Are Fighting for Every Vote",
+      "header": "Digital advertising, local organizers and voter data are transforming modern election strategies.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600",
+      "link": "#article-23",
+      "category": "ELECTIONS",
+      "time": "13 hours ago"
+    },
+    {
+      "id": 24,
+      "title": "Former Party Insider Makes Allegations That Could Shake the Establishment",
+      "header": "A former senior official has raised questions about internal decision-making and party leadership.",
+      "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600",
+      "link": "#article-24",
+      "category": "SCANDALS",
+      "time": "14 hours ago"
+    },
+    {
+      "id": 25,
+      "title": "Should Governments Regulate Artificial Intelligence? Parliament Faces a Defining Vote",
+      "header": "Lawmakers are weighing innovation, privacy and public safety in a landmark regulatory debate.",
+      "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600",
+      "link": "#article-25",
+      "category": "POLICY",
+      "time": "15 hours ago"
+    },
+    {
+      "id": 26,
+      "title": "A New Era of Global Competition: The Political Battle for Strategic Resources",
+      "header": "Major economies are reconsidering their international partnerships as competition over resources intensifies.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600",
+      "link": "#article-26",
+      "category": "WORLD",
+      "time": "16 hours ago"
+    },
+    {
+      "id": 27,
+      "title": "Party Leadership Contest Turns Into a Battle for the Future of the Movement",
+      "header": "Competing factions are presenting different visions for the party's direction and electoral prospects.",
+      "image": "https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=600",
+      "link": "#article-27",
+      "category": "POLITICS",
+      "time": "17 hours ago"
+    },
+    {
+      "id": 28,
+      "title": "Election Forecast: Five Key Regions That Could Change Everything",
+      "header": "A handful of closely contested districts may determine which political alliance forms the next government.",
+      "image": "https://images.unsplash.com/photo-1524666041070-9a87656c25bb?w=600",
+      "link": "#article-28",
+      "category": "ELECTIONS",
+      "time": "18 hours ago"
+    },
+    {
+      "id": 29,
+      "title": "Government Faces Backlash Over Proposed Pension System Changes",
+      "header": "Unions, opposition parties and citizens are challenging the proposed changes to retirement policy.",
+      "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600",
+      "link": "#article-29",
+      "category": "POLICY",
+      "time": "19 hours ago"
+    },
+    {
+      "id": 30,
+      "title": "Leaked Report Raises Questions About Political Influence in Public Contracts",
+      "header": "A document circulating among lawmakers has prompted demands for an independent review.",
+      "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600",
+      "link": "#article-30",
+      "category": "SCANDALS",
+      "time": "20 hours ago"
+    },
+    {
+      "id": 31,
+      "title": "Peace Negotiations Enter Critical Stage as International Pressure Builds",
+      "header": "Diplomats are attempting to secure a framework for negotiations after months of stalled discussions.",
+      "image": "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=600",
+      "link": "#article-31",
+      "category": "WORLD",
+      "time": "21 hours ago"
+    },
+    {
+      "id": 32,
+      "title": "The Rise of Populism: Why Traditional Political Parties Are Losing Support",
+      "header": "Economic uncertainty and dissatisfaction with established institutions are reshaping voter preferences.",
+      "image": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600",
+      "link": "#article-32",
+      "category": "POLITICS",
+      "time": "22 hours ago"
+    },
+    {
+      "id": 33,
+      "title": "Candidate Promises Major Education Reform in Final Campaign Push",
+      "header": "The proposed package includes changes to school funding, teacher salaries and university access.",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600",
+      "link": "#article-33",
+      "category": "POLICY",
+      "time": "1 day ago"
+    },
+    {
+      "id": 34,
+      "title": "Political Crisis Deepens as Coalition Partners Threaten to Leave Government",
+      "header": "Disagreements over key legislation are putting the stability of the governing alliance in doubt.",
+      "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48c620?w=600",
+      "link": "#article-34",
+      "category": "POLITICS",
+      "time": "1 day ago"
+    },
+    {
+      "id": 35,
+      "title": "Global Power Shift? Emerging Economies Demand a Greater Role in International Institutions",
+      "header": "A growing coalition of countries is calling for changes to the international political and economic order.",
+      "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600",
+      "link": "#article-35",
+      "category": "WORLD",
+      "time": "1 day ago"
+    }
+  ]
+}

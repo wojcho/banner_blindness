@@ -1,0 +1,326 @@
+{
+  "initialArticleId": "polish-lithuanian-commonwealth",
+  "targetArticleId": "battle-of-vienna",
+  "articles": [
+    {
+      "id": "polish-lithuanian-commonwealth",
+      "title": "Polish-Lithuanian Commonwealth",
+      "header": "The Polish-Lithuanian Commonwealth was a powerful European state formed in 1569 through the Union of Lublin.",
+      "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+      "content": "The Polish-Lithuanian Commonwealth was established in 1569 by the Union of Lublin, uniting the Kingdom of Poland and the Grand Duchy of Lithuania. It became one of the largest and most populous states in Europe. Its political system was based on an elected monarchy and a powerful parliament called the Sejm. The Commonwealth was known for religious tolerance, noble democracy, and cultural diversity. It reached its greatest territorial extent in the early seventeenth century. Over time, internal political problems and foreign invasions weakened the state, leading to its partitions between Russia, Prussia, and Austria in 1772, 1793, and 1795.",
+      "relatedArticleIds": ["union-of-lublin", "sigismund-iii", "jan-iii-sobieski", "partitions-of-poland", "golden-liberty"]
+    },
+    {
+      "id": "union-of-lublin",
+      "title": "Union of Lublin",
+      "header": "The Union of Lublin in 1569 created the Polish-Lithuanian Commonwealth.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "The Union of Lublin was signed on July 1, 1569. It united the Kingdom of Poland and the Grand Duchy of Lithuania into a single political entity. Both countries shared an elected monarch and parliament while retaining separate administrations, armies, and legal systems. The union was a major political achievement and shaped Eastern European history for more than two centuries.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "sigismund-ii-augustus", "golden-liberty"]
+    },
+    {
+      "id": "golden-liberty",
+      "title": "Golden Liberty",
+      "header": "Golden Liberty was the political system that granted extensive rights to the nobility of the Commonwealth.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "Golden Liberty was a unique political system in which the noble class, known as the szlachta, enjoyed extensive political privileges. Nobles elected kings, participated in parliamentary sessions, and influenced national legislation. The liberum veto allowed a single deputy to block a parliamentary session. Although initially intended to protect political freedoms, this mechanism eventually contributed to political paralysis and the decline of the Commonwealth.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "union-of-lublin", "partitions-of-poland"]
+    },
+    {
+      "id": "sigismund-ii-augustus",
+      "title": "Sigismund II Augustus",
+      "header": "Sigismund II Augustus was the last monarch of the Jagiellonian dynasty and a key architect of the Union of Lublin.",
+      "image": "https://images.unsplash.com/photo-1566127992631-137a642a90f4",
+      "content": "Sigismund II Augustus ruled Poland from 1548 until 1572. He was the last male member of the Jagiellonian dynasty. His reign was marked by political reforms, cultural development, and the creation of the Polish-Lithuanian Commonwealth. He strongly supported closer cooperation between Poland and Lithuania, which resulted in the Union of Lublin in 1569. His death without an heir ended the Jagiellonian dynasty.",
+      "relatedArticleIds": ["union-of-lublin", "polish-lithuanian-commonwealth", "sigismund-iii"]
+    },
+    {
+      "id": "sigismund-iii",
+      "title": "Sigismund III Vasa",
+      "header": "Sigismund III Vasa was King of Poland and Grand Duke of Lithuania from 1587 to 1632.",
+      "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342",
+      "content": "Sigismund III Vasa belonged to the Swedish House of Vasa. He ruled the Polish-Lithuanian Commonwealth for 45 years and attempted to strengthen royal authority. During his reign, the capital of Poland was moved from Krakow to Warsaw. He also pursued claims to the Swedish throne and supported military campaigns against Russia and Sweden. His reign witnessed significant territorial expansion and major political conflicts.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "smolensk-war", "battle-of-klushino", "jan-iii-sobieski"]
+    },
+    {
+      "id": "jan-iii-sobieski",
+      "title": "Jan III Sobieski",
+      "header": "Jan III Sobieski was a Polish king and military commander famous for defeating the Ottoman army at Vienna in 1683.",
+      "image": "https://images.unsplash.com/photo-1566127992631-137a642a90f4",
+      "content": "Jan III Sobieski ruled the Polish-Lithuanian Commonwealth from 1674 to 1696. Before becoming king, he gained fame as a military commander through victories against Ottoman and Tatar forces. His most famous achievement was leading the allied Christian army during the Battle of Vienna in 1683. His cavalry charge helped break the Ottoman siege and became one of the most celebrated military actions in European history.",
+      "relatedArticleIds": ["battle-of-vienna", "polish-lithuanian-commonwealth", "battle-of-chocim-1673"]
+    },
+    {
+      "id": "stephen-bathory",
+      "title": "Stephen Bathory",
+      "header": "Stephen Bathory was King of Poland and Grand Duke of Lithuania from 1576 to 1586.",
+      "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342",
+      "content": "Stephen Bathory was elected king in 1576. Originally Prince of Transylvania, he became one of the most successful military rulers of the Commonwealth. He reorganized the army, strengthened royal authority, and conducted successful campaigns against Muscovy during the Livonian War. His victories helped secure important territorial gains and strengthened the Commonwealth's position in Eastern Europe.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "livonian-war", "sigismund-iii"]
+    },
+    {
+      "id": "casimir-iii",
+      "title": "Casimir III the Great",
+      "header": "Casimir III the Great transformed medieval Poland through legal reforms, economic development, and diplomacy.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "Casimir III ruled Poland from 1333 to 1370. He strengthened the kingdom through administrative reforms, castle construction, and economic development. He established the University of Krakow in 1364, later known as the Jagiellonian University. His reign brought relative stability and prosperity, earning him the title the Great. He was the last king of the Piast dynasty.",
+      "relatedArticleIds": ["jagiellonian-dynasty", "battle-of-grunwald", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "jagiellonian-dynasty",
+      "title": "Jagiellonian Dynasty",
+      "header": "The Jagiellonian dynasty ruled Poland and several Central European kingdoms during the late medieval and early modern periods.",
+      "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342",
+      "content": "The Jagiellonian dynasty originated with Wladyslaw II Jagiello, who became King of Poland in 1386. The dynasty ruled Poland and Lithuania and later held the thrones of Hungary and Bohemia. Its reign was characterized by territorial expansion, diplomatic alliances, and cultural development. The dynasty ended in Poland with the death of Sigismund II Augustus in 1572.",
+      "relatedArticleIds": ["casimir-iii", "battle-of-grunwald", "sigismund-ii-augustus", "union-of-lublin"]
+    },
+    {
+      "id": "wladyslaw-jagiello",
+      "title": "Wladyslaw II Jagiello",
+      "header": "Wladyslaw II Jagiello was Grand Duke of Lithuania and King of Poland who helped create a powerful Polish-Lithuanian alliance.",
+      "image": "https://images.unsplash.com/photo-1566127992631-137a642a90f4",
+      "content": "Wladyslaw II Jagiello became King of Poland in 1386 after converting to Christianity and marrying Queen Jadwiga. His reign established the personal union between Poland and Lithuania. He commanded Polish-Lithuanian forces during the Battle of Grunwald in 1410, defeating the Teutonic Order. His dynasty became one of the most influential royal houses in Central Europe.",
+      "relatedArticleIds": ["battle-of-grunwald", "jagiellonian-dynasty", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "battle-of-grunwald",
+      "title": "Battle of Grunwald",
+      "header": "The Battle of Grunwald in 1410 was one of the largest medieval battles in Europe.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Grunwald took place on July 15, 1410, between the allied forces of Poland and Lithuania and the Teutonic Order. Commanded by Wladyslaw II Jagiello and Grand Duke Vytautas, the allied army achieved a decisive victory. The defeat severely weakened the Teutonic Order and changed the balance of power in the Baltic region.",
+      "relatedArticleIds": ["wladyslaw-jagiello", "jagiellonian-dynasty", "thirteen-years-war", "teutonic-order"]
+    },
+    {
+      "id": "teutonic-order",
+      "title": "Teutonic Order",
+      "header": "The Teutonic Order was a medieval military religious organization that established a powerful state along the Baltic coast.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Teutonic Order was founded during the Crusades and expanded into the Baltic region during the thirteenth century. It established a state in Prussia and frequently fought against Poland and Lithuania. Its power declined after the Battle of Grunwald in 1410 and subsequent conflicts. In 1525, the Prussian branch of the order was secularized.",
+      "relatedArticleIds": ["battle-of-grunwald", "thirteen-years-war", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "thirteen-years-war",
+      "title": "Thirteen Years' War",
+      "header": "The Thirteen Years' War was a conflict between Poland and the Teutonic Order from 1454 to 1466.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Thirteen Years' War began in 1454 when the Prussian Confederation rebelled against the Teutonic Order and requested the protection of the Polish king. Poland eventually won the conflict. The Second Peace of Thorn in 1466 gave Poland control over Royal Prussia and established Polish influence over the remaining Teutonic territories.",
+      "relatedArticleIds": ["teutonic-order", "battle-of-grunwald", "casimir-iii"]
+    },
+    {
+      "id": "battle-of-klushino",
+      "title": "Battle of Klushino",
+      "header": "The Battle of Klushino in 1610 was a remarkable Polish victory over Russian and Swedish forces.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Klushino took place on July 4, 1610, during the Polish-Muscovite War. Polish forces commanded by Hetman Stanislaw Zolkiewski defeated a much larger Russian-Swedish army. The victory opened the road to Moscow and led to the occupation of the Russian capital by Commonwealth forces. It remains one of the most famous victories of Polish cavalry.",
+      "relatedArticleIds": ["sigismund-iii", "polish-muscovite-war", "smolensk-war"]
+    },
+    {
+      "id": "polish-muscovite-war",
+      "title": "Polish-Muscovite War",
+      "header": "The Polish-Muscovite War was a series of conflicts between the Commonwealth and Russia during the early seventeenth century.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Polish-Muscovite War included several military campaigns between 1605 and 1618. The conflict began during Russia's Time of Troubles, when the Commonwealth intervened in Russian political affairs. Polish forces occupied Moscow for a period and supported the candidacy of Prince Wladyslaw for the Russian throne. The war ended with the Truce of Deulino in 1618, which granted the Commonwealth significant territorial gains.",
+      "relatedArticleIds": ["battle-of-klushino", "sigismund-iii", "smolensk-war"]
+    },
+    {
+      "id": "smolensk-war",
+      "title": "Smolensk War",
+      "header": "The Smolensk War of 1632–1634 was fought between the Polish-Lithuanian Commonwealth and Russia.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Smolensk War began when Russia attempted to recover territories lost during the Time of Troubles. Russian forces besieged Smolensk, but the Polish king Wladyslaw IV led a successful relief campaign. The conflict ended with the Treaty of Polyanovka in 1634, confirming most territorial arrangements in favor of the Commonwealth.",
+      "relatedArticleIds": ["polish-muscovite-war", "sigismund-iii", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "battle-of-chocim-1621",
+      "title": "Battle of Chocim 1621",
+      "header": "The Battle of Chocim in 1621 stopped a major Ottoman invasion of the Polish-Lithuanian Commonwealth.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Chocim took place in September and October 1621. Commonwealth and Cossack forces defended a fortified camp against a much larger Ottoman army led by Sultan Osman II. After weeks of fighting, the Ottomans agreed to negotiations. The resulting peace treaty preserved the Commonwealth's borders and prevented further escalation of the conflict.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "battle-of-chocim-1673", "ottoman-empire"]
+    },
+    {
+      "id": "battle-of-chocim-1673",
+      "title": "Battle of Chocim 1673",
+      "header": "The Battle of Chocim in 1673 was a decisive Polish victory commanded by Hetman Jan Sobieski.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "On November 11, 1673, Polish forces commanded by Jan Sobieski defeated the Ottoman army near Chocim. The victory restored Commonwealth military prestige after earlier setbacks. It also helped Sobieski gain political support and eventually become king of Poland in 1674.",
+      "relatedArticleIds": ["jan-iii-sobieski", "battle-of-vienna", "battle-of-chocim-1621"]
+    },
+    {
+      "id": "battle-of-vienna",
+      "title": "Battle of Vienna",
+      "header": "The Battle of Vienna in 1683 ended the Ottoman siege of the city and became a landmark victory in European history.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Vienna took place on September 12, 1683. An allied Christian army led by Polish King Jan III Sobieski confronted the Ottoman army commanded by Grand Vizier Kara Mustafa. The Polish cavalry, including the famous winged hussars, launched a decisive charge that helped defeat the besieging forces. The victory ended the Ottoman siege of Vienna and marked a turning point in the Ottoman-Habsburg wars.",
+      "relatedArticleIds": ["jan-iii-sobieski", "battle-of-chocim-1673", "ottoman-empire", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "winged-hussars",
+      "title": "Polish Winged Hussars",
+      "header": "The Winged Hussars were an elite heavy cavalry formation that became a symbol of Polish military power.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Polish Winged Hussars were among the most effective cavalry units in early modern Europe. They used long lances, swords, and specialized armor. Their distinctive wings became their most recognizable feature. They played major roles in victories at Kircholm, Klushino, and Vienna. Their charges were particularly effective against infantry and cavalry formations.",
+      "relatedArticleIds": ["battle-of-vienna", "battle-of-klushino", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "ottoman-empire",
+      "title": "Ottoman Empire",
+      "header": "The Ottoman Empire was a powerful multinational empire that controlled parts of Europe, Asia, and Africa for centuries.",
+      "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
+      "content": "The Ottoman Empire was founded around the end of the thirteenth century and expanded into southeastern Europe, the Middle East, and North Africa. Its capital was Constantinople after its conquest in 1453. The empire frequently fought the Polish-Lithuanian Commonwealth and the Habsburg monarchy. Its expansion into Central Europe was halted during the late seventeenth century.",
+      "relatedArticleIds": ["battle-of-vienna", "battle-of-chocim-1621", "battle-of-chocim-1673"]
+    },
+    {
+      "id": "livonian-war",
+      "title": "Livonian War",
+      "header": "The Livonian War was a conflict from 1558 to 1583 over control of territories along the eastern Baltic Sea.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Livonian War involved Muscovy, Sweden, Denmark, and the Polish-Lithuanian Commonwealth. Ivan IV of Russia initially invaded Livonia, threatening the Baltic trade routes. Poland and Lithuania intervened under King Stephen Bathory, who conducted successful campaigns against Russian forces. The war ended with the Truce of Yam-Zapolsky in 1582 and the Truce of Plussa in 1583.",
+      "relatedArticleIds": ["stephen-bathory", "polish-lithuanian-commonwealth", "polish-muscovite-war"]
+    },
+    {
+      "id": "partitions-of-poland",
+      "title": "Partitions of Poland",
+      "header": "The Partitions of Poland between 1772 and 1795 resulted in the disappearance of the Commonwealth from the map of Europe.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "The Partitions of Poland were three territorial divisions carried out by Russia, Prussia, and Austria. The First Partition occurred in 1772, the Second in 1793, and the Third in 1795. Internal political weakness, foreign interference, and military defeats contributed to the collapse of the Commonwealth. Poland remained without an independent state for 123 years until independence was restored in 1918.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "constitution-of-may-3", "kosciuszko-uprising"]
+    },
+    {
+      "id": "constitution-of-may-3",
+      "title": "Constitution of May 3",
+      "header": "The Constitution of May 3, 1791 was one of the world's first modern written national constitutions.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "The Constitution of May 3 was adopted by the Great Sejm in 1791. It aimed to reform the political system of the Commonwealth by strengthening central government, limiting the liberum veto, and introducing greater political stability. It also established a constitutional monarchy. The reforms provoked opposition from conservative nobles and neighboring powers, contributing to the events leading to the Second Partition of Poland.",
+      "relatedArticleIds": ["partitions-of-poland", "kosciuszko-uprising", "golden-liberty"]
+    },
+    {
+      "id": "kosciuszko-uprising",
+      "title": "Kościuszko Uprising",
+      "header": "The Kościuszko Uprising of 1794 was the last major attempt to defend Polish independence before the final partition.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The uprising began in March 1794 under the leadership of Tadeusz Kosciuszko. It aimed to restore Polish sovereignty after the Second Partition. The insurgents achieved an early victory at Raclawice, where peasant scythemen became famous. However, Russian and Prussian forces eventually defeated the rebellion. The uprising ended with the Third Partition in 1795.",
+      "relatedArticleIds": ["partitions-of-poland", "constitution-of-may-3", "tadeusz-kosciuszko"]
+    },
+    {
+      "id": "tadeusz-kosciuszko",
+      "title": "Tadeusz Kościuszko",
+      "header": "Tadeusz Kościuszko was a Polish military engineer and independence leader who also fought in the American Revolutionary War.",
+      "image": "https://images.unsplash.com/photo-1566127992631-6e5fd01aa342",
+      "content": "Tadeusz Kosciuszko was born in 1746 and became a military engineer. He served in the American Revolutionary War, helping design fortifications, including those at West Point. After returning to Poland, he led the national uprising of 1794 against Russian and Prussian domination. He became an enduring symbol of Polish independence and international freedom.",
+      "relatedArticleIds": ["kosciuszko-uprising", "partitions-of-poland", "constitution-of-may-3"]
+    },
+    {
+      "id": "battle-of-warsaw-1920",
+      "title": "Battle of Warsaw 1920",
+      "header": "The Battle of Warsaw in August 1920 stopped the Soviet advance into Poland during the Polish-Soviet War.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Warsaw took place between August 12 and 25, 1920. Polish forces led by Jozef Pilsudski defeated the advancing Red Army. The victory prevented the Soviet conquest of Poland and changed the course of the Polish-Soviet War. It is sometimes called the Miracle on the Vistula.",
+      "relatedArticleIds": ["polish-soviet-war", "tadeusz-kosciuszko", "partitions-of-poland"]
+    },
+    {
+      "id": "polish-soviet-war",
+      "title": "Polish-Soviet War",
+      "header": "The Polish-Soviet War of 1919–1921 determined the eastern borders of the newly independent Polish state.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Polish-Soviet War followed the restoration of Polish independence in 1918. Polish and Soviet forces fought over territories between Poland and Russia. The conflict included major battles, most notably the Battle of Warsaw in 1920. It ended with the Treaty of Riga in 1921, establishing the eastern frontier of Poland for the interwar period.",
+      "relatedArticleIds": ["battle-of-warsaw-1920", "partitions-of-poland", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "jadwiga-of-poland",
+      "title": "Jadwiga of Poland",
+      "header": "Jadwiga was crowned King of Poland in 1384 and played a crucial role in the Polish-Lithuanian union.",
+      "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342",
+      "content": "Jadwiga became monarch of Poland in 1384 and married Wladyslaw Jagiello in 1386. Their marriage helped establish the union between Poland and Lithuania. She supported the development of education and donated resources to the University of Krakow. She was canonized as a saint in 1997.",
+      "relatedArticleIds": ["wladyslaw-jagiello", "jagiellonian-dynasty", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "ivan-the-terrible",
+      "title": "Ivan the Terrible",
+      "header": "Ivan IV was the first ruler of Russia to be crowned Tsar and an important rival of the Commonwealth.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "Ivan IV ruled Russia from 1547 to 1584. His reign expanded Russian territories and strengthened centralized authority. He waged the Livonian War to gain access to the Baltic Sea, bringing Russia into conflict with Poland and Lithuania. His domestic policies included the oprichnina, a period of political repression and violence.",
+      "relatedArticleIds": ["livonian-war", "polish-muscovite-war", "stephen-bathory"]
+    },
+    {
+      "id": "peter-the-great",
+      "title": "Peter the Great",
+      "header": "Peter the Great transformed Russia into a major European power through military, administrative, and cultural reforms.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "Peter I ruled Russia from 1682 to 1725. He modernized the Russian army, navy, government, and economy. His victories in the Great Northern War established Russia as a major Baltic power. He founded Saint Petersburg in 1703 and introduced extensive Western European reforms. His policies greatly influenced the later history of the Polish-Lithuanian Commonwealth.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "partitions-of-poland", "ottoman-empire"]
+    },
+    {
+      "id": "napoleon",
+      "title": "Napoleon Bonaparte",
+      "header": "Napoleon Bonaparte was a French military commander and emperor whose wars transformed Europe.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "Napoleon rose to power during the French Revolution and became Emperor of the French in 1804. His military campaigns reshaped European borders and political systems. He supported the creation of the Duchy of Warsaw in 1807, which offered Poles renewed hope for independence. His defeat at Waterloo in 1815 ended his rule.",
+      "relatedArticleIds": ["partitions-of-poland", "constitution-of-may-3", "kosciuszko-uprising"]
+    },
+    {
+      "id": "battle-of-waterloo",
+      "title": "Battle of Waterloo",
+      "header": "The Battle of Waterloo in 1815 ended Napoleon's rule and reshaped the political order of Europe.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Waterloo was fought on June 18, 1815, in present-day Belgium. Napoleon's French army was defeated by a coalition led by the Duke of Wellington and Prussian Field Marshal Gebhard Leberecht von Blucher. The defeat ended the Hundred Days and led to Napoleon's final exile on Saint Helena.",
+      "relatedArticleIds": ["napoleon", "partitions-of-poland", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "french-revolution",
+      "title": "French Revolution",
+      "header": "The French Revolution of 1789 transformed France and inspired political movements throughout Europe.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "The French Revolution began in 1789 amid economic crisis and demands for political reform. It ended the absolute monarchy, abolished feudal privileges, and promoted ideas of citizenship and popular sovereignty. The revolution eventually led to Napoleon's rise to power and influenced constitutional reforms across Europe, including those in the Polish-Lithuanian Commonwealth.",
+      "relatedArticleIds": ["constitution-of-may-3", "napoleon", "partitions-of-poland"]
+    },
+    {
+      "id": "american-revolution",
+      "title": "American Revolution",
+      "header": "The American Revolution created the United States and inspired independence movements around the world.",
+      "image": "https://images.unsplash.com/photo-1461360228754-6e81c478b882",
+      "content": "The American Revolution took place between 1775 and 1783. The thirteen British colonies declared independence in 1776 and fought a war against Great Britain. The conflict ended with the Treaty of Paris in 1783. Polish military figures such as Tadeusz Kosciuszko and Kazimierz Pulaski participated in the struggle.",
+      "relatedArticleIds": ["tadeusz-kosciuszko", "french-revolution", "constitution-of-may-3"]
+    },
+    {
+      "id": "kazimierz-pulaski",
+      "title": "Kazimierz Pulaski",
+      "header": "Kazimierz Pulaski was a Polish military commander who became a hero of the American Revolutionary War.",
+      "image": "https://images.unsplash.com/photo-1566127992631-6e5fd01aa342",
+      "content": "Kazimierz Pulaski was born in Poland in 1745 and initially fought against Russian influence during the Bar Confederation. After emigrating to America, he joined the Continental Army and became known as the Father of the American Cavalry. He died from wounds received during the Siege of Savannah in 1779.",
+      "relatedArticleIds": ["american-revolution", "tadeusz-kosciuszko", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "bar-confederation",
+      "title": "Bar Confederation",
+      "header": "The Bar Confederation was an armed rebellion of Polish nobles against Russian influence and royal authority.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Bar Confederation was formed in 1768 by nobles opposing Russian interference in the Commonwealth and the policies of King Stanislaw August Poniatowski. The rebellion lasted until 1772 and involved battles across Poland and Lithuania. Its defeat contributed to the First Partition of Poland.",
+      "relatedArticleIds": ["partitions-of-poland", "polish-lithuanian-commonwealth", "constitution-of-may-3"]
+    },
+    {
+      "id": "stanislaw-august",
+      "title": "Stanisław August Poniatowski",
+      "header": "Stanisław August Poniatowski was the last king of Poland and reigned during the final decades of the Commonwealth.",
+      "image": "https://images.unsplash.com/photo-1566127992631-137a642a90f4",
+      "content": "Stanislaw August Poniatowski ruled from 1764 to 1795. He supported educational and cultural reforms and encouraged the modernization of the state. His reign included the adoption of the Constitution of May 3 in 1791. Despite his reform efforts, the Commonwealth was partitioned by neighboring powers, and he abdicated in 1795.",
+      "relatedArticleIds": ["constitution-of-may-3", "partitions-of-poland", "bar-confederation", "kosciuszko-uprising"]
+    },
+    {
+      "id": "battle-of-kircholm",
+      "title": "Battle of Kircholm",
+      "header": "The Battle of Kircholm in 1605 was a spectacular victory of Polish-Lithuanian cavalry over the Swedish army.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Kircholm took place on September 27, 1605, during the Polish-Swedish War. Commonwealth forces commanded by Jan Karol Chodkiewicz defeated a significantly larger Swedish army. The battle demonstrated the effectiveness of Polish-Lithuanian cavalry and the tactical skill of its commanders.",
+      "relatedArticleIds": ["winged-hussars", "sigismund-iii", "polish-lithuanian-commonwealth"]
+    },
+    {
+      "id": "battle-of-cedynia",
+      "title": "Battle of Cedynia",
+      "header": "The Battle of Cedynia in 972 was an early Polish victory under Duke Mieszko I.",
+      "image": "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23",
+      "content": "The Battle of Cedynia took place in 972 between the forces of Mieszko I and the army of Margrave Hodo of the Saxon Eastern March. The Polish forces achieved victory, strengthening Mieszko's control over territories west of the Oder River. The battle is considered an important early event in the formation of the Polish state.",
+      "relatedArticleIds": ["polish-lithuanian-commonwealth", "casimir-iii", "jagiellonian-dynasty"]
+    }
+  ]
+}
