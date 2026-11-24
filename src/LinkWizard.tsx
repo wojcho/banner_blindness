@@ -14,7 +14,37 @@ import {
   Title,
 } from "@mantine/core";
 
-const adConfigIds: string[] = ["basic"];
+const adConfigIds: string[] = [
+  "error",
+  "generic",
+  "advert",
+  "pigeon",
+  "face",
+  "captcha",
+  "technology",
+  "clothes",
+  "biology",
+  "history",
+  "nature",
+  "landmarks",
+  "politics",
+  "finance",
+  
+  "error-sidebar",
+  "generic-sidebar",
+  "advert-sidebar",
+  "pigeon-sidebar",
+  "face-sidebar",
+  "captcha-sidebar",
+  "technology-sidebar",
+  "clothes-sidebar",
+  "biology-sidebar",
+  "history-sidebar",
+  "nature-sidebar",
+  "landmarks-sidebar",
+  "politics-sidebar",
+  "finance-sidebar",
+];
 
 const portals = [
   { value: "captcha", label: "Captcha" },
@@ -33,10 +63,10 @@ type PortalType =
 
 const portalConfigIds: Record<PortalType, string[]> = {
   captcha: [],
-  encyclopedia: ["basic"],
-  ecommerce: ["basic"],
-  newspaper: ["basic"],
-  gallery: ["basic"],
+  encyclopedia: ["basic", "biology", "history"],
+  ecommerce: ["basic", "technology", "clothes"],
+  newspaper: ["basic", "politics", "finance"],
+  gallery: ["basic", "nature", "landmarks"],
 };
 
 export function LinkWizard() {

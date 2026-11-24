@@ -3,6 +3,19 @@ import {
   NewspaperIcon,
   ShoppingBagIcon,
   ImageIcon,
+  WarningCircleIcon,
+  InfoIcon,
+  BirdIcon,
+  SmileyIcon,
+  ShieldCheckIcon,
+  CpuIcon,
+  DnaIcon,
+  TShirtIcon,
+  HourglassIcon,
+  TreeIcon,
+  GlobeHemisphereWestIcon,
+  BankIcon,
+  BriefcaseIcon,
 } from "@phosphor-icons/react";
 
 import type {
@@ -15,6 +28,19 @@ const iconMap = {
   NewspaperIcon,
   ShoppingBagIcon,
   ImageIcon,
+  WarningCircleIcon,
+  InfoIcon,
+  BirdIcon,
+  SmileyIcon,
+  ShieldCheckIcon,
+  CpuIcon,
+  DnaIcon,
+  TShirtIcon,
+  HourglassIcon,
+  TreeIcon,
+  GlobeHemisphereWestIcon,
+  BankIcon,
+  BriefcaseIcon,
 } as const;
 
 type IconName = keyof typeof iconMap;

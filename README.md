@@ -90,21 +90,21 @@ scenarios
   - [x] politics
   - [x] finance
 
-- [ ] ads
-  - [ ] error
-  - [ ] generic
-  - [ ] advert
-  - [ ] pigeon
-  - [ ] face
-  - [ ] captcha
-  - [ ] technology
-  - [ ] clothes
-  - [ ] biology
-  - [ ] history
-  - [ ] nature
-  - [ ] landmarks
-  - [ ] politics
-  - [ ] finance
+- [x] ads
+  - [x] error
+  - [x] generic
+  - [x] advert
+  - [x] pigeon
+  - [x] face
+  - [x] captcha
+  - [x] technology
+  - [x] clothes
+  - [x] biology
+  - [x] history
+  - [x] nature
+  - [x] landmarks
+  - [x] politics
+  - [x] finance
 
 ---
 
